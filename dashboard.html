@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./style.css">
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <nav id="navigation-bar-desktop">
+            <div id="nav-left-section">
+                <img id="app-logo" src="./images/application-logo.png" alt="app-logo">
+                <p id="app-title">MyExpenseTracker</p>
+            </div>
+            <div id="nav-middle-section">
+                <button id="dashboard" class="nav-middle-button">Dashboard</button>
+                <button id="transactions" class="nav-middle-button">Transactions</button>
+                <button id="raports" class="nav-middle-button">Raports</button>
+                <button id="bugets" class="nav-middle-button">Bugets</button>
+                <button id="savings" class="nav-middle-button">Savings</button>
+            </div>
+            <div id="nav-right-section">
+                <img id="user-image" src="./images/image-with-me.jpg" alt="user-image">
+                <p id="user-name">User name</p>
+            </div>
+        </nav>
+        <nav id="navigation-bar-mobile">
+            <button id="menu"></button>
+            <p id="app-title-mobile">MyExpenseTracker</p>
+            <button id="profile"></button>
+        </nav>
+        <div id="dashboard-main-container">
+            <div id="statistics-container">
+                <div id="statistics-incomes" class="statistic">
+                    <p class="statistics-title">Monthly incomes</p>
+                    <div id="monthly-incomes" class="result-statistic">
+                        <p class="value-statistic">+4200</p>
+                        <p>RON</p>
+                    </div>
+                </div>
+                <div id="statistics-expenses" class="statistic">
+                    <p class="statistics-title">Monthly expenses</p>
+                    <div id="monthly-expenses" class="result-statistic">
+                        <p class="value-statistic">-2800</p>
+                        <p>RON</p>
+                    </div>
+                </div>
+                <div id="statistics-savings" class="statistic">
+                    <p class="statistics-title">Currently Savings</p>
+                    <div id="currently-savings" class="result-statistic">
+                        <p class="value-statistic">5600</p>
+                        <p>RON</p>
+                    </div>
+                </div>
+                <div id="statistics-budget" class="statistic">
+                    <p class="statistics-title">Budget Left</p>
+                    <div id="budget-left" class="result-statistic">
+                        <p class="value-statistic">1200</p>
+                        <p>RON</p>
+                    </div>
+                </div>
+            </div>
+            <div id="chart-and-recent-payments-container">
+                <div id="chart-container">
+                    <canvas id="financeChart"></canvas>
+                </div>
+                <div id="recent-payments">
+                    <div id="see-all-container">
+                        <h3>Recent Payments</h3>
+                        <button id="see-all">See all</button>
+                    </div>
+                    <div id="first-recent-payment" class="payments">
+                        <div>
+                            <img src="./images/savings-logo.png" alt="savings-logo">
+                            <p>Salary</p>
+                        </div>
+                        <p>+3000 RON</p>
+                    </div>
+                    <div id="second-recent-payment" class="payments">
+                        <div>
+                            <img src="./images/bill.png" alt="savings-logo">
+                            <p>Electricity Bill</p>
+                        </div>
+                        <p>-200 RON</p>
+                    </div>
+                    <div id="third-recent-payment" class="payments">
+                        <div>
+                            <img src="./images/groceries.png" alt="savings-logo">
+                            <p>Groceries</p>
+                        </div>
+                        <p>-150 RON</p>
+                    </div>
+                    <div id="forth-recent-payment" class="payments">
+                        <div>
+                            <img src="./images/transfer.png" alt="savings-logo">
+                            <p>Savings Transfer</p>
+                        </div>
+                        <p>+3000 RON</p>
+                    </div>
+                    <div id="forth-recent-payment" class="payments">
+                        <div>
+                            <img src="./images/transfer.png" alt="savings-logo">
+                            <p>Savings Transfer</p>
+                        </div>
+                        <p>+3000 RON</p>
+                    </div>
+                    <div id="forth-recent-payment" class="payments">
+                        <div>
+                            <img src="./images/transfer.png" alt="savings-logo">
+                            <p>Savings Transfer</p>
+                        </div>
+                        <p>+3000 RON</p>
+                    </div>
+                </div>
+            </div>
+            <div id="center-button">
+                <button id="add-payment">Add Payment</button>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script>
+        const ctx = document.getElementById('financeChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Ian', 'Feb', 'Mar', 'Apr'],
+                datasets: [
+                    {
+                        label: 'Income',
+                        data: [4200, 3800, 4600, 4100]
+                    },
+                    {
+                        label: 'Expenses',
+                        data: [2800, 3000, 2600, 2900]
+                    }
+                ]
+            }
+        });
+        </script>
+    </body>
+</html>

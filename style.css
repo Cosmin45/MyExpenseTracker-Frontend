@@ -1,0 +1,403 @@
+html
+{
+    font-size: 16px;
+    font-family: "Roboto Slab", serif;
+}
+
+body
+{
+    margin: 0;
+}
+
+button
+{
+    font-size: 16px;
+}
+
+#main-container
+{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 580px;
+}
+
+#login-title
+{
+    font-size: 2rem;
+}
+
+.login
+{
+    margin: 2%;
+}
+
+#username, #password
+{
+    width: 70%;
+    height: 5%;
+    border-radius: 50px;
+    background-color: #f3cfff;
+    border: none;
+    text-align: center;
+    font-size: 1rem;
+}
+
+#other-options
+{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+#submit
+{
+    width: 35%;
+    height: 5%;
+    border-radius: 50px;
+    background-color: orange;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#submit:hover
+{
+    background-color: #ffda96;
+}
+
+/* ==========Dashboard============ */
+
+#navigation-bar-desktop
+{
+    display: none;
+}
+
+#navigation-bar-mobile
+{
+    background-color: #486ba3;
+    display: flex;
+    width: 96%;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2%;
+    padding-right: 2%;
+    top: 0;
+    position: sticky;
+}
+
+#menu
+{
+    background-image: url("./images/menu.png");
+}
+
+#profile
+{
+    background-image: url("./images/image-with-me.jpg");
+    border-radius: 50px;
+}
+
+#menu, #profile
+{
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+#menu:hover, #profile:hover
+{
+    cursor: pointer;
+}
+
+#app-title-mobile
+{
+    font-size: 20px;
+    color: white;
+}
+
+#dashboard-main-container
+{
+    margin: 2% 2% 2% 2%;
+}
+
+#statistics-container
+{
+    display: flex;
+    color: black;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.statistic
+{
+    width: calc(50% - 10px);
+    border-radius: 10px;
+    color: white;
+}
+
+.value-statistic
+{
+    font-size: 3rem;
+}
+
+#statistics-incomes
+{
+    background-color: #4bb36f;
+}
+#statistics-expenses
+{
+    background-color: #f7665c;
+}
+#statistics-savings
+{
+    background-color: #4e99cc;
+}
+#statistics-budget
+{
+    background-color: #8c63c2;
+}
+
+.result-statistic
+{
+    display: flex;
+}
+
+.statistic p
+{
+    margin: 5% 0% 5% 5%;
+}
+
+.statistics-title
+{
+    font-size: 1.3rem;
+}
+
+#statistics-incomes #monthly-incomes
+{
+    margin-top: 0px;
+}
+
+#chart-container 
+{
+    width: 100%;
+}
+
+#recent-payments
+{
+    width: 100%;
+    margin-top: 20px;
+}
+
+#chart-and-recent-payments-container
+{
+    margin-top: 20px;
+}
+
+.payments
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #486ba3;
+}
+
+#see-all-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #486ba3;
+    border-top: 1px solid #486ba3;
+    font-size: 20px;
+}
+
+.payments div
+{
+    display: flex;
+    align-items: center;
+    width: 70%;
+}
+
+.payments img
+{
+    width: 30px;
+    height: 30px;
+    margin-right: 3%;
+}
+
+.payments p
+{
+    font-size: 20px;
+}
+
+#see-all
+{
+    width: 20%;
+    height: 2rem;
+    background-color: #4e99cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#see-all:hover
+{
+    cursor: pointer;
+}
+
+#center-button
+{
+    display: flex;
+    justify-content: center;
+    height: 10rem;
+}
+
+#add-payment
+{
+    background-color: #4e99cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    width: 30%;
+    height: 25%;
+}
+
+
+@media (min-width: 992px)
+{
+    #username, #password, #other-options
+    {
+        width: 30%;
+    }
+
+    #submit
+    {
+        width: 10%;
+    }
+
+    .login
+    {
+        margin-top: 1%;
+        margin-bottom: 1%;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+
+    #navigation-bar-mobile
+    {
+        display: none;
+    }
+
+    #statistics-container
+    {
+        justify-content: space-between;
+        gap: 10 px;
+        flex-wrap: nowrap;
+        margin-top: 0px;
+    }
+
+    #chart-and-recent-payments-container
+    {
+        display: flex;
+        /* border: 2px solid black; */
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+
+    #chart-container
+    {
+        width: calc(50% - 10px);
+        height: 100%;
+         border: 1px solid #486ba3; 
+        /* margin-top: 20px; */
+    }
+
+    #recent-payments
+    {
+        width: calc(50% - 10px);
+        height: 100%;
+        /* border: 2px solid blue; */
+        margin-top: 0px;
+    }
+
+    #add-payment
+    {
+        margin-top: 40px;
+    }
+
+    #navigation-bar-desktop
+    {
+        display: flex;
+        align-items: center;
+        background-color: #486ba3;
+        justify-content: space-between;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 2%;
+        padding-right: 2%;
+        top: 0;
+        position: sticky;
+    }
+
+    #nav-left-section
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    #app-logo, #user-image
+    {
+        width: 40px;
+        height: 40px;
+    }
+
+    #app-logo
+    {
+        margin-right: 10px;
+    }
+
+    #app-title
+    {
+        font-size: 20px;
+        color: white;
+    }
+
+    #nav-middle-section
+    {
+        width: 65%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .nav-middle-button
+    {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        width: 20%;
+        height: 3rem;
+    }
+
+    #nav-right-section
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #user-image
+    {
+        border-radius: 50px;
+        margin-right: 10px;
+    }
+    #user-name
+    {
+        color: white;
+    }
+}
