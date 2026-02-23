@@ -80,11 +80,11 @@ button
 {
     background-color: #486ba3;
     display: flex;
-    width: 96%;
+    width: 94%;
     align-items: center;
     justify-content: space-between;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
     top: 0;
     position: sticky;
 }
@@ -124,10 +124,10 @@ button
 
 #dashboard-main-container
 {
-    margin: 2% 2% 2% 2%;
+    margin: 3% 3% 3% 3%;
 }
 
-#statistics-container
+#cards-container
 {
     display: flex;
     color: black;
@@ -135,63 +135,62 @@ button
     gap: 20px;
 }
 
-.statistic
+.cards
 {
     width: calc(50% - 10px);
     border-radius: 10px;
     color: white;
 }
 
-.value-statistic
+.card-sum
 {
     font-size: 3rem;
 }
 
-#statistics-incomes
+#card-incomes
 {
     background-color: #4bb36f;
 }
-#statistics-expenses
+#card-expenses
 {
     background-color: #f7665c;
 }
-#statistics-savings
+#card-savings
 {
     background-color: #4e99cc;
 }
-#statistics-budget
+#card-budget
 {
     background-color: #8c63c2;
 }
 
-.result-statistic
+.card-total
 {
     display: flex;
 }
 
-.statistic p
+.cards p
 {
     margin: 5% 0% 5% 5%;
 }
 
-.statistics-title
+.cards-title
 {
     font-size: 1.3rem;
 }
 
-#statistics-incomes #monthly-incomes
+#card-incomes #monthly-incomes
 {
     margin-top: 0px;
 }
 
-#chart-container 
+#chart-container, #recent-payments
 {
     width: 100%;
 }
 
 #recent-payments
 {
-    width: 100%;
     margin-top: 20px;
 }
 
@@ -205,6 +204,10 @@ button
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #486ba3;
+}
+#sixth-recent-payment
+{
     border-bottom: 1px solid #486ba3;
 }
 
@@ -256,7 +259,9 @@ button
 {
     display: flex;
     justify-content: center;
-    height: 10rem;
+    height: 3rem;
+    /* border: 1px solid black; */
+    padding: 20px;
 }
 
 #add-payment
@@ -265,9 +270,8 @@ button
     color: white;
     border: none;
     border-radius: 5px;
-    margin-top: 30px;
     width: 30%;
-    height: 25%;
+    height: 100%;
 }
 
 
@@ -296,10 +300,9 @@ button
         display: none;
     }
 
-    #statistics-container
+    #cards-container
     {
         justify-content: space-between;
-        gap: 10 px;
         flex-wrap: nowrap;
         margin-top: 0px;
     }
@@ -307,30 +310,36 @@ button
     #chart-and-recent-payments-container
     {
         display: flex;
-        /* border: 2px solid black; */
-        justify-content: space-between;
+        align-items: stretch;
+        /* border: 1px solid black; */
+        /* justify-content: space-between; */
+        gap: 20px;
         margin-top: 40px;
     }
 
-    #chart-container
+    #chart-container, #recent-payments
     {
-        width: calc(50% - 10px);
-        height: 100%;
-         border: 1px solid #486ba3; 
-        /* margin-top: 20px; */
+        border: 1px solid #486ba3; 
+        margin-top: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
-    #recent-payments
+    #see-all-container
     {
-        width: calc(50% - 10px);
-        height: 100%;
-        /* border: 2px solid blue; */
-        margin-top: 0px;
+        border-top: none;
+    }
+
+    #sixth-recent-payment
+    {
+        border-bottom: none;
     }
 
     #add-payment
     {
-        margin-top: 40px;
+        margin-top: 20px;
     }
 
     #navigation-bar-desktop
@@ -341,8 +350,8 @@ button
         justify-content: space-between;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
-        padding-left: 2%;
-        padding-right: 2%;
+        padding-left: 3%;
+        padding-right: 3%;
         top: 0;
         position: sticky;
     }
