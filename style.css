@@ -12,7 +12,10 @@ body
 button
 {
     font-size: 16px;
+    cursor: pointer;
 }
+
+/* ==========Login============ */
 
 #main-container
 {
@@ -46,6 +49,13 @@ button
     font-size: 1rem;
 }
 
+#login-error
+{
+    display: none;
+    color: red;
+    text-align: center;
+}
+
 #other-options
 {
     display: flex;
@@ -53,18 +63,28 @@ button
     width: 70%;
 }
 
-#submit
+#login-button, 
+#reset-password-request, 
+#reset-password-confirm
 {
-    width: 35%;
+    width: 20%;
     height: 5%;
     border-radius: 50px;
     background-color: orange;
     border: none;
     font-size: 1rem;
-    cursor: pointer;
 }
 
-#submit:hover
+#login-button:disabled,
+#reset-password-request:disabled
+{
+    background-color: #ffda96;
+}
+
+
+#login-button:hover, 
+#reset-password-request:hover, 
+#reset-password-confirm:hover
 {
     background-color: #ffda96;
 }
@@ -109,11 +129,6 @@ button
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
-}
-
-#menu:hover, #profile:hover
-{
-    cursor: pointer;
 }
 
 #app-title-mobile
@@ -179,24 +194,15 @@ button
     font-size: 1.3rem;
 }
 
-#card-incomes #monthly-incomes
-{
-    margin-top: 0px;
-}
-
-#chart-container, #recent-payments
-{
-    width: 100%;
-}
-
+#chart-and-recent-payments-container,
 #recent-payments
 {
     margin-top: 20px;
 }
 
-#chart-and-recent-payments-container
+#chart-container, #recent-payments
 {
-    margin-top: 20px;
+    width: 100%;
 }
 
 .payments
@@ -205,20 +211,6 @@ button
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #486ba3;
-}
-#sixth-recent-payment
-{
-    border-bottom: 1px solid #486ba3;
-}
-
-#see-all-container
-{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #486ba3;
-    border-top: 1px solid #486ba3;
-    font-size: 20px;
 }
 
 .payments div
@@ -240,6 +232,21 @@ button
     font-size: 20px;
 }
 
+#sixth-recent-payment
+{
+    border-bottom: 1px solid #486ba3;
+}
+
+#see-all-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #486ba3;
+    border-top: 1px solid #486ba3;
+    font-size: 20px;
+}
+
 #see-all
 {
     width: 20%;
@@ -248,11 +255,6 @@ button
     color: white;
     border: none;
     border-radius: 5px;
-}
-
-#see-all:hover
-{
-    cursor: pointer;
 }
 
 #center-button
@@ -269,20 +271,89 @@ button
     background-color: #4e99cc;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 30%;
     height: 100%;
+}
+
+/* ==========Forgot Password============ */
+
+#reset-password-request-container,
+#reset-password-confirm-container,
+#ok-message-container
+{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#email, #reset-password-new-password, 
+#reset-password-confirm-password
+{
+    width: 70%;
+    height: 5%;
+    border-radius: 50px;
+    background-color: #f3cfff;
+    border: none;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.message
+{
+    display: none;
+}
+
+#reset-password-request-nok,
+#reset-password-confirm-nok
+{
+    color: red;
+}
+
+#reset-password-request-ok,
+#reset-password-confirm-ok
+{
+    color: green;
+}
+
+#reset-password-messages
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* #reset-password-request, #reset-password-confirm
+{
+    width: 30%;
+    height: 5%;
+    border-radius: 50px;
+    background-color: orange;
+    border: none;
+    font-size: 1rem;
+} */
+
+#reset-password:hover
+{
+    background-color: #ffda96;
 }
 
 
 @media (min-width: 992px)
 {
-    #username, #password, #other-options
+    /* ==========Login============ */
+    #username, #password, #other-options,
+    #email, #reset-password-new-password,
+    #reset-password-confirm-password
     {
         width: 30%;
     }
 
-    #submit
+    #login-button, #reset-password-request,
+    #reset-password-confirm
     {
         width: 10%;
     }
@@ -295,51 +366,15 @@ button
         margin-left: 10%;
     }
 
+    /* ==========Dashboard============ */
+    #dashboard-main-container
+    {
+        margin: 2% 3% 2% 3%;
+    }
+
     #navigation-bar-mobile
     {
         display: none;
-    }
-
-    #cards-container
-    {
-        justify-content: space-between;
-        flex-wrap: nowrap;
-        margin-top: 0px;
-    }
-
-    #chart-and-recent-payments-container
-    {
-        display: flex;
-        align-items: stretch;
-        /* border: 1px solid black; */
-        /* justify-content: space-between; */
-        gap: 20px;
-        margin-top: 40px;
-    }
-
-    #chart-container, #recent-payments
-    {
-        border: 1px solid #486ba3; 
-        margin-top: 0px;
-        padding-top: 0px;
-        padding-bottom: 0px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    #see-all-container
-    {
-        border-top: none;
-    }
-
-    #sixth-recent-payment
-    {
-        border-bottom: none;
-    }
-
-    #add-payment
-    {
-        margin-top: 20px;
     }
 
     #navigation-bar-desktop
@@ -392,6 +427,8 @@ button
         margin-right: 1rem;
         width: 20%;
         height: 3rem;
+        border: none;
+        border-radius: 10px;
     }
 
     #nav-right-section
@@ -408,5 +445,48 @@ button
     #user-name
     {
         color: white;
+    }
+
+    #cards-container
+    {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        margin-top: 0px;
+    }
+
+    #chart-and-recent-payments-container
+    {
+        display: flex;
+        align-items: stretch;
+        /* border: 1px solid black; */
+        /* justify-content: space-between; */
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    #chart-container, #recent-payments
+    {
+        border: 1px solid #486ba3; 
+        margin-top: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 10px;
+    }
+
+    #see-all-container
+    {
+        border-top: none;
+    }
+
+    #sixth-recent-payment
+    {
+        border-bottom: none;
+    }
+
+    #add-payment
+    {
+        margin-top: 20px;
     }
 }

@@ -9,16 +9,20 @@
     <body>
         <div id="main-container">
             <p id="login-title" class="login">USER LOGIN</p>
-            <input id="username" class="login" type="text" placeholder="username or email" required>
-            <input id="password" class="login" type="password" placeholder="password" required>
+            <input id="username" class="login" type="text" placeholder="Username or Email" required>
+            <input id="password" class="login" type="password" placeholder="Password" required>
+            <div id="credentials-error">
+                <p id="login-error"></p>
+            </div>
             <div id="other-options">
                 <a id="signup" class="login" href="signup.html">Singup</a>
-                <a id="forgot-password" class="login" href="forgot-password.html">Forgot password?</a>
+                <a id="forgot-password" class="login" href="reset-password-request.html">Forgot password?</a>
             </div>
-            <button id="submit" class="login" type="submit">LOGIN</button>
+            <button onclick="loginOnClick()" id="login-button" class="login" type="submit">LOGIN</button>
         </div>
-        <script>
-            const loginButton = document.getElementById("submit");
+        <script src="login.js"></script>
+        <!-- <script>
+            const loginButton = document.getElementById("login-button");
 
             loginButton.addEventListener("click", async function(event) {
                 event.preventDefault();
@@ -28,6 +32,7 @@
 
                 if (!username || !password) {
                     alert("Completează toate câmpurile!");
+
                     return;
                 }
 
@@ -54,8 +59,6 @@
                     // { "token": "..." }
                     localStorage.setItem("jwt", data.token);
 
-                    alert("Login reușit!");
-
                     // redirecționare către dashboard
                     window.location.href = "dashboard.html";
 
@@ -64,6 +67,6 @@
                     alert("Nu se poate conecta la server");
                 }
             });
-        </script>
+        </script> -->
     </body>
 </html>
