@@ -4,7 +4,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-        <title>MyExpenseTracker</title>
+        <title>Login</title>
     </head>
     <body>
         <div id="main-container">
@@ -15,58 +15,11 @@
                 <p id="login-error"></p>
             </div>
             <div id="other-options">
-                <a id="signup" class="login" href="signup.html">Singup</a>
-                <a id="forgot-password" class="login" href="reset-password-request.html">Forgot password?</a>
+                <a id="signup-option" class="login" href="signup.html">Singup</a>
+                <a id="forgot-password-option" class="login" href="reset-password-request.html">Forgot password?</a>
             </div>
             <button onclick="loginOnClick()" id="login-button" class="login" type="submit">LOGIN</button>
         </div>
         <script src="login.js"></script>
-        <!-- <script>
-            const loginButton = document.getElementById("login-button");
-
-            loginButton.addEventListener("click", async function(event) {
-                event.preventDefault();
-
-                const username = document.getElementById("username").value;
-                const password = document.getElementById("password").value;
-
-                if (!username || !password) {
-                    alert("Completează toate câmpurile!");
-
-                    return;
-                }
-
-                try {
-                    const response = await fetch("http://localhost:8080/auth/login", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            username: username,
-                            password: password
-                        })
-                    });
-
-                    if (!response.ok) {
-                        alert("Username sau parolă incorectă");
-                        return;
-                    }
-
-                    const data = await response.json();
-
-                    // presupunem ca backend-ul returneaza:
-                    // { "token": "..." }
-                    localStorage.setItem("jwt", data.token);
-
-                    // redirecționare către dashboard
-                    window.location.href = "dashboard.html";
-
-                } catch (error) {
-                    console.error(error);
-                    alert("Nu se poate conecta la server");
-                }
-            });
-        </script> -->
     </body>
 </html>

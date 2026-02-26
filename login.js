@@ -16,18 +16,6 @@ async function loginOnClick()
     const username = document.querySelector("#username").value;
     const password = document.querySelector("#password").value;
 
-    // if(username === "" || password === "")
-    // {
-    //     const error = document.querySelector("#login-error");
-    //     error.textContent = "Empty fields!";
-    //     error.style.display = "block";
-
-    //     loginButton.textContent = "LOGIN";
-    //     loginButton.disabled = false;
-
-    //     return;
-    // }
-
     try
     {
         const response = await fetch("http://localhost:8080/auth/login",
@@ -43,11 +31,16 @@ async function loginOnClick()
                     password: password
                 })
             });
-
+        const data = await response.json();
         if(!response.ok)
         {
             const error = document.querySelector("#login-error");
-            const data = await response.json();
+
+            if(data.message && data.message.includes("Code already sent on email."))
+            {
+                window.location.href = "requires-mfa.html?username=" + username;
+                return;
+            }
 
             error.textContent = data.message || "Username or password incorrect";
             error.style.display = "block";
@@ -55,7 +48,13 @@ async function loginOnClick()
             return;
         }
         
-        const data = await response.json();
+        if(data.requiresMFA)
+        {
+            window.location.href = "requires-mfa.html?username=" + username;
+
+            return;
+        }
+
         localStorage.setItem("jwt", data.token);
 
         window.location.href = "dashboard.html";

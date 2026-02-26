@@ -28,7 +28,10 @@ button
     min-height: 580px;
 }
 
-#login-title
+#login-title, #signup-title,
+#reset-password-request-title,
+#reset-password-confirm-title,
+#mfa-title
 {
     font-size: 2rem;
 }
@@ -65,7 +68,9 @@ button
 
 #login-button, 
 #reset-password-request, 
-#reset-password-confirm
+#reset-password-confirm,
+#signup,
+#mfa-authentication
 {
     width: 20%;
     height: 5%;
@@ -76,15 +81,18 @@ button
 }
 
 #login-button:disabled,
-#reset-password-request:disabled
+#reset-password-request:disabled,
+#signup:disabled,
+#mfa-authentication:disabled
 {
     background-color: #ffda96;
 }
 
-
 #login-button:hover, 
 #reset-password-request:hover, 
-#reset-password-confirm:hover
+#reset-password-confirm:hover,
+#signup:hover,
+#mfa-authentication:hover
 {
     background-color: #ffda96;
 }
@@ -280,7 +288,7 @@ button
 
 #reset-password-request-container,
 #reset-password-confirm-container,
-#ok-message-container
+#signup-container, #mfa-container
 {
     display: flex;
     height: 100vh;
@@ -290,8 +298,19 @@ button
     gap: 20px;
 }
 
+#signup-success, #reset-success
+{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
 #email, #reset-password-new-password, 
-#reset-password-confirm-password
+#reset-password-confirm-password,
+.signup-field, #mfa-code
 {
     width: 70%;
     height: 5%;
@@ -308,37 +327,25 @@ button
 }
 
 #reset-password-request-nok,
-#reset-password-confirm-nok
+#reset-password-confirm-nok,
+#signup-nok, #mfa-nok
 {
     color: red;
 }
 
 #reset-password-request-ok,
-#reset-password-confirm-ok
+#reset-password-confirm-ok,
+#signup-ok, #mfa-ok
 {
     color: green;
 }
 
-#reset-password-messages
+#reset-password-messages,
+#signup-failed
 {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-/* #reset-password-request, #reset-password-confirm
-{
-    width: 30%;
-    height: 5%;
-    border-radius: 50px;
-    background-color: orange;
-    border: none;
-    font-size: 1rem;
-} */
-
-#reset-password:hover
-{
-    background-color: #ffda96;
 }
 
 
@@ -347,13 +354,15 @@ button
     /* ==========Login============ */
     #username, #password, #other-options,
     #email, #reset-password-new-password,
-    #reset-password-confirm-password
+    #reset-password-confirm-password,
+    .signup-field, #mfa-code
     {
         width: 30%;
     }
 
     #login-button, #reset-password-request,
-    #reset-password-confirm
+    #reset-password-confirm, #signup, 
+    #mfa-authentication
     {
         width: 10%;
     }

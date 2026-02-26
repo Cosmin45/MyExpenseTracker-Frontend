@@ -51,9 +51,11 @@ async function resetOnClick()
         }
         
         const mainContainer = document.querySelector("#reset-password-confirm-container");
+        const okContainer = document.querySelector("#reset-success");
         const success = document.querySelector("#reset-password-confirm-ok");
 
         mainContainer.style.display = "none";
+        okContainer.style.display = "flex";
 
         success.textContent = "Password reset successfully. You can close this window.";
         success.style.display = "block";
