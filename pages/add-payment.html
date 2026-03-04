@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <title>Add Payment</title>
+    </head>
+    <body>
+        <div id="add-payment-main-container">
+            <div id="add-payment-container">
+                <div id="app-name-container">
+                    <p id="app-name">MyExpenseTracker</p>
+                </div>
+                <div id="title-container">
+                    <p id="title">Add New Payment</p>
+                </div>
+                <div id="payment-properties-container">
+                    <div id="payment-type-container" class="payment-property">
+                        <label>Type <span class="required">*</span></label>
+                        <div id="payment-type-buttons-container">
+                            <button id="payment-type-income" class="type-button active">Income</button>
+                            <button id="payment-type-expense" class="type-button">Expense</button>
+                        </div>
+                    </div>
+                    <div id="payment-date-container" class="payment-property">
+                        <label>Date <span class="required">*</span></label>
+                        <input id="date-property" type="date">
+                    </div>
+                    <div id="payment-amount-container" class="payment-property">
+                        <label>Amount <span class="required">*</span></label>
+                        <input id="amount-property" type="number">
+                    </div>
+                    <div id="payment-category-container" class="payment-property">
+                        <label>Category <span class="required">*</span></label>
+                        <select name="categories" id="category-property">
+                            <option value="" disabled selected hidden>Select Category</option>
+                            <option value="FOOD">Food</option>
+                            <option value="TRANSPORT">Transport</option>
+                            <option value="ENTERTAINMENT">Entertainment</option>
+                            <option value="BILLS">Bills</option>
+                            <option value="HEALTH">Health</option>
+                            <option value="SHOPPING">Shopping</option>
+                            <option value="SALARY">Salary</option>
+                            <option value="FREELANCE">Freelance</option>
+                            <option value="GROCERIES">Groceries</option>
+                            <option value="UTILITIES">Utilities</option>
+                            <option value="DINING_OUT">Dining out</option>
+                            <option value="CLOTHING">Clothing</option>
+                            <option value="TRANSFER">Transfer</option>
+                            <option value="OTHER">Other</option>
+                        </select>
+                    </div>
+                    <div id="payment-method-container" class="payment-property">
+                        <label>Payment method <span class="required">*</span></label>
+                        <select name="payments" id="payment-method-property">
+                            <option value="" disabled selected hidden>Select Payment Method</option>
+                            <option value="CASH">Cash</option>
+                            <option value="CARD">Card</option>
+                            <option value="BANK_TRANSFER">Bank transfer</option>
+                            <option value="CRYPTO">Crypto</option>
+                            <option value="MOBILE_PAY">Mobile pay</option>
+                            <option value="BANK_ACCOUNT">Bank account</option>
+                            <option value="CREDIT_CARD">Credit card</option>
+                            <option value="DEBIT_CARD">Debit card</option>
+                            <option value="OTHER">Other</option>
+                        </select>
+                    </div>
+                    <div id="payment-merchant-container" class="payment-property">
+                        <label>Merchant</label>
+                        <input id="merchant-property" type="text">
+                    </div>
+                    <div id="payment-note-container" class="payment-property">
+                        <label>Note</label>
+                        <input id="note-property" type="text">
+                    </div>
+                </div>
+                <div id="cancel-or-add-container">
+                    <button onclick="cancelNewPayment()" id="cancel-payment-button">Cancel</button>
+                    <button onclick="addPaymentOnClick()" id="add-payment-button">Add Payment</button>
+                </div>
+                <p id="add-payment-nok" class="message"></p>
+                <p id="add-payment-ok" class="message"></p>
+            </div>
+        </div>
+
+        <script src="../js/add-payment.js"></script>
+    </body>
+</html>

@@ -1,11 +1,7 @@
-<script>
-const ctx = document.getElementById('financeChart');
-
-new Chart(ctx, 
-{
+const incomeVsExpenseCtx = document.getElementById('financeChart');
+new Chart(incomeVsExpenseCtx, {
     type: 'bar',
-    data: 
-    {
+    data: {
         labels: ['Ian', 'Feb', 'Mar', 'Apr'],
         datasets: [
             {
@@ -20,21 +16,15 @@ new Chart(ctx,
     },
     options: 
     {
+        cutout: "40%", // dimensiunea găurii (efectul de inel)
+        radius: "95%",
+        
         responsive: true,
-        plugins: 
+        maintainAspectRatio: false,
+
+        layout: 
         {
-            legend: 
-            {
-                position: 'top'
-            }
+            padding: 10
         },
-        scales: 
-        {
-            y: 
-            {
-                beginAtZero: true
-            }
-        }
     }
 });
-</script>

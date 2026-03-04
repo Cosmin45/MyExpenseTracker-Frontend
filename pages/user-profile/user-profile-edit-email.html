@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/style.css">
+        <title>Edit Fullname</title>
+    </head>
+    <body>
+        <div id="edit-email-window-container">
+            <div id="edit-email-main-container">
+                <div id="edit-email-top-container">
+                    <label>Edit Email</label>
+                </div>
+                <div id="edit-email-middle-container">
+                    <div>
+                        <label>Current Email Adress</label>
+                        <input type="text" disabled>
+                    </div>
+                    <div>
+                        <label>New Email Adress</label>
+                        <input type="text" id="edit-email-new-email">
+                    </div>
+                    <div>
+                        <label>Confirm Email Adress</label>
+                        <input type="text" id="edit-email-confirm-email">
+                    </div>
+                    <div id="edit-email-warning-container">
+                        <img src="/images/warning.png" alt="">
+                        <p><span>Please note: </span>A verification email will be sent to
+                            confirm your new address. The email will be updated after confirmation.</p>
+                    </div>
+                </div>
+                <div id="edit-email-bottom-container">
+                    <button onclick="backOnClick()" id="email-edit-cancel-button">Back</button>
+                    <button onclick="saveChangesOnClick()" id="email-edit-save-button">Save Changes</button>
+                </div>
+                <div id="edit-email-message-container">
+                    <p id="edit-email-message-nok" class="message">
+                        Please complete all fields.
+                    </p>
+                    <p id="edit-email-message-ok" class="message">
+                        Your email change request has been completed successfully.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/user-profile/edit-email.js"></script>
+    </body>
+</html>

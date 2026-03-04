@@ -50,21 +50,19 @@ async function loginOnClick()
         
         if(data.requiresMFA)
         {
-            window.location.href = "requires-mfa.html?username=" + username;
+            window.location.href = "./pages/requires-mfa.html?username=" + username;
 
             return;
         }
 
         localStorage.setItem("jwt", data.token);
 
-        window.location.href = "dashboard.html";
+        window.location.href = "./pages/dashboard.html";
     }
     catch(Error)
     {
-        const serverError = Error.message.json() || "Error...";
-
         const error = document.querySelector("#login-error");
-        error.textContent = serverError;
+        error.textContent = "Couldn't connect to server. Try again later.";
         error.style.display = "block";
     }
     finally

@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/style.css">
+        <title>User Profile</title>
+    </head>
+    <body>
+        <div id="user-profile-main-container">
+            <div id="top-bar-container">
+                <div>
+                    <img src="/images/user-profile-images/back.png" alt="back-img">
+                    <button onclick="backOnClick()">Back</button>
+                </div>
+                <p>User Profile</p>
+            </div>
+            <div id="image-container">
+                    <img id="user-image" src="/images/user-profile-images/user-profile.png" alt="User-image">
+                    <input type="file" id="image-input" accept="image/*" onchange="previewImage(event)" hidden>
+                    <button onclick="document.getElementById('image-input').click()">Change photo</button>
+            </div>
+            <div id="user-informations-container">
+                <div id="user-email-container" class="user-information">
+                    <div class="logo-and-info">
+                        <img src="/images/user-profile-images/email.png" alt="email-logo">
+                        <label>Email</label>
+                    </div>
+                    <p>user.email@test.com</p>
+                    <button onclick="goToEditPage('email')">Edit</button>
+                </div>
+                <div id="user-fullname-container" class="user-information">
+                    <div class="logo-and-info">
+                        <img src="/images/user-profile-images/fullname.png" alt="fullname-logo">
+                        <label>Full Name</label>
+                    </div>
+                    <p>User User</p>
+                    <button onclick="goToEditPage('fullname')">Edit</button>
+                </div>
+                <div id="user-username-container" class="user-information">
+                    <div class="logo-and-info">
+                        <img src="/images/user-profile-images/username.png" alt="username-logo">
+                        <label>Username</label>
+                    </div>
+                    <p>Mr.Love</p>
+                    <button onclick="goToEditPage('username')">Edit</button>
+                </div>
+                <div id="user-password-container" class="user-information">
+                    <div class="logo-and-info">
+                        <img src="/images/user-profile-images/password.png" alt="password-logo">
+                        <label>Password</label>
+                    </div>
+                    <p>**********</p>
+                    <button onclick="goToEditPage('password')">Edit</button>
+                </div>
+            </div>
+            <div id="delete-account-container">
+                    <button id="delete-account-button"> Delete Account</button>
+                    <p id="delete-account-warning">Permanently delete your account and all data.</p>
+            </div>
+        </div>
+
+        <script src="/js/user-profile/user-profile.js"></script>
+    </body>
+</html>

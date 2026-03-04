@@ -62,10 +62,8 @@ async function resetOnClick()
     }
     catch(Error)
     {
-        const serverError = Error.message.json() || "Error...";
-
         const error = document.querySelector("#reset-password-confirm-nok");
-        error.textContent = serverError.message;
+        error.textContent = "Couldn't connect to server. Try again later.";
         error.style.display = "block";
     }
     finally

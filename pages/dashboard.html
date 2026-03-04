@@ -1,12 +1,12 @@
 <html>
     <head>
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="../css/style.css">
         <title>Dashboard</title>
     </head>
     <body>
         <nav id="navigation-bar-desktop">
             <div id="nav-left-section">
-                <img id="app-logo" src="./images/application-logo.png" alt="app-logo">
+                <img id="app-logo" src="/images/application-logo.png" alt="app-logo">
                 <p id="app-title">MyExpenseTracker</p>
             </div>
             <div id="nav-middle-section">
@@ -17,14 +17,14 @@
                 <button id="savings" class="nav-middle-button">Savings</button>
             </div>
             <div id="nav-right-section">
-                <img id="user-image" src="./images/image-with-me.jpg" alt="user-image">
-                <p id="user-name">User name</p>
+                <img id="user-image" src="/images/image-with-me.jpg" alt="user-image">
+                <button onclick="userProfileOnClick()" id="user-profile-button">User name</button>
             </div>
         </nav>
         <nav id="navigation-bar-mobile">
             <button id="menu"></button>
             <p id="app-title-mobile">MyExpenseTracker</p>
-            <button id="profile"></button>
+            <button onclick="userProfileOnClick()" id="user-profile"></button>
         </nav>
         <div id="dashboard-main-container">
             <div id="cards-container">
@@ -57,85 +57,71 @@
                     </div>
                 </div>
             </div>
-            <div id="chart-and-recent-payments-container">
-                <div id="chart-container">
+            <div id="charts-and-recent-payments-container">
+                <div id="income-vs-expense-chart-container">
                     <canvas id="financeChart"></canvas>
                 </div>
-                <div id="recent-payments">
+                <div id="recent-payments-container">
                     <div id="see-all-container">
                         <h3>Recent Payments</h3>
                         <button id="see-all">See all</button>
                     </div>
                     <div id="first-recent-payment" class="payments">
                         <div>
-                            <img src="./images/savings-logo.png" alt="savings-logo">
+                            <img src="/images/categories-images/salary.png" alt="savings-logo">
                             <p>Salary</p>
                         </div>
                         <p>+3000 RON</p>
                     </div>
                     <div id="second-recent-payment" class="payments">
                         <div>
-                            <img src="./images/bill.png" alt="savings-logo">
+                            <img src="/images/categories-images/bill.png" alt="savings-logo">
                             <p>Electricity Bill</p>
                         </div>
                         <p>-200 RON</p>
                     </div>
-                    <div id="third-recent-payment" class="payments">
+                    <!-- <div id="third-recent-payment" class="payments">
                         <div>
-                            <img src="./images/groceries.png" alt="savings-logo">
+                            <img src="/images/groceries.png" alt="savings-logo">
                             <p>Groceries</p>
                         </div>
                         <p>-150 RON</p>
-                    </div>
+                    </div> -->
                     <div id="forth-recent-payment" class="payments">
                         <div>
-                            <img src="./images/transfer.png" alt="savings-logo">
-                            <p>Savings Transfer</p>
+                            <img src="/images/categories-images/transfer.png" alt="savings-logo">
+                            <p>Revolut Transfer</p>
                         </div>
-                        <p>+3000 RON</p>
+                        <p>-500 RON</p>
                     </div>
                     <div id="fifth-recent-payment" class="payments">
                         <div>
-                            <img src="./images/transfer.png" alt="savings-logo">
-                            <p>Savings Transfer</p>
+                            <img src="/images/categories-images/dinner-out.png" alt="savings-logo">
+                            <p>Dining out</p>
                         </div>
-                        <p>+3000 RON</p>
+                        <p>-250 RON</p>
                     </div>
                     <div id="sixth-recent-payment" class="payments">
                         <div>
-                            <img src="./images/transfer.png" alt="savings-logo">
-                            <p>Savings Transfer</p>
+                            <img src="/images/categories-images/freelance.png" alt="savings-logo">
+                            <p>Freelance</p>
                         </div>
-                        <p>+3000 RON</p>
+                        <p>+1350 RON</p>
                     </div>
+                </div>
+                <div id="expense-distribution-chart-container">
+                    <canvas id="expensesChart"></canvas>
                 </div>
             </div>
             <div id="center-button">
-                <button id="add-payment">Add Payment</button>
+                <button onclick="addPaymentOnClick()" id="add-payment">Add Payment</button>
             </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="../js/chart-income-vs-expense.js"></script>
+        <script src="../js/expenses-distribution.js"></script>
+        <script src="../js/dashboard.js"></script>
 
-        <script>
-        const ctx = document.getElementById('financeChart');
-
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Ian', 'Feb', 'Mar', 'Apr'],
-                datasets: [
-                    {
-                        label: 'Income',
-                        data: [4200, 3800, 4600, 4100]
-                    },
-                    {
-                        label: 'Expenses',
-                        data: [2800, 3000, 2600, 2900]
-                    }
-                ]
-            }
-        });
-        </script>
     </body>
 </html>
