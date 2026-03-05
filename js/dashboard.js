@@ -4,7 +4,7 @@ async function loadUserInfo()
 
     if (!token) 
         {
-        window.location.href = "index.html";
+        window.location.href = "/index.html";
         return;
     }
 
@@ -22,7 +22,7 @@ async function loadUserInfo()
         if (!response.ok) 
             {
             localStorage.removeItem("jwt");
-            window.location.href = "index.html";
+            window.location.href = "//index.html";
             return;
         }
 
@@ -30,7 +30,7 @@ async function loadUserInfo()
         const userString = user.username;
         const userArray = userString.split("");
 
-        const userName = document.querySelector("#user-name");
+        const userName = document.querySelector("#user-profile-button");
         if(userArray.length > 15)
         {
             userName.textContent = userString.slice(0, 15) + "...";

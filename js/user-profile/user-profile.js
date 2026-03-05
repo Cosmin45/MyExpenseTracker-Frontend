@@ -14,7 +14,7 @@ async function loadUserInfo()
 
     if (!token) 
         {
-        window.location.href = "index.html";
+        window.location.href = "/index.html";
         return;
     }
 
@@ -32,7 +32,7 @@ async function loadUserInfo()
         if (!response.ok) 
         {
             localStorage.removeItem("jwt");
-            window.location.href = "index.html";
+            window.location.href = "/index.html";
             return;
         }
 
@@ -70,4 +70,9 @@ function previewImage(event)
     };
 
     reader.readAsDataURL(file);
+}
+
+function deleteAccountOnClick()
+{
+    window.location.href = "/pages/user-profile/delete-account.html";
 }

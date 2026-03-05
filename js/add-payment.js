@@ -51,7 +51,7 @@ async function addPaymentOnClick()
         const token = localStorage.getItem("jwt");
         if(!token)
         {
-            window.location.href = "index.html";
+            window.location.href = "/index.html";
             return;
         }
 

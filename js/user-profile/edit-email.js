@@ -4,7 +4,7 @@ async function loadUserInfo()
 
     if (!token) 
         {
-        window.location.href = "index.html";
+        window.location.href = "/index.html";
         return;
     }
 
@@ -22,7 +22,7 @@ async function loadUserInfo()
         if (!response.ok) 
         {
             localStorage.removeItem("jwt");
-            window.location.href = "index.html";
+            window.location.href = "/index.html";
             return;
         }
 
@@ -77,7 +77,7 @@ async function saveChangesOnClick()
 
         if(!token)
         {
-            window.location.href = "index.html";
+            window.location.href = "/index.html";
             return;
         }
 

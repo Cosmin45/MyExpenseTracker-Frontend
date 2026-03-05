@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/style.css">
+        <title>Delete account</title>
+    </head>
+    <body>
+        <div id="delete-account-window-container">
+            <div id="delete-account-main-container">
+                <p>Are you sure you want to delete your account?</p>
+                <input id="delete-account-password" type="password" placeholder="Password">
+                <div id="delete-account-buttons-container">
+                    <button onclick="cancelOnClick()" id="delete-account-cancel-button">CANCEL</button>
+                    <button onclick="deleteOnClick()" id="delete-account-delete-button">DELETE</button>
+                </div>
+                <p id="delete-account-message-nok" class="message"></p>
+            </div>
+        </div>
+        <script src="/js/user-profile/delete-account.js"></script>
+    </body>
+</html>

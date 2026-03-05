@@ -1329,6 +1329,81 @@ button
     font-size: 18px;
 }
 
+/* ==========Delete account============ */
+#delete-account-window-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#delete-account-main-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+    /* border: 1px solid red; */
+    gap: 20px;
+}
+
+#delete-account-main-container p,
+#delete-account-main-container div
+{
+    width: 90%;
+}
+
+#delete-account-main-container p
+{
+    text-align: center;
+    font-size: 20px;
+    color: red;
+}
+
+#delete-account-main-container input
+{
+    width: 90%;
+    height: 7%;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid #dedede;
+}
+
+#delete-account-main-container div
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 6%;
+}
+
+#delete-account-main-container button
+{
+    width: 50%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+#delete-account-cancel-button
+{
+    color:#486ba3;
+}
+
+#delete-account-delete-button
+{
+    color: #ff0000b7;
+}
+
+
+
 @media (min-width: 900px)
 {
     #add-payment-container
@@ -1597,13 +1672,14 @@ button
     #edit-email-main-container,
     #edit-fullname-main-container,
     #edit-username-main-container,
-    #edit-password-main-container
+    #edit-password-main-container,
+    #delete-account-main-container
     {
         width: 40%;
         height: 100%;
         /* border: 1px solid red; */
     }
+   
 
-        /* ==========Edit Email============ */
 
 }
