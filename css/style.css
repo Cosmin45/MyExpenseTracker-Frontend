@@ -900,7 +900,41 @@ button
     font-size: 18px;
 }
 
+/* ==========Edit Email============ */
+#verify-email-window-container
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+#verify-email-main-container
+{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+#verify-email-message-ok,
+#verify-email-message-nok
+{
+    color: green;
+    font-size: 24px;
+}
+
+#verify-email-message-ok
+{
+    color: green;
+}
+#verify-email-message-nok
+{
+    color: red;
+}
 
 @media (min-width: 900px)
 {
