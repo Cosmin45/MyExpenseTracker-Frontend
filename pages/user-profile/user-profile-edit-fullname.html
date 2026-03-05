@@ -1,8 +1,39 @@
 <html>
     <head>
+        <link rel="stylesheet" href="/css/style.css">
         <title>Edit Fullname</title>
     </head>
     <body>
-        
+        <div id="edit-fullname-window-container">
+            <div id="edit-fullname-main-container">
+                <div id="edit-fullname-top-container">
+                    <label>Edit Full Name</label>
+                </div>
+                <div id="edit-fullname-middle-container">
+                    <div>
+                        <label>Current Full Name</label>
+                        <input type="text" disabled>
+                    </div>
+                    <div>
+                        <label>New Full Name</label>
+                        <input type="text" id="edit-fullname-new-fullname">
+                    </div>
+                </div>
+                <div id="edit-fullname-bottom-container">
+                    <button onclick="backOnClick()" id="fullname-edit-cancel-button">Back</button>
+                    <button onclick="saveChangesOnClick()" id="fullname-edit-save-button">Save Changes</button>
+                </div>
+                <div id="edit-fullname-message-container">
+                    <p id="edit-fullname-message-nok" class="message">
+                        Please complete required field.
+                    </p>
+                    <p id="edit-fullname-message-ok" class="message">
+                        Your fullname has been changed successfully.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/user-profile/edit-fullname.js"></script>
     </body>
 </html>

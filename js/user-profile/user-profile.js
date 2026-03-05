@@ -38,7 +38,7 @@ async function loadUserInfo()
 
         const user = await response.json();
         const email = user.email;
-        const fullname = user.fullName;
+        const fullname = user.fullname;
         const username = user.username;
 
         const emailObject = document.querySelector("#user-email-container p");

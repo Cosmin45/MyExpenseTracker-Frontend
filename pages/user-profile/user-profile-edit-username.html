@@ -1,8 +1,39 @@
 <html>
     <head>
+        <link rel="stylesheet" href="/css/style.css">
         <title>Edit Username</title>
     </head>
     <body>
-        
+        <div id="edit-username-window-container">
+            <div id="edit-username-main-container">
+                <div id="edit-username-top-container">
+                    <label>Edit Username</label>
+                </div>
+                <div id="edit-username-middle-container">
+                    <div>
+                        <label>Current Username</label>
+                        <input type="text" disabled>
+                    </div>
+                    <div>
+                        <label>New Username</label>
+                        <input type="text" id="edit-username-new-username">
+                    </div>
+                </div>
+                <div id="edit-username-bottom-container">
+                    <button onclick="backOnClick()" id="username-edit-cancel-button">Back</button>
+                    <button onclick="saveChangesOnClick()" id="username-edit-save-button">Save Changes</button>
+                </div>
+                <div id="edit-username-message-container">
+                    <p id="edit-username-message-nok" class="message">
+                        Please complete required field.
+                    </p>
+                    <p id="edit-username-message-ok" class="message">
+                        Your username has been changed successfully.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/user-profile/edit-username.js"></script>
     </body>
 </html>
