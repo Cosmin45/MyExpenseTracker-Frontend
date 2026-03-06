@@ -5,7 +5,7 @@ async function confirmNewEmail()
 {
     try
     {
-        const response = await fetch("http://localhost:8080/public/verify-email?token=" + token,
+        const response = await fetch("http://localhost:8080/public/confirm-change-email?token=" + token,
             {
                 method: "GET",
                 headers: 

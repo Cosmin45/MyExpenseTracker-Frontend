@@ -120,12 +120,12 @@ button
 
 #menu
 {
-    background-image: url("./images/menu.png");
+    background-image: url("/images/menu-square.png");
 }
 
 #user-profile
 {
-    background-image: url("./images/image-with-me.jpg");
+    background-image: url("/images/user.png");
     border-radius: 50px;
 }
 
@@ -145,7 +145,6 @@ button
     font-size: 20px;
     color: white;
 }
-
 
 #dashboard-main-container
 {
@@ -184,8 +183,6 @@ button
     border:1px solid #486ba3;
     height: 30vh;
 }
-
-
 
 #cards-container
 {
@@ -232,7 +229,6 @@ button
 {
     font-size: 1.3rem;
 }
-
 
 .payments
 {
@@ -1516,6 +1512,7 @@ button
         border: none;
         padding-left: 10px;
         background-color: transparent;
+        text-decoration: underline;
     }
 
     #user-image
