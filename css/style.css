@@ -199,7 +199,7 @@ button
 }
 .card-sum
 {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 #card-incomes
 {
@@ -1536,6 +1536,11 @@ button
         justify-content: space-between;
         flex-wrap: nowrap;
         margin-top: 0px;
+    }
+
+    .card-sum
+    {
+        font-size: 3rem;
     }
 
     #charts-and-recent-payments-container

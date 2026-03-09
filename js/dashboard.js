@@ -1,4 +1,4 @@
-async function loadUserInfo() 
+async function loadDashboardInfo() 
 {
     const token = localStorage.getItem("jwt");
 
@@ -10,7 +10,7 @@ async function loadUserInfo()
 
     try 
     {
-        const response = await fetch("http://localhost:8080/user/info", 
+        const response = await fetch("http://localhost:8080/dashboard", 
         {
             method: "GET",
             headers: 
@@ -20,14 +20,15 @@ async function loadUserInfo()
         });
 
         if (!response.ok) 
-            {
+        {
             localStorage.removeItem("jwt");
-            window.location.href = "//index.html";
+            window.location.href = "/index.html";
             return;
         }
 
-        const user = await response.json();
-        const userString = user.username;
+        const informations = await response.json();
+
+        const userString = informations.username;
         const userArray = userString.split("");
 
         const userName = document.querySelector("#user-profile-button");
@@ -37,10 +38,24 @@ async function loadUserInfo()
         }
         else
         {
-            userName.textContent = user.username;
+            userName.textContent = userString;
         }
 
+        const monthlyAverageIncomes = informations.monthlyAverageIncomes;
+        const averageIncomesCard = document.querySelector("#monthly-average-incomes .card-sum")
+        averageIncomesCard.textContent = monthlyAverageIncomes;
 
+        const monthlyAverageExpenses = informations.monthlyAverageExpenses;
+        const averageExpensesCard = document.querySelector("#monthly-average-expenses .card-sum")
+        averageExpensesCard.textContent = monthlyAverageExpenses;
+
+        const savingsThisMonth = informations.savingsThisMonth;
+        const savingsThisMonthCard = document.querySelector("#savings-this-month .card-sum")
+        savingsThisMonthCard.textContent = savingsThisMonth;
+
+        const budgetLeftThisMonth = informations.budgetLeftThisMonth;
+        const budgetLeftCard = document.querySelector("#budget-left-this-month .card-sum")
+        budgetLeftCard.textContent = budgetLeftThisMonth;
     } 
     catch (e) 
     {
@@ -48,7 +63,7 @@ async function loadUserInfo()
     }
 }
 
-window.addEventListener("DOMContentLoaded", loadUserInfo);
+window.addEventListener("DOMContentLoaded", loadDashboardInfo);
 
 
 function addPaymentOnClick()
