@@ -1556,12 +1556,6 @@ button
         height: 400px;
     }
 
-    /* #financeChart, #expensesChart, 
-    #recent-payments-container
-    {
-        border: 1px solid red;
-    } */
-
     #income-vs-expense-chart-container,
     #recent-payments-container
     {
@@ -1588,7 +1582,7 @@ button
         flex-basis: 25%;
     }
 
-    #expensesChart, #financeChart
+    #expensesChart, #expense-vs-income-chart
     {
         height: 100%;
     }

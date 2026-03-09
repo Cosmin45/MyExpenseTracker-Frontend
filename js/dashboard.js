@@ -45,48 +45,11 @@ async function loadDashboardInfo()
 
         const informations = await response.json();
 
-        const userString = informations.username;
-        const userArray = userString.split("");
+        updateUsername(informations);
 
-        const userName = document.querySelector("#user-profile-button");
-        if(userArray.length > 15)
-        {
-            userName.textContent = userString.slice(0, 15) + "...";
-        }
-        else
-        {
-            userName.textContent = userString;
-        }
+        updateCards(informations);
 
-        const monthlyAverageIncomes = informations.monthlyAverageIncomes;
-        const averageIncomesCard = document.querySelector("#monthly-average-incomes .card-sum")
-        averageIncomesCard.textContent = monthlyAverageIncomes;
-
-        const monthlyAverageExpenses = informations.monthlyAverageExpenses;
-        const averageExpensesCard = document.querySelector("#monthly-average-expenses .card-sum")
-        averageExpensesCard.textContent = monthlyAverageExpenses;
-
-        const savingsThisMonth = informations.savingsThisMonth;
-        const savingsThisMonthCard = document.querySelector("#savings-this-month .card-sum")
-        savingsThisMonthCard.textContent = savingsThisMonth;
-
-        const budgetLeftThisMonth = informations.budgetLeftThisMonth;
-        const budgetLeftCard = document.querySelector("#budget-left-this-month .card-sum")
-        budgetLeftCard.textContent = budgetLeftThisMonth;
-
-        const recentFiveExpenses = informations.recentFiveExpenses;
-
-        if(recentFiveExpenses.length === 5)
-        {
-            console.log(recentFiveExpenses);
-        }
-
-        for(let i = 0; i < recentFiveExpenses.length; i++)
-        {
-            console.log(i + " | " + recentFiveExpenses[i].amount);
-
-            addPaymentToRecentPaymentsContainer(recentFiveExpenses[i], i);
-        }
+        updateExpenseVsIncomeChart(informations);
 
     } 
     catch (e) 
@@ -113,6 +76,49 @@ function addPaymentToRecentPaymentsContainer(payment, position)
 function assignLogoByCategory(category)
 {
     return categoryImages[category] || categoryImages[OTHER];
+}
+
+function updateUsername(informations)
+{
+    const userString = informations.username;
+    const userArray = userString.split("");
+
+    const userName = document.querySelector("#user-profile-button");
+
+    if(userArray.length > 15)
+    {
+        userName.textContent = userString.slice(0, 15) + "...";
+    }
+    else
+    {
+        userName.textContent = userString;
+    }
+}
+
+function updateCards(informations)
+{
+    const monthlyAverageIncomes = informations.monthlyAverageIncomes;
+    const averageIncomesCard = document.querySelector("#monthly-average-incomes .card-sum")
+    averageIncomesCard.textContent = monthlyAverageIncomes;
+
+    const monthlyAverageExpenses = informations.monthlyAverageExpenses;
+    const averageExpensesCard = document.querySelector("#monthly-average-expenses .card-sum")
+    averageExpensesCard.textContent = monthlyAverageExpenses;
+
+    const savingsThisMonth = informations.savingsThisMonth;
+    const savingsThisMonthCard = document.querySelector("#savings-this-month .card-sum")
+    savingsThisMonthCard.textContent = savingsThisMonth;
+
+    const budgetLeftThisMonth = informations.budgetLeftThisMonth;
+    const budgetLeftCard = document.querySelector("#budget-left-this-month .card-sum")
+    budgetLeftCard.textContent = budgetLeftThisMonth;
+
+    const recentFiveExpenses = informations.recentFiveExpenses;
+
+    for(let i = 0; i < recentFiveExpenses.length; i++)
+    {
+        addPaymentToRecentPaymentsContainer(recentFiveExpenses[i], i);
+    }
 }
 
 function addPaymentOnClick()
