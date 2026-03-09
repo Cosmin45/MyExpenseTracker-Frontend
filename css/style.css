@@ -257,32 +257,21 @@ button
 {
     font-size: 18px;
 }
-#sixth-recent-payment
+#fifth-recent-payment
 {
     border-bottom: 1px solid #486ba3;
 }
 #see-all-container
 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
     border: 1px solid #486ba3;
     padding-left: 10px;
     padding-right: 10px;
-
     font-size: 20px;
 }
-#see-all
+#see-all-container h3
 {
-    width: 20%;
-    height: 2rem;
-    background-color: #4e99cc;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    text-align: center;
 }
-
 
 #center-button
 {
@@ -1611,12 +1600,12 @@ button
         border-bottom: 1px solid #486ba3;
     }
 
-    #see-all-container, #sixth-recent-payment
+    #see-all-container, #fifth-recent-payment
     {
         border-top: none;
     }
 
-    #sixth-recent-payment
+    #fifth-recent-payment
     {
         border-bottom: none;
     }
