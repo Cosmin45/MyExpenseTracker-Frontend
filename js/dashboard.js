@@ -51,6 +51,8 @@ async function loadDashboardInfo()
 
         updateExpenseVsIncomeChart(informations);
 
+        updateExpensesDistributionChart(informations);
+
     } 
     catch (e) 
     {
