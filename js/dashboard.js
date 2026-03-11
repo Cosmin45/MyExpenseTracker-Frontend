@@ -34,8 +34,11 @@ async function loadDashboardInfo()
 
         updateExpenseVsIncomeChart(informations);
 
+<<<<<<< HEAD
         updateRecentPaymentsAddedContainer(informations);
 
+=======
+>>>>>>> 5cd45c1e48ebf290e6adbe83043a63ea791b0c46
         updateExpensesDistributionChart(informations);
 
     } 
