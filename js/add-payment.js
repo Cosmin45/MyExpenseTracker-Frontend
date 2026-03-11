@@ -110,5 +110,5 @@ async function addPaymentOnClick()
 
 function cancelNewPayment()
 {
-    window.location.href = "/pages/dashboard.html";
+    window.location.href = "/pages/payments.html";
 }

@@ -4,10 +4,153 @@
         <title>Payments</title>
     </head>
     <body>
-        <div id="payments-window-container">
-            <div id="">
+        <div id="payments-top-bar">
+            <!-- Top bar -->
+            <img src="/images/user-profile-images/back.png" alt="back-img">
+            <button onclick="backOnClick()">Back</button>
+            <p>Payments</p>
+        </div>
 
+        <div id="payments-main-container">
+            <!-- Filters -->
+             <div id="payments-add-and-filters-container">
+                <button onclick="addPaymentOnClick()" id="payments-add-payment"></button>
+                <div id="payments-filters-container">
+                    <select name="" id="payment-type-select">
+                        <option value="All">All Types</option>
+                        <option value="Expense">Expense</option>
+                        <option value="Income">Income</option>
+                    </select>
+                    <select name="" id="payment-category-select">
+                        <option value="All">All Categories</option>
+                        <option value="Food">Food</option>
+                        <option value="Salary">Salary</option>
+                    </select>
+                    <select name="" id="payment-date-select">
+                        <option value="All">All dates</option>
+                        <option value="this-month">This Month</option>
+                    </select>
+                </div>
+             </div>
+
+            <!-- Payments Cards -->
+            <div id="payments-container">
+                    <div class="payment-card-container">
+                        <div class="payments-edit-and-delete-container">
+                            <button class="payment-card-edit-button"></button>
+                            <button class="payment-card-delete-button"></button>
+                        </div>
+                        <div class="payment-informations-container">
+                            <div class="payment-card-top-section-container">
+                                <div class="payment-card-date-and-category-container">
+                                    <p class="payment-card-date">Mar 09, 2026</p>
+                                    <p class="payment-card-category">Groceries</p>
+                                </div>
+                                <p class="payment-card-value">-120</p>
+                            </div>
+                            <div class="payment-card-bottom-section-container">
+                                <p class="payment-card-marchant">Supermarket</p>
+                                <p class="payment-card-payment-method">Card</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-card-container">
+                        <div class="payments-edit-and-delete-container">
+                            <button class="payment-card-edit-button"></button>
+                            <button class="payment-card-delete-button"></button>
+                        </div>
+                        <div class="payment-informations-container">
+                            <div class="payment-card-top-section-container">
+                                <div class="payment-card-date-and-category-container">
+                                    <p class="payment-card-date">Mar 09, 2026</p>
+                                    <p class="payment-card-category">Groceries</p>
+                                </div>
+                                <p class="payment-card-value">-120</p>
+                            </div>
+                            <div class="payment-card-bottom-section-container">
+                                <p class="payment-card-marchant">Supermarket</p>
+                                <p class="payment-card-payment-method">Card</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-card-container">
+                        <div class="payments-edit-and-delete-container">
+                            <button class="payment-card-edit-button"></button>
+                            <button class="payment-card-delete-button"></button>
+                        </div>
+                        <div class="payment-informations-container">
+                            <div class="payment-card-top-section-container">
+                                <div class="payment-card-date-and-category-container">
+                                    <p class="payment-card-date">Mar 09, 2026</p>
+                                    <p class="payment-card-category">Groceries</p>
+                                </div>
+                                <p class="payment-card-value">-120</p>
+                            </div>
+                            <div class="payment-card-bottom-section-container">
+                                <p class="payment-card-marchant">Supermarket</p>
+                                <p class="payment-card-payment-method">Card</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-card-container">
+                        <div class="payments-edit-and-delete-container">
+                            <button class="payment-card-edit-button"></button>
+                            <button class="payment-card-delete-button"></button>
+                        </div>
+                        <div class="payment-informations-container">
+                            <div class="payment-card-top-section-container">
+                                <div class="payment-card-date-and-category-container">
+                                    <p class="payment-card-date">Mar 09, 2026</p>
+                                    <p class="payment-card-category">Groceries</p>
+                                </div>
+                                <p class="payment-card-value">-120</p>
+                            </div>
+                            <div class="payment-card-bottom-section-container">
+                                <p class="payment-card-marchant">Supermarket</p>
+                                <p class="payment-card-payment-method">Card</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-card-container">
+                        <div class="payments-edit-and-delete-container">
+                            <button class="payment-card-edit-button"></button>
+                            <button class="payment-card-delete-button"></button>
+                        </div>
+                        <div class="payment-informations-container">
+                            <div class="payment-card-top-section-container">
+                                <div class="payment-card-date-and-category-container">
+                                    <p class="payment-card-date">Mar 09, 2026</p>
+                                    <p class="payment-card-category">Groceries</p>
+                                </div>
+                                <p class="payment-card-value">-120</p>
+                            </div>
+                            <div class="payment-card-bottom-section-container">
+                                <p class="payment-card-marchant">Supermarket</p>
+                                <p class="payment-card-payment-method">Card</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-card-container">
+                        <div class="payments-edit-and-delete-container">
+                            <button class="payment-card-edit-button"></button>
+                            <button class="payment-card-delete-button"></button>
+                        </div>
+                        <div class="payment-informations-container">
+                            <div class="payment-card-top-section-container">
+                                <div class="payment-card-date-and-category-container">
+                                    <p class="payment-card-date">Mar 09, 2026</p>
+                                    <p class="payment-card-category">Groceries</p>
+                                </div>
+                                <p class="payment-card-value">-120</p>
+                            </div>
+                            <div class="payment-card-bottom-section-container">
+                                <p class="payment-card-marchant">Supermarket</p>
+                                <p class="payment-card-payment-method">Card</p>
+                            </div>
+                        </div>
+                    </div>
             </div>
-        </div>  
+        </div>
+        <script src="/js/payments.js"></script>
     </body>
 </html>

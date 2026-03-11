@@ -273,24 +273,6 @@ button
     text-align: center;
 }
 
-#center-button
-{
-    display: flex;
-    justify-content: center;
-    height: 3rem;
-    /* border: 1px solid black; */
-    /* padding: 20px; */
-}
-#add-payment
-{
-    background-color: #4e99cc;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    width: 30%;
-    height: 100%;
-}
-
 /* ==========Forgot Password============ */
 
 #reset-password-request-container,
@@ -1387,7 +1369,205 @@ button
     color: #ff0000b7;
 }
 
+/* ==========Payments============ */
+#payments-main-container
+{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f3;
+    padding: 15px;
+}
 
+#payments-main-container select,
+#payments-main-container 
+.payment-card-container 
+.payment-informations-container
+{
+    background-color: white;
+}
+
+#payments-top-bar
+{
+    height: 6%;
+    background-color: #486ba3;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#payments-top-bar img
+{
+    height: 60%;
+}
+
+#payments-top-bar button
+{
+    height: 100%;
+    width: 12%;
+    font-size: 20px;
+    text-align: left;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+#payments-top-bar p
+{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 26px;
+}
+
+#payments-add-and-filters-container
+{
+    display: flex;
+    /* align-items: center; */
+    gap: 5px;
+    /* border: 1px solid black; */
+    height: 5vh;
+    margin-bottom: 15px;
+}
+
+#payments-add-and-filters-container 
+#payments-add-payment
+{
+    height: 100%;
+    width: 8%;
+    /* border: 1px solid red; */
+}
+
+#payments-filters-container
+{
+    /* border: 1px solid black; */
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+#payments-filters-container select
+{
+    width: 33%;
+    height: 100%;
+    font-size: 16px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-left: 15px;
+}
+
+#payments-container
+{
+    /* border: 1px solid blue; */
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    overflow-y: auto;
+    padding-bottom: 80px;
+}
+
+.payment-card-container
+{
+    display: flex;
+    gap: 5px;
+    border-radius: 10px;
+    /* border: 1px solid red; */
+}
+
+.payments-edit-and-delete-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    width: 8%;
+
+    /* border: 1px solid green; */
+}
+
+.payments-edit-and-delete-container button
+{
+    width: 100%;
+    height: 30%;
+}
+
+.payment-informations-container
+{
+    border-radius: 5px;
+    width: 92%;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+}
+
+.payment-card-top-section-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.payment-card-bottom-section-container
+{
+    border-top: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.payment-informations-container
+{
+    font-weight: bold;
+}
+
+.payment-card-value
+{
+    font-size: 20px;
+}
+
+.payment-card-marchant
+{
+    color:#a8a8a8;
+}
+
+.payment-card-payment-method
+{
+    color:#34495E;
+}
+
+.payment-card-edit-button,
+.payment-card-delete-button,
+#payments-add-payment
+{
+    background-color: transparent;
+
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border: none;
+}
+
+.payment-card-edit-button
+{
+    background-image: url("/images/payments/edit.png");
+}
+
+.payment-card-delete-button
+{
+    background-image: url("/images/payments/delete.png");
+}
+
+#payments-add-payment
+{
+    background-image: url("/images/payments/add-2.png");
+}
 
 @media (min-width: 900px)
 {
@@ -1653,7 +1833,8 @@ button
         width: 50%;
     }
 
-    /* ==Edit Email, Fullname, Username, Password== */
+    /* ==Edit Email, Fullname, Username, Password,
+        Delete== */
     #edit-email-main-container,
     #edit-fullname-main-container,
     #edit-username-main-container,
@@ -1665,6 +1846,50 @@ button
         /* border: 1px solid red; */
     }
    
+    /* ==========Payments============ */
+    #payments-main-container
+    {
+        align-items: center;
+    }
 
+    #payments-filters-container,
+    #payments-container,
+    #payments-add-and-filters-container
+    {
+        width: 50%;
+    }
+
+    .payments-edit-and-delete-container
+    {
+        width: 5%;
+        gap: 10px;
+    }
+
+    .payments-edit-and-delete-container button
+    {
+        height: 40%;
+        background-size: 60%;
+    }
+
+    #payments-add-and-filters-container
+    {
+        gap: 5px;
+    }
+
+    #payments-add-and-filters-container
+    #payments-add-payment
+    {
+        width: 5%;
+    }
+
+    #payments-top-bar
+    {
+        padding-left: 25.5%;
+    }
+
+    #payments-top-bar button
+    {
+        width: 7%;
+    }
 
 }

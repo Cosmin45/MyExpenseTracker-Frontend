@@ -91,3 +91,8 @@ function userProfileOnClick()
 {
     window.location.href = "/pages/user-profile/user-profile.html";
 }
+
+function paymentsOnClick()
+{
+    window.location.href = "/pages/payments.html";
+}

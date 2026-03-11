@@ -11,7 +11,7 @@
             </div>
             <div id="nav-middle-section">
                 <button id="dashboard" class="nav-middle-button">Dashboard</button>
-                <button id="payments" class="nav-middle-button">Payments</button>
+                <button onclick="paymentsOnClick()" id="payments" class="nav-middle-button">Payments</button>
                 <button id="raports" class="nav-middle-button">Raports</button>
                 <button id="bugets" class="nav-middle-button">Bugets</button>
                 <button id="savings" class="nav-middle-button">Savings</button>
@@ -37,7 +37,7 @@
                 <div id="card-expenses" class="cards">
                     <p class="cards-title">Monthly average expenses</p>
                     <div id="monthly-average-expenses" class="card-total">
-                        <p class="card-sum">-2800</p>
+                        <p class="card-sum">0</p>
                     </div>
                 </div>
                 <div id="card-savings" class="cards">
@@ -100,9 +100,6 @@
                 <div id="expense-distribution-chart-container">
                     <canvas id="expensesChart"></canvas>
                 </div>
-            </div>
-            <div id="center-button">
-                <button onclick="addPaymentOnClick()" id="add-payment">Add Payment</button>
             </div>
         </div>
 
