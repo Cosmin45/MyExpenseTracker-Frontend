@@ -7,9 +7,8 @@ html
 html, body{
     margin:0;
     padding:0;
-    height:100%;
-    overflow:hidden;
 }
+
 
 button
 {
@@ -1396,6 +1395,10 @@ button
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 #payments-top-bar img
