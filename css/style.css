@@ -4,10 +4,11 @@ html
     font-family: "Inter", sans-serif;
 }
 
-body
-{
-    margin: 0;
-    /* font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
+html, body{
+    margin:0;
+    padding:0;
+    height:100%;
+    overflow:hidden;
 }
 
 button
@@ -1372,11 +1373,11 @@ button
 /* ==========Payments============ */
 #payments-main-container
 {
-    /* border: 1px solid red; */
-    display: flex;
-    flex-direction: column;
-    background-color: #f3f3f3;
-    padding: 15px;
+    display:flex;
+    flex-direction:column;
+    background:#f3f3f3;
+    padding:15px;
+    min-height:100vh;
 }
 
 #payments-main-container select,
@@ -1447,7 +1448,7 @@ button
     gap: 10px;
     height: 100%;
     margin-bottom: 15px;
-    width: 100%;
+    width: 100vh;
 }
 
 #payments-filters-container select
@@ -1462,14 +1463,9 @@ button
 
 #payments-container
 {
-    /* border: 1px solid blue; */
-
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
-    overflow-y: auto;
-    padding-bottom: 80px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
 }
 
 .payment-card-container
