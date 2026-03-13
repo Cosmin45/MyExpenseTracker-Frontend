@@ -12,7 +12,7 @@
 
         <div id="payments-main-container">
              <div id="payments-add-and-filters-container">
-                <button onclick="addPaymentOnClick()" id="payments-add-payment"></button>
+                <button onclick="addPaymentOnClick()" id="payments-add-payment-button"></button>
                 <div id="payments-filters-container">
                     <select name="" id="payment-type-select">
                         <option value="All">All Types</option>
@@ -44,6 +44,13 @@
                         <option value="last-7-days">Last 7 days</option>
                     </select>
                 </div>
+                <select name="" id="payments-sort-by-select">
+                    <option value="sort-by" disabled selected hidden>Sort by</option>
+                    <option value="date-desc">Date DESC</option>
+                    <option value="date-asc">Date ASC</option>
+                    <option value="value-desc">Value DESC</option>
+                    <option value="value-asc">Value ASC</option>
+                </select>
              </div>
 
             <div id="payments-container"></div>

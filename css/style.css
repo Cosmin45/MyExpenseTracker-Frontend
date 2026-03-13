@@ -1429,7 +1429,6 @@ button
 #payments-add-and-filters-container
 {
     display: flex;
-    /* align-items: center; */
     gap: 5px;
     /* border: 1px solid black; */
     height: 5vh;
@@ -1437,7 +1436,7 @@ button
 }
 
 #payments-add-and-filters-container 
-#payments-add-payment
+#payments-add-payment-button
 {
     height: 100%;
     width: 8%;
@@ -1446,17 +1445,16 @@ button
 
 #payments-filters-container
 {
-    /* border: 1px solid black; */
+    /* border: 1px solid orange; */
     display: flex;
     gap: 10px;
     height: 100%;
-    margin-bottom: 15px;
-    width: 100vh;
 }
 
-#payments-filters-container select
+#payments-filters-container select,
+#payments-sort-by-select
 {
-    width: 33%;
+    /* width: 33%; */
     height: 100%;
     font-size: 16px;
     border: 1px solid gray;
@@ -1464,11 +1462,16 @@ button
     padding-left: 15px;
 }
 
+#payments-sort-by-select
+{
+    margin-left: 15px;
+}
+
 #payments-container
 {
     display:flex;
     flex-direction:column;
-    gap:15px;
+    gap: 15px;
 }
 
 .payment-card-container
@@ -1494,6 +1497,7 @@ button
 {
     width: 100%;
     height: 30%;
+    /* border: 1px solid magenta; */
 }
 
 .payment-informations-container
@@ -1503,6 +1507,7 @@ button
     padding-left: 15px;
     padding-right: 15px;
     border: none;
+    border: 1px solid gray;
 }
 
 .payment-card-top-section-container
@@ -1542,11 +1547,11 @@ button
 
 .payment-card-edit-button,
 .payment-card-delete-button,
-#payments-add-payment
+#payments-add-payment-button
 {
     background-color: transparent;
 
-    background-size: 70%;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 
@@ -1563,14 +1568,14 @@ button
     background-image: url("/images/payments/delete.png");
 }
 
-#payments-add-payment
+#payments-add-payment-button
 {
     background-image: url("/images/payments/add-2.png");
 }
 
 @media (min-width: 900px)
 {
-    #add-payment-container
+    #add-payment-container  
     {
         width: 60%;
     }
@@ -1851,39 +1856,22 @@ button
         align-items: center;
     }
 
-    #payments-filters-container,
     #payments-container,
     #payments-add-and-filters-container
     {
         width: 50%;
     }
 
-    .payments-edit-and-delete-container
-    {
-        width: 5%;
-        gap: 10px;
-    }
-
-    .payments-edit-and-delete-container button
-    {
-        height: 40%;
-        background-size: 60%;
-    }
-
+    .payments-edit-and-delete-container,
     #payments-add-and-filters-container
-    {
-        gap: 5px;
-    }
-
-    #payments-add-and-filters-container
-    #payments-add-payment
+    #payments-add-payment-button
     {
         width: 5%;
     }
 
     #payments-top-bar
     {
-        padding-left: 25.5%;
+        padding-left: 25.1%;
     }
 
     #payments-top-bar button

@@ -139,58 +139,15 @@ async function deleteOnClick(paymentId, button)
     }
 }
 
-
-// async function filterPaymentsBytype(type)
-// {
-//     const token = localStorage.getItem("jwt");
-
-//     if (!token) 
-//     {
-//         window.location.href = "/index.html";
-//         return;
-//     }
-
-//     try 
-//     {
-//         const response = await fetch("http://localhost:8080/expenses/type/" + type, 
-//         {
-//             method: "GET",
-//             headers: 
-//             {
-//                 "Authorization": "Bearer " + token
-//             }
-//         });
-
-//         if (!response.ok) 
-//         {
-//             localStorage.removeItem("jwt");
-//             window.location.href = "/index.html";
-//             return;
-//         }
-
-//         const informations = await response.json();
-//         const container = document.getElementById("payments-container");
-//         container.innerHTML = "";
-
-//         informations.forEach(payment => 
-//         {
-//             createPaymentCard(payment);
-//         });
-//     } 
-//     catch (e) 
-//     {
-//         console.error("Error loading user", e);
-//     }
-// }
-
-
 const typeSelect = document.getElementById("payment-type-select");
 const categorySelect = document.getElementById("payment-category-select");
 const timeSelect = document.getElementById("payment-time-select");
+const sortBySelect = document.getElementById("payments-sort-by-select");
 
 typeSelect.addEventListener("change", applyFilters);
 categorySelect.addEventListener("change", applyFilters);
 timeSelect.addEventListener("change", applyFilters);
+sortBySelect.addEventListener("change", applyFilters);
 
 async function applyFilters()
 {
@@ -205,11 +162,13 @@ async function applyFilters()
     const type = typeSelect.value;
     const category = categorySelect.value;
     const time = timeSelect.value;
+    const sortBy = sortBySelect.value;
 
     const params = new URLSearchParams();
     if(type !== "All") params.append("type", type);
     if(category !== "All") params.append("category", category);
     if(time !== "All") params.append("time", time);
+    if(sortBy !== "sort-by") params.append("sortBy", sortBy);
 
     try 
     {
