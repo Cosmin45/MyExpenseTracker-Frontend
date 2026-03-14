@@ -8,6 +8,11 @@ function addPaymentOnClick()
     window.location.href = "/pages/add-payment.html";
 }
 
+function editPaymentOnClick(id)
+{
+    window.location.href = "/pages/edit-payment.html?id=" + id;
+}
+
 async function loadAllPayments()
 {
     const token = localStorage.getItem("jwt");
@@ -65,7 +70,7 @@ function createPaymentCard(payment)
 
     card.innerHTML = `
         <div class="payments-edit-and-delete-container">
-            <button class="payment-card-edit-button""></button>
+            <button class="payment-card-edit-button" onclick="editPaymentOnClick(${payment.id})"></button>
             <button class="payment-card-delete-button" onclick="deleteOnClick(${payment.id}, this)"></button>
         </div>
 
