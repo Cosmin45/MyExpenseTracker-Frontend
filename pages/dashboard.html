@@ -10,11 +10,10 @@
                 <p id="app-title">MyExpenseTracker</p>
             </div>
             <div id="nav-middle-section">
-                <button id="dashboard" class="nav-middle-button">Dashboard</button>
-                <button onclick="paymentsOnClick()" id="payments" class="nav-middle-button">Payments</button>
-                <button id="raports" class="nav-middle-button">Raports</button>
-                <button id="bugets" class="nav-middle-button">Bugets</button>
-                <button id="savings" class="nav-middle-button">Savings</button>
+                <button onclick="paymentsOnClick()" id="dashboard-payments-button" class="nav-middle-button">Payments</button>
+                <button onclick="" id="dashboard-raports-button" class="nav-middle-button">Raports</button>
+                <button onclick="" id="dashboard-bugets-button" class="nav-middle-button">Bugets</button>
+                <button onclick="" id="dashboard-savings-button" class="nav-middle-button">Savings</button>
             </div>
             <div id="nav-right-section">
                 <img id="user-image" src="/images/user.png" alt="user-image">
@@ -22,9 +21,17 @@
             </div>
         </nav>
         <nav id="navigation-bar-mobile">
-            <button id="menu"></button>
-            <p id="app-title-mobile">MyExpenseTracker</p>
-            <button onclick="userProfileOnClick()" id="user-profile"></button>
+            <div id="dashoboard-nav-bar-top-section-container">
+                <img id="menu" src="/images/application-logo.png" alt="app-logo">
+                <p id="app-title-mobile">MyExpenseTracker</p>
+                <button onclick="userProfileOnClick()" id="user-profile"></button>
+            </div>
+            <div id="dashoboard-nav-bar-bottom-section-container">
+                <button onclick="paymentsOnClick()" id="dashboard-payments-button">Payments</button>
+                <button onclick="" id="dashboard-raports-button">Raports</button>
+                <button onclick="" id="dashboard-bugets-button">Bugets</button>
+                <button onclick="" id="dashboard-savings-button">Savings</button>
+            </div>
         </nav>
         <div id="dashboard-main-container">
             <div id="cards-container">

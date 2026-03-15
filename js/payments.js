@@ -84,10 +84,16 @@ function createPaymentCard(payment)
                 <p class="payment-card-value">${payment.amount}</p>
             </div>
 
-            <div class="payment-card-bottom-section-container">
+            <div class="payment-card-middle-section-container">
                 <p class="payment-card-marchant">${payment.merchant}</p>
                 <p class="payment-card-payment-method">${payment.paymentMethod}</p>
             </div>
+
+            <p class="payment-card-bottom-note">
+                <span>Note: </span>
+                ${payment.note}
+            </p>
+
         </div>
     `;
 
