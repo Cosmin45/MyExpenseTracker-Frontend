@@ -34,7 +34,7 @@ async function loadStatisticsInfo()
 
         // Expenses
 
-        updateExpenseVsIncomeChart(informations);
+        updateExpenseTotalPerMonthChart(informations);
 
         updateTopSpendingCategoriesChart(informations);
 
@@ -44,12 +44,23 @@ async function loadStatisticsInfo()
 
         updateExpensesByMerchantChart(informations);
 
-        updateMiniContainers(informations);
+        updateExpensesMiniContainers(informations)
 
         updateNormalContainers(informations);
 
 
         // Incomes
+
+        updateIncomesTotalPerMonthChart(informations);
+
+        updateIncomesAveragePerMonthChart(informations);
+
+        updateIncomesMiniContainers(informations);
+
+
+        // Choose which container to show based on button "active" class
+
+        showActiveInformationContainer();
 
     } 
     catch (e) 
@@ -84,24 +95,20 @@ function showActiveInformationContainer()
     const button = document.querySelector(".type-button.active");
     if(button.id.includes("expenses"))
     {
-        console.log("expenses");
         document.querySelector("#statistics-expenses-main-container").classList.add("active");
     }
     else if(button.id.includes("incomes"))
     {
-        console.log("incomes");
         document.querySelector("#statistics-incomes-main-container").classList.add("active");
     }
     else if(button.id.includes("cashflow"))
     {
-        console.log("cashflow");
         document.querySelector("#statistics-cashflow-main-container").classList.add("active");
     }
     else
     {
         alert("None on existing buttons active");
     }
-    console.log(document.querySelectorAll(".informations-container.active"));
 }
 
 

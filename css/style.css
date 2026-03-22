@@ -1724,16 +1724,28 @@ button
     /* border: 1px solid orange; */
 }
 
-#statistics-expenses-highest-expense-date-container p
+#statistics-expenses-highest-expense-date-container p,
+#statistics-incomes-highest-income-date-container p
 {
     font-weight: bold;
 }
 
-#statistics-expenses-highest-expense-date-container div
+#statistics-expenses-highest-expense-date-container div,
+#statistics-incomes-highest-income-date-container div
 {
     width: 100%;
     display: flex;
     justify-content: space-around;
+}
+
+.all-columns-container div p:first-of-type,
+#statistics-expenses-highest-expense-date-container,
+#statistics-expenses-forecast-next-month-container span,
+#statistics-expenses-total-container span,
+#statistics-expenses-average-container span
+{
+    color: red;
+    font-weight: bold;
 }
 
 .all-columns-container
@@ -1774,18 +1786,43 @@ button
     border-radius: 5px;
 }
 
-                                    /* Incomes Main Container */
+                                /* Incomes Main Container */
+#statistics-incomes-main-container
+{
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* border: 1px solid red; */
+}
+
+#statistics-incomes-highest-income-date-container,
+#statistics-incomes-total-container span,
+#statistics-incomes-average-container span,
+#statistics-incomes-forecast-next-month-container span
+{
+    font-weight: bold;
+    color: green;
+}
+
+#statistics-incomes-total-per-month-container,
+#statistics-incomes-average-per-month-container
+{
+    height: 30vh;
+    background-color: white;
+}
 
 
-
-
-
+                                    /* Commons */
 #statistics-buttons-container .type-button.active
 {
     color: white;
 }
 
-#statistics-expenses-main-container h3
+#statistics-expenses-main-container h3,
+#statistics-incomes-main-container h3
 {
     color:#486ba3;
     /* border-bottom: 1px solid black; */
@@ -2110,6 +2147,7 @@ button
     /* ==========Statistics============ */
 
     #statistics-expenses-main-container,
+    #statistics-incomes-main-container,
     #statistics-buttons-container
     {
         width: 50%;
@@ -2131,7 +2169,9 @@ button
         width: 50%;
     }
 
-    #statistics-expenses-total-per-month-container
+    #statistics-expenses-total-per-month-container,
+    #statistics-incomes-total-per-month-container,
+    #statistics-incomes-average-per-month-container
     {
         height: 40vh;
     }

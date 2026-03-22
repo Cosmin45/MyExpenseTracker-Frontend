@@ -1,26 +1,26 @@
-function updateExpenseTotalPerMonthChart(informations)
+function updateIncomesAveragePerMonthChart(informations)
 {
-    const lastElements = informations.totalExpensesPerMonth.slice(-6).reverse();
+    const lastElements = informations.totalIncomesPerMonth.slice(-6).reverse();
     const labels = [];
-    const expenses = [];
+    const incomes = [];
     
     for(let i = lastElements.length - 1; i >= 0; i--)
     {
         labels.push(lastElements[i].month);
-        expenses.push(lastElements[i].totalAmount);
+        incomes.push(lastElements[i].totalAmount);
     }
-
-    const incomeVsExpenseCtx = document.querySelector(
-        "#statistics-expenses-total-per-month-container canvas");
-    new Chart(incomeVsExpenseCtx, 
+    
+    const incomesCtx = document.querySelector(
+        "#statistics-incomes-total-per-month-container canvas");
+    new Chart(incomesCtx, 
         {
         type: 'bar',
         data: {
             labels: labels,
             datasets: [
                 {
-                    label: 'Expense',
-                    data: expenses
+                    label: 'Income',
+                    data: incomes
                 }
             ]
         },
@@ -37,7 +37,7 @@ function updateExpenseTotalPerMonthChart(informations)
             plugins: {
                 title: {
                 display: true,
-                text: "Expenses by Month",
+                text: "Incomes by Month",
                 font: {
                     size: 20,
                     weight: "bold"

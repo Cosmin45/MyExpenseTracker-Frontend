@@ -1,10 +1,10 @@
-function updateMiniContainers(informations)
+function updateExpensesMiniContainers(informations)
 {
     updateExpensesMonthComparisonContainer(informations);
 
     updateHighestExpenseDayContainer(informations);
 
-    updateForecastNextMonthContainer(informations);
+    updateExpensesForecastNextMonthContainer(informations);
 
     updateTotalExpensesContainer(informations);
 
@@ -13,7 +13,7 @@ function updateMiniContainers(informations)
 
 function updateExpensesMonthComparisonContainer(informations)
 {
-    const percentage = informations.monthComparisonDTO.percentage;
+    const percentage = informations.expensesMonthComparisonDTO.percentage;
 
     const value = document.querySelector("#statistics-expenses-month-comparison-container p .value");
     const text = document.querySelector("#statistics-expenses-month-comparison-container p .text");
@@ -52,9 +52,9 @@ function updateHighestExpenseDayContainer(informations)
     value.textContent = highestExpenseDaySum;
 }
 
-function updateForecastNextMonthContainer(informations)
+function updateExpensesForecastNextMonthContainer(informations)
 {
-    const forecast = informations.forecastDTO.forecast;
+    const forecast = informations.expensesForecastDTO.forecast;
 
     const spanElement = document.querySelector("#statistics-expenses-forecast-next-month-container span");
     spanElement.textContent = forecast;

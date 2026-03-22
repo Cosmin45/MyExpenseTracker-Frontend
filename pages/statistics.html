@@ -13,8 +13,8 @@
             </div>
             
             <div id="statistics-buttons-container">
-                <button id="statistics-expenses-button" class="type-button active">Expenses</button>
-                <button id="statistics-incomes-button" class="type-button">Incomes</button>
+                <button id="statistics-expenses-button" class="type-button">Expenses</button>
+                <button id="statistics-incomes-button" class="type-button active">Incomes</button>
                 <button id="statistics-cashflow-button" class="type-button">Cashflow</button>
             </div>
 
@@ -86,7 +86,7 @@
                 
                 <div id="statistics-expenses-total-container" class="mini-container">
                     <h3>Total Expenses</h3>
-                    <p>Your total expenses is <span style="font-weight: bold;">-</span></p>
+                    <p>Your total expenses is <span>-</span></p>
                 </div>
                 
                 <div id="statistics-expenses-average-container" class="mini-container">
@@ -97,14 +97,49 @@
             </div>
 
             <div id="statistics-incomes-main-container" class="informations-container">
-                
+                <!-- Rectangular Chart -->
+                <div id="statistics-incomes-total-per-month-container"><canvas></canvas></div>
+                <!-- Rectangular Chart -->
+                <div id="statistics-incomes-average-per-month-container"><canvas></canvas></div>
+                <!-- Mini Container -->
+                <div id="statistics-incomes-forecast-next-month-container" class="mini-container">
+                    <h3>Forecast Next Month</h3>
+                    <p>
+                        Based on your past information, your next month income will be <span>-</span>
+                    </p>
+                </div>
+                <!-- Mini Container -->
+                <div id="statistics-incomes-month-comparison-container" class="mini-container">
+                    <h3>Month comparison</h3>
+                    <p>
+                        This month incomes are <span class="value"></span><span class="text"></span>
+                    </p>
+                </div>
+                <!-- Mini Container -->
+                <div id="statistics-incomes-total-container" class="mini-container">
+                    <h3>Total Incomes</h3>
+                    <p>Your total incomes is <span>-</span></p>
+                </div>
+                <!-- Mini Container -->
+                <div id="statistics-incomes-average-container" class="mini-container">
+                    <h3>Average Incomes</h3>
+                    <p>Your average incomes is <span>-</span></p>
+                </div>
+                <!-- Mini Container -->
+                <div id="statistics-incomes-highest-income-date-container" class="mini-container">
+                    <h3>Highest Income Date</h3>
+                    <div>
+                        <p id="date">----/--/--</p>
+                        <p id="value">-</p>
+                    </div>
+                </div>
             </div>
 
             <div id="statistics-cashflow-main-container" class="informations-container">
                 
             </div>
         </div>
-
+        <!-- Expenses -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="/js//statistics/statistics.js"></script>
         <script src="/js/statistics/expenses/expenses-total-per-month.js"></script>
@@ -112,7 +147,12 @@
         <script src="/js/statistics/expenses/expenses-by-payment-method.js"></script>
         <script src="/js/statistics/expenses/expenses-average-per-category.js"></script>
         <script src="/js/statistics/expenses/expenses-by-merchant.js"></script>
-        <script src="/js/statistics/expenses/mini-containers.js"></script>
+        <script src="/js/statistics/expenses/expenses-mini-containers.js"></script>
         <script src="/js/statistics/expenses/normal-containers.js"></script>
+        <!-- Incomes -->
+        <script src="/js/statistics/incomes/incomes-total-per-month.js"></script>
+        <script src="/js/statistics/incomes/incomes-average-per-month.js"></script>
+        <script src="/js/statistics/incomes/incomes-mini-containers.js"></script>
+        <script src=""></script>
     </body>
 </html>
