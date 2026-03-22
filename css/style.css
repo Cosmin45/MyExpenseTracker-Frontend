@@ -1671,7 +1671,9 @@ button
 
 
                                     /* Expenses Main Container */
-#statistics-expenses-main-container
+#statistics-expenses-main-container,
+#statistics-incomes-main-container,
+#statistics-cashflow-main-container
 {
     flex-direction: column;
     width: 100%;
@@ -1680,11 +1682,6 @@ button
     padding-left: 10px;
     padding-right: 10px;
     /* border: 1px solid red; */
-}
-
-#statistics-expenses-total-per-month-container
-{
-    height: 30vh;
 }
 
 .mini-container
@@ -1787,16 +1784,6 @@ button
 }
 
                                 /* Incomes Main Container */
-#statistics-incomes-main-container
-{
-    flex-direction: column;
-    width: 100%;
-    box-sizing: border-box;
-    gap: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-    /* border: 1px solid red; */
-}
 
 #statistics-incomes-highest-income-date-container,
 #statistics-incomes-total-container span,
@@ -1807,8 +1794,10 @@ button
     color: green;
 }
 
+#statistics-expenses-total-per-month-container,
 #statistics-incomes-total-per-month-container,
-#statistics-incomes-average-per-month-container
+#statistics-incomes-average-per-month-container,
+#statistics-cashflow-main-container div
 {
     height: 30vh;
     background-color: white;
@@ -2148,6 +2137,7 @@ button
 
     #statistics-expenses-main-container,
     #statistics-incomes-main-container,
+    #statistics-cashflow-main-container,
     #statistics-buttons-container
     {
         width: 50%;
@@ -2157,11 +2147,6 @@ button
     {
         display: flex;
         flex-wrap: wrap;
-        /* display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 10px; 
-        */
     }
 
     #statistics-expenses-ring-charts-container div
@@ -2171,7 +2156,8 @@ button
 
     #statistics-expenses-total-per-month-container,
     #statistics-incomes-total-per-month-container,
-    #statistics-incomes-average-per-month-container
+    #statistics-incomes-average-per-month-container,
+    #statistics-cashflow-main-container div
     {
         height: 40vh;
     }

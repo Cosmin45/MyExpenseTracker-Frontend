@@ -13,12 +13,12 @@
             </div>
             
             <div id="statistics-buttons-container">
-                <button id="statistics-expenses-button" class="type-button">Expenses</button>
-                <button id="statistics-incomes-button" class="type-button active">Incomes</button>
+                <button id="statistics-expenses-button" class="type-button active">Expenses</button>
+                <button id="statistics-incomes-button" class="type-button">Incomes</button>
                 <button id="statistics-cashflow-button" class="type-button">Cashflow</button>
             </div>
 
-            <div id="statistics-expenses-main-container" class="informations-container active">
+            <div id="statistics-expenses-main-container" class="informations-container">
                 
                 <div id="statistics-expenses-total-per-month-container"><canvas></canvas></div>
                 
@@ -136,7 +136,9 @@
             </div>
 
             <div id="statistics-cashflow-main-container" class="informations-container">
-                
+                <div id="statistics-cashflow-expenses-vs-incomes-container"><canvas></canvas></div>
+                <div id="statistics-cashflow-expenses-vs-budget-container"><canvas></canvas></div>
+                <div id="statistics-cashflow-exp-vs-inc-vs-bud-vs-sav-container"><canvas></canvas></div>
             </div>
         </div>
         <!-- Expenses -->
@@ -153,6 +155,9 @@
         <script src="/js/statistics/incomes/incomes-total-per-month.js"></script>
         <script src="/js/statistics/incomes/incomes-average-per-month.js"></script>
         <script src="/js/statistics/incomes/incomes-mini-containers.js"></script>
-        <script src=""></script>
+        <!-- Cashflow -->
+        <script src="/js/statistics/cashflow/cashflow-expenses-vs-incomes.js"></script>
+        <script src="/js/statistics/cashflow/cashflow-expenses-vs-budget.js"></script>
+        <script src="/js/statistics/cashflow/exp-vs-inc-vs-bud-vs-sav.js"></script>
     </body>
 </html>

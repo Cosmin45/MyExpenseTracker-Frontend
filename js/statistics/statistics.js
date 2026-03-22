@@ -58,9 +58,18 @@ async function loadStatisticsInfo()
         updateIncomesMiniContainers(informations);
 
 
+        // Cashflow
+
+        updateExpenseVsIncomeChart(informations);
+
+        updateExpenseVsBudgetChart(informations);
+
+        updateExpVsIncVsBudVsSavChart(informations);
+
         // Choose which container to show based on button "active" class
 
         showActiveInformationContainer();
+
 
     } 
     catch (e) 
