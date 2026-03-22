@@ -96,3 +96,8 @@ function paymentsOnClick()
 {
     window.location.href = "/pages/payments.html";
 }
+
+function statisticsOnClick()
+{
+    window.location.href = "/pages/statistics.html";
+}

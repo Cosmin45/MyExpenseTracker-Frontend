@@ -5,6 +5,8 @@ html
 }
 
 html, body{
+    /* width: 100%;
+    height: 100%; */
     margin:0;
     padding:0;
 }
@@ -487,6 +489,11 @@ button
     color: white;
     background-color: #486ba3;
     border: none;
+}
+
+.type-button.active:hover
+{
+    background-color: #6a92d1;
 }
 
 .payment-property label
@@ -1610,6 +1617,190 @@ button
     background-image: url("/images/payments/add-2.png");
 }
 
+/* ==========Statistics============ */
+#statistics-main-container
+{
+    width: 100%;
+
+    background-color: #F5F7FA;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;                   
+
+    padding-bottom: 15px;
+    /* border: 1px solid red; */
+}
+
+#statistics-main-container #payments-top-bar
+{
+    box-sizing: border-box;
+    width: 100%;
+    height: 6vh;
+}
+
+#statistics-buttons-container
+{
+    height: 5vh;
+    width: 100%;
+    
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    /* border: 1px solid black; */
+}
+
+#statistics-buttons-container button
+{
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    color: #486ba3;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+                                    /* Expenses Main Container */
+#statistics-expenses-main-container
+{
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* border: 1px solid red; */
+}
+
+#statistics-expenses-total-per-month-container
+{
+    height: 30vh;
+}
+
+.mini-container
+{
+    /* margin: 10px; */
+    padding-left: 10px;
+    padding-right: 10px;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.normal-container
+{
+    /* margin: 10px; */             /* margin: 10px; */         
+    padding-left: 10px;
+    padding-right: 10px;
+    /* border: 1px solid black; */
+    background-color: white;
+}
+
+.normal-container div
+{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+
+#statistics-expenses-recurring-payments-container div
+{
+    display: flex;
+    justify-content: space-between;
+    
+    /* border: 1px solid orange; */
+}
+
+#statistics-expenses-highest-expense-date-container p
+{
+    font-weight: bold;
+}
+
+#statistics-expenses-highest-expense-date-container div
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.all-columns-container
+{
+    display: flex;
+}
+
+.all-columns-container div
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#statistics-expenses-ring-charts-container,
+#statistics-expenses-total-per-month-container
+{
+    margin: 0px;                /* border: 1px solid red; */
+    background-color: white;
+}
+
+.normal-container h3
+{
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.normal-container .all-columns-container div
+{
+    display: flex;
+    /* border: 1px solid red; */
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+}
+
+#statistics-expenses-main-container div
+{
+    border-radius: 5px;
+}
+
+                                    /* Incomes Main Container */
+
+
+
+
+
+#statistics-buttons-container .type-button.active
+{
+    color: white;
+}
+
+#statistics-expenses-main-container h3
+{
+    color:#486ba3;
+    /* border-bottom: 1px solid black; */
+}
+
+.informations-container 
+{
+    display: none;
+}
+
+.informations-container.active 
+{
+    display: flex;
+}
+
 @media (min-width: 900px)
 {
     #add-payment-container  
@@ -1915,5 +2106,35 @@ button
     {
         width: 7%;
     }
+
+    /* ==========Statistics============ */
+
+    #statistics-expenses-main-container,
+    #statistics-buttons-container
+    {
+        width: 50%;
+    }
+
+    #statistics-expenses-ring-charts-container
+    {
+        display: flex;
+        flex-wrap: wrap;
+        /* display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 10px; 
+        */
+    }
+
+    #statistics-expenses-ring-charts-container div
+    {
+        width: 50%;
+    }
+
+    #statistics-expenses-total-per-month-container
+    {
+        height: 40vh;
+    }
+
 
 }

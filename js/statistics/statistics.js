@@ -1,0 +1,107 @@
+function backOnClick()
+{
+    window.location.href = "/pages/dashboard.html";
+}
+
+
+async function loadStatisticsInfo() 
+{
+    const token = localStorage.getItem("jwt");
+
+    if (!token) 
+    {
+        window.location.href = "/index.html";
+        return;
+    }
+
+    try 
+    {
+        const response = await fetch("http://localhost:8080/analytics/info", 
+        {
+            method: "GET",
+            headers: 
+            {
+                "Authorization": "Bearer " + token
+            }
+        });
+
+        if (!response.ok) 
+        {
+            return;
+        }
+
+        const informations = await response.json();
+
+        // Expenses
+
+        updateExpenseVsIncomeChart(informations);
+
+        updateTopSpendingCategoriesChart(informations);
+
+        updateExpensesByPaymentMethodChart(informations);
+
+        updateExpensesAveragePerCategoryChart(informations);
+
+        updateExpensesByMerchantChart(informations);
+
+        updateMiniContainers(informations);
+
+        updateNormalContainers(informations);
+
+
+        // Incomes
+
+    } 
+    catch (e) 
+    {
+        console.error("Error loading user", e);
+    }
+}
+window.addEventListener("DOMContentLoaded", loadStatisticsInfo);
+
+
+const statisticsButtons = document.querySelectorAll(".type-button");
+statisticsButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        if(button.classList.contains("active"))
+        {
+            return;
+        }
+
+        statisticsButtons.forEach(b => b.classList.remove("active"));
+        button.classList.add("active");
+
+        showActiveInformationContainer();
+    });
+});
+
+
+function showActiveInformationContainer()
+{
+    const informationContainers = document.querySelectorAll(".informations-container");
+    informationContainers.forEach(container => container.classList.remove("active"));
+
+    const button = document.querySelector(".type-button.active");
+    if(button.id.includes("expenses"))
+    {
+        console.log("expenses");
+        document.querySelector("#statistics-expenses-main-container").classList.add("active");
+    }
+    else if(button.id.includes("incomes"))
+    {
+        console.log("incomes");
+        document.querySelector("#statistics-incomes-main-container").classList.add("active");
+    }
+    else if(button.id.includes("cashflow"))
+    {
+        console.log("cashflow");
+        document.querySelector("#statistics-cashflow-main-container").classList.add("active");
+    }
+    else
+    {
+        alert("None on existing buttons active");
+    }
+    console.log(document.querySelectorAll(".informations-container.active"));
+}
+
+
