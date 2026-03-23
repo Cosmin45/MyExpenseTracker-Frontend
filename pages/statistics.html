@@ -13,9 +13,11 @@
             </div>
             
             <div id="statistics-buttons-container">
-                <button id="statistics-expenses-button" class="type-button active">Expenses</button>
+                <button id="statistics-expenses-button" class="type-button">Expenses</button>
                 <button id="statistics-incomes-button" class="type-button">Incomes</button>
                 <button id="statistics-cashflow-button" class="type-button">Cashflow</button>
+                <button id="statistics-budget-button" class="type-button">Budget</button>
+                <button id="statistics-savings-button" class="type-button active">Savings</button>
             </div>
 
             <div id="statistics-expenses-main-container" class="informations-container">
@@ -140,6 +142,30 @@
                 <div id="statistics-cashflow-expenses-vs-budget-container"><canvas></canvas></div>
                 <div id="statistics-cashflow-exp-vs-inc-vs-bud-vs-sav-container"><canvas></canvas></div>
             </div>
+
+            <div id="statistics-budget-main-container" class="informations-container">
+
+            </div>
+            <div id="statistics-savings-main-container" class="informations-container">
+                <div id="statistics-savings-total-per-month-container"><canvas></canvas></div>
+                
+                <div id="progress-bar-container">
+                    <div id="labels-container">
+                        <h3 id="savings-label">Savings</h3>
+                        <p id="progress-label">
+                            <span id="savings-value"></span>
+                            /
+                            <span id="goal-value"></span>
+                        </p>
+                        <h3 id="goal-label">Goal</h3>
+                    </div>
+                    
+                    <div id="bar-container">
+                        <div id="progress"></div>
+                        <div id="goal"></div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- Expenses -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -159,5 +185,8 @@
         <script src="/js/statistics/cashflow/cashflow-expenses-vs-incomes.js"></script>
         <script src="/js/statistics/cashflow/cashflow-expenses-vs-budget.js"></script>
         <script src="/js/statistics/cashflow/exp-vs-inc-vs-bud-vs-sav.js"></script>
+        <!-- Savings -->
+        <script src="/js/statistics/savings/savings-total-per-month.js"></script>
+        <script src="/js/statistics/savings/savings-progress-bar.js"></script>
     </body>
 </html>

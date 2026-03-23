@@ -66,6 +66,14 @@ async function loadStatisticsInfo()
 
         updateExpVsIncVsBudVsSavChart(informations);
 
+
+        // Savings
+
+        updateSavingsPerMonthPerMonthChart(informations);
+
+        updateProgressBarContainer(informations);
+
+
         // Choose which container to show based on button "active" class
 
         showActiveInformationContainer();
@@ -113,6 +121,14 @@ function showActiveInformationContainer()
     else if(button.id.includes("cashflow"))
     {
         document.querySelector("#statistics-cashflow-main-container").classList.add("active");
+    }
+    else if(button.id.includes("budget"))
+    {
+        document.querySelector("#statistics-budget-main-container").classList.add("active");
+    }
+    else if(button.id.includes("savings"))
+    {
+        document.querySelector("#statistics-savings-main-container").classList.add("active");
     }
     else
     {

@@ -21,7 +21,7 @@ function updateExpensesMonthComparisonContainer(informations)
     if (percentage < 0)
     {
         value.textContent = Math.abs(percentage) + "% ";
-        value.style.color = "green";
+        value.style.color = "#4bb36f";
         value.style.fontWeight = "bold";
 
         text.textContent = "lower than previous month so far."
@@ -33,7 +33,7 @@ function updateExpensesMonthComparisonContainer(informations)
     else
     {
         value.textContent = Math.abs(percentage) + "% ";
-        value.style.color = "red";
+        value.style.color = "#ff7878";
         value.style.fontWeight = "bold";
 
         text.textContent = "higher than previous month so far."
