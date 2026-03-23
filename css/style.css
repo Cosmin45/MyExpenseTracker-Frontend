@@ -1679,7 +1679,8 @@ button
 #statistics-expenses-main-container,
 #statistics-incomes-main-container,
 #statistics-cashflow-main-container,
-#statistics-savings-main-container
+#statistics-savings-main-container,
+#statistics-budget-main-container
 {
     flex-direction: column;
     width: 100%;
@@ -1804,7 +1805,8 @@ button
 #statistics-incomes-total-per-month-container,
 #statistics-incomes-average-per-month-container,
 #statistics-cashflow-main-container div,
-#statistics-savings-total-per-month-container
+#statistics-savings-total-per-month-container,
+#statistics-budget-left-per-month-container
 {
     height: 30vh;
     background-color: white;
@@ -1817,6 +1819,7 @@ button
 }
 
 #statistics-savings-total-per-month-container,
+#statistics-budget-left-per-month-container,
 #progress-bar-container
 {
     border-radius: 5px;
@@ -1898,6 +1901,12 @@ button
 {
     text-align: right;
     color: #ff7878;
+}
+
+
+#statistics-budget-main-container
+{
+    height: 100vh;
 }
 
                                     /* Commons */
@@ -2236,6 +2245,7 @@ button
     #statistics-incomes-main-container,
     #statistics-cashflow-main-container,
     #statistics-savings-main-container,
+    #statistics-budget-main-container,
     #statistics-buttons-container
     {
         width: 50%;
@@ -2256,7 +2266,8 @@ button
     #statistics-incomes-total-per-month-container,
     #statistics-incomes-average-per-month-container,
     #statistics-cashflow-main-container div,
-    #statistics-savings-total-per-month-container
+    #statistics-savings-total-per-month-container,
+    #statistics-budget-left-per-month-container
     {
         height: 40vh;
     }
