@@ -65,21 +65,21 @@ function updateUsername(informations)
 
 function updateCards(informations)
 {
-    const monthlyAverageIncomes = informations.monthlyAverageIncomes;
+    const monthlyAverageIncomes = informations.monthlyAverageIncomes.average;
     const averageIncomesCard = document.querySelector("#monthly-average-incomes .card-sum")
     averageIncomesCard.textContent = monthlyAverageIncomes;
 
-    const monthlyAverageExpenses = informations.monthlyAverageExpenses;
+    const monthlyAverageExpenses = informations.monthlyAverageExpenses.average;
     const averageExpensesCard = document.querySelector("#monthly-average-expenses .card-sum")
     averageExpensesCard.textContent = monthlyAverageExpenses;
 
-    const savingsThisMonth = informations.savingsThisMonth;
+    const savingsThisMonth = informations.savingsThisMonth.savings;
     const savingsThisMonthCard = document.querySelector("#savings-this-month .card-sum")
     savingsThisMonthCard.textContent = savingsThisMonth;
 
     const budgetLeftThisMonth = informations.budgetLeftThisMonth;
     const budgetLeftCard = document.querySelector("#budget-left-this-month .card-sum")
-    budgetLeftCard.textContent = budgetLeftThisMonth;
+    budgetLeftCard.textContent = budgetLeftThisMonth.budgetLeft;
 }
 
 function addPaymentOnClick()
