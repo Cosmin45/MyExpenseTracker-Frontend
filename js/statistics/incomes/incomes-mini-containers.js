@@ -50,7 +50,7 @@ function updateForecastNextMonthContainer(informations)
 
 function updateTotalIncomesContainer(informations)
 {
-    const total = informations.totalIncomes;
+    const total = informations.totalIncomes.total;
 
     const spanElement = document.querySelector("#statistics-incomes-total-container span");
     spanElement.textContent = total;
@@ -58,7 +58,7 @@ function updateTotalIncomesContainer(informations)
 
 function updateAverageIncomesContainer(informations)
 {
-    const average = informations.averageIncomes;
+    const average = informations.averageIncomes.average;
 
     const spanElement = document.querySelector("#statistics-incomes-average-container span");
     spanElement.textContent = average;

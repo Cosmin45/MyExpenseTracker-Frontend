@@ -62,7 +62,7 @@ function updateExpensesForecastNextMonthContainer(informations)
 
 function updateTotalExpensesContainer(informations)
 {
-    const total = informations.totalExpenses;
+    const total = informations.totalExpenses.total;
 
     const spanElement = document.querySelector("#statistics-expenses-total-container span");
     spanElement.textContent = total;
@@ -70,7 +70,7 @@ function updateTotalExpensesContainer(informations)
 
 function updateAverageExpensesContainer(informations)
 {
-    const average = informations.averageExpenses;
+    const average = informations.averageExpenses.average;
 
     const spanElement = document.querySelector("#statistics-expenses-average-container span");
     spanElement.textContent = average;
