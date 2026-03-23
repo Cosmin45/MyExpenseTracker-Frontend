@@ -145,24 +145,39 @@
 
             <div id="statistics-budget-main-container" class="informations-container">
                 <div id="statistics-budget-left-per-month-container"><canvas></canvas></div>
+                <div class="progress-bar-container">
+                    <div class="labels-container">
+                        <h3 id="expenses-label">Expenses</h3>
+                        <p class="progress-label">
+                            <span id="expenses-value"></span>
+                            /
+                            <span id="budget-value"></span>
+                        </p>
+                        <h3 id="budget-label">Budget</h3>
+                    </div>
+                    <div class="bar-container">
+                        <div id="expenses"></div>
+                        <div id="budget-left"></div>
+                    </div>
+                </div>
             </div>
             
             <div id="statistics-savings-main-container" class="informations-container">
                 <div id="statistics-savings-total-per-month-container"><canvas></canvas></div>
                 
-                <div id="progress-bar-container">
-                    <div id="labels-container">
+                <div class="progress-bar-container">
+                    <div class="labels-container">
                         <h3 id="savings-label">Savings</h3>
-                        <p id="progress-label">
+                        <p class="progress-label">
                             <span id="savings-value"></span>
                             /
                             <span id="goal-value"></span>
                         </p>
                         <h3 id="goal-label">Goal</h3>
                     </div>
-                    <div id="bar-container">
-                        <div id="progress"></div>
-                        <div id="goal"></div>
+                    <div class="bar-container">
+                        <div id="savings-progress"></div>
+                        <div id="savings-goal"></div>
                     </div>
                 </div>
             </div>
@@ -190,5 +205,6 @@
         <script src="/js/statistics/savings/savings-progress-bar.js"></script>
         <!-- Budget -->
          <script src="/js/statistics/budget/budget-left-per-month.js"></script>
+         <script src="/js/statistics/budget/budget-left-progress-bar.js"></script>
     </body>
 </html>

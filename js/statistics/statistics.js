@@ -78,6 +78,8 @@ async function loadStatisticsInfo()
 
         updateBudgetLeftPerMonthChart(informations);
 
+        updateBudgetLeftProgressBarContainer(informations);
+
 
         // Choose which container to show based on button "active" class
 

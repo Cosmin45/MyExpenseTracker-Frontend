@@ -10,10 +10,10 @@ function updateProgressBarContainer(informations)
     const savingsValueElement = document.querySelector("#savings-value");
     savingsValueElement.textContent = savingsValue;
 
-    const progressContainer = document.querySelector("#progress");
+    const progressContainer = document.querySelector("#savings-progress");
     progressContainer.style.width = savingsPercentageProgress + "%";
 
-    const goalContainer = document.querySelector("#goal");
+    const goalContainer = document.querySelector("#savings-goal");
     goalContainer.style.width = (100 - savingsPercentageProgress) + "%";
 
 }
