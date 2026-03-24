@@ -104,12 +104,12 @@ function createPaymentCard(payment)
     if(payment.expenseType === "EXPENSE")
     {
         amount.textContent = "-" + payment.amount;
-        amount.style.color = "red";
+        amount.style.color = "#ff7878";
     }
     else
     {
         amount.textContent = "+" + payment.amount;
-        amount.style.color = "green";
+        amount.style.color = "#4bb36f";
     }
 }
 

@@ -344,7 +344,7 @@ button
 #signup-nok, #mfa-nok,
 #add-payment-nok
 {
-    color: #ff7878;
+    color: red;
 }
 
 #reset-password-request-ok,
@@ -769,7 +769,7 @@ button
 }
 #verify-email-message-nok
 {
-    color: #ff7878;
+    color: red;
 }
 
 /* ==========Edit Email============ */
@@ -915,7 +915,7 @@ button
 
 #edit-email-message-nok
 {
-    color: #ff7878;
+    color: red;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -1046,7 +1046,7 @@ button
 
 #edit-fullname-message-nok
 {
-    color: #ff7878;
+    color: red;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -1177,7 +1177,7 @@ button
 
 #edit-username-message-nok
 {
-    color: #ff7878;
+    color: red;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -1308,7 +1308,7 @@ button
 
 #edit-password-message-nok
 {
-    color: #ff7878;
+    color: red;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -1403,9 +1403,10 @@ button
 {
     display:flex;
     flex-direction:column;
-    background:#f3f3f3;
+    background:#F5F7FA;
     padding:15px;
     min-height:100vh;
+    min-width: 630px;
 }
 
 #payments-main-container select,
@@ -1458,7 +1459,7 @@ button
 #payments-add-and-filters-container
 {
     display: flex;
-    gap: 5px;
+    gap: 10px;
     /* border: 1px solid black; */
     height: 5vh;
     margin-bottom: 15px;
@@ -1478,23 +1479,30 @@ button
     display: flex;
     gap: 10px;
     height: 100%;
+    width: 92%;
+    box-sizing: border-box;
 }
 
 #payments-filters-container select,
+#payments-add-and-filters-container 
 #payments-sort-by-select
 {
-    /* width: 33%; */
+    /* width: 25%; */
     height: 100%;
     font-size: 16px;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
+    border: none;
     border-radius: 5px;
     padding-left: 15px;
+    color: #486ba3;
+    font-weight: bold;
+    background-color: #f0f0f0;
 }
 
-#payments-sort-by-select
+/* #payments-sort-by-select
 {
     margin-left: 15px;
-}
+} */
 
 #payments-container
 {
@@ -1506,7 +1514,7 @@ button
 .payment-card-container
 {
     display: flex;
-    gap: 5px;
+    gap: 10px;
     border-radius: 10px;
     /* border: 1px solid #ff7878; */
 }
@@ -1533,10 +1541,9 @@ button
 {
     border-radius: 5px;
     width: 92%;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
     border: none;
-    border: 1px solid gray;
 }
 
 .payment-card-top-section-container
@@ -1556,20 +1563,15 @@ button
     justify-content: space-between;
 }
 
-.payment-card-container .payment-card-bottom-note
+.payment-card-bottom-note
 {
     font-weight: normal;
     line-height: 1.5;
     text-align: justify;
 }
 
+.payment-informations-container,
 .payment-card-bottom-note span
-{
-    font-weight: bold;
-    color:darksalmon;
-}
-
-.payment-informations-container
 {
     font-weight: bold;
 }
@@ -1579,13 +1581,11 @@ button
     font-size: 20px;
 }
 
-.payment-card-marchant
+.payment-card-payment-method,
+.payment-card-marchant,
+.payment-card-bottom-note span
 {
-    color:#a8a8a8;
-}
-
-.payment-card-payment-method
-{
+    /* font-weight: bold; */
     color:#34495E;
 }
 
@@ -1600,6 +1600,11 @@ button
     background-position: center;
 
     border: none;
+}
+
+.payment-card-time-and-category-container p
+{
+    color:#34495E;
 }
 
 .payment-card-edit-button
@@ -2232,6 +2237,11 @@ button
     #payments-add-and-filters-container
     {
         width: 50%;
+    }
+
+    #payments-filters-container select
+    {
+        width: 20%;
     }
 
     .payments-edit-and-delete-container,
