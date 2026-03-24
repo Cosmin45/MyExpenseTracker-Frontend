@@ -519,9 +519,9 @@ button
     height: 2.5rem;
 }
 
-.requi#ff7878
+.required
 {
-    color: #ff7878;
+    color: red;
 }
 
 #cancel-or-add-container
