@@ -41,6 +41,21 @@ function updateExpenseVsIncomeChart(informations)
             {
                 padding: 10
             },
+            plugins: {
+                title: {
+                display: true,
+                text: "Expenses & Incomes by Month",
+                font: {
+                    size: 20,
+                    weight: "bold"
+                },
+                color: "#486ba3",
+                padding: {
+                    top: 10,
+                    bottom: 20
+                }
+                }
+            }
         }
     });
 }

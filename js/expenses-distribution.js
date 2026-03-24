@@ -41,11 +41,24 @@ function updateExpensesDistributionChart(informations)
             },
 
             plugins: {
+                title: {
+                display: true,
+                text: "Top 5 Expense Categories",
+                font: {
+                    size: 20,
+                    weight: "bold"
+                },
+                color: "#486ba3",
+                padding: {
+                    top: 10,
+                    bottom: 20
+                }
+                },
                 legend: {
-                    position: "bottom", // legenda în dreapta ca în imagine
+                    position: "bottom",
                     labels: {
                         font: {
-                            size: 16   // mărește textul
+                            size: 16
                         },
                         boxWidth: 16,
                         color: "black"
