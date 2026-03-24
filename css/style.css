@@ -1882,8 +1882,7 @@ button
     color: #4bb36f;
 }
 
-.progress-bar-container .progress-label,
-.progress-bar-container 
+.progress-bar-container .progress-label
 {
     text-align: center;
     font-weight: bold;
