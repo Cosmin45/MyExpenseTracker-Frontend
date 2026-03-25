@@ -58,7 +58,7 @@ button
 #login-error
 {
     display: none;
-    color: #ff7878;
+    color: red;
     text-align: center;
 }
 
