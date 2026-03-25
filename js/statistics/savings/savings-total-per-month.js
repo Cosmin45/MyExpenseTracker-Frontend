@@ -10,9 +10,14 @@ function updateSavingsPerMonthPerMonthChart(informations)
         savings.push(lastElements[i].savings);
     }
     
-    const savingsCtx = document.querySelector(
-        "#statistics-savings-total-per-month-container canvas").getContext("2d");
-    new Chart(savingsCtx, 
+    const containers = document.querySelectorAll(
+        ".savings-by-month-container canvas");
+
+    console.log(containers);
+
+    containers.forEach(container => 
+    {
+        new Chart(container, 
         {
         type: 'bar',
         data: {
@@ -32,24 +37,10 @@ function updateSavingsPerMonthPerMonthChart(informations)
             layout: 
             {
                 padding: 10
-            },
-
-            plugins: {
-                title: {
-                display: true,
-                text: "Savings by Month",
-                font: {
-                    size: 20,
-                    weight: "bold"
-                },
-                color: "#486ba3",
-                padding: {
-                    top: 10,
-                    bottom: 20
-                }
-                }
             }
         }
     });
+    });
+    
 }
 

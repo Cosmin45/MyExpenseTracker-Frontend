@@ -28,15 +28,17 @@ async function loadDashboardInfo()
 
         const informations = await response.json();
 
-        updateUsername(informations);
+        // updateUsername(informations);
 
         updateCards(informations);
 
         updateExpenseVsIncomeChart(informations);
 
-        updateRecentPaymentsAddedContainer(informations);
+        updateSavingsPerMonthPerMonthChart(informations);
 
-        updateExpensesDistributionChart(informations);
+        // updateRecentPaymentsAddedContainer(informations);
+
+        // updateExpensesDistributionChart(informations);
 
     } 
     catch (e) 
@@ -66,19 +68,19 @@ function updateUsername(informations)
 function updateCards(informations)
 {
     const monthlyAverageIncomes = informations.monthlyAverageIncomes.average;
-    const averageIncomesCard = document.querySelector("#monthly-average-incomes .card-sum")
+    const averageIncomesCard = document.querySelector("#card-one-value")
     averageIncomesCard.textContent = monthlyAverageIncomes;
 
     const monthlyAverageExpenses = informations.monthlyAverageExpenses.average;
-    const averageExpensesCard = document.querySelector("#monthly-average-expenses .card-sum")
+    const averageExpensesCard = document.querySelector("#card-second-value")
     averageExpensesCard.textContent = monthlyAverageExpenses;
 
     const savingsThisMonth = informations.savingsThisMonth.savings;
-    const savingsThisMonthCard = document.querySelector("#savings-this-month .card-sum")
+    const savingsThisMonthCard = document.querySelector("#card-third-value")
     savingsThisMonthCard.textContent = savingsThisMonth;
 
     const budgetLeftThisMonth = informations.budgetLeftThisMonth;
-    const budgetLeftCard = document.querySelector("#budget-left-this-month .card-sum")
+    const budgetLeftCard = document.querySelector("#card-forth-value")
     budgetLeftCard.textContent = budgetLeftThisMonth.budgetLeft;
 }
 

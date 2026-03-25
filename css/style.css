@@ -268,11 +268,27 @@ button
     font-size: 25px;
 }
 
+#dashboard-first-two-charts-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 #dashboard-expenses-and-incomes-by-month-container
 {
     width: 100%;
     height: 30vh;
-    border: 1px solid red;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.savings-by-month-container
+{
+    width: 100%;
+    height: 30vh;
+    background-color: white;
+    border-radius: 5px;
 }
 
 /* ==========Dashboard============ */
@@ -2208,8 +2224,29 @@ button
         gap: 10px;
     }
 
-    
+    #dashboard-cards-container
+    {
+        height: 15vh;
+    }
 
+    .card
+    {
+        width: calc(25% - 8px);
+        height: 100%;
+    }
+
+    #dashboard-expenses-and-incomes-by-month-container,
+    #dashboard-first-two-charts-container 
+    .savings-by-month-container
+    {
+        width: calc(50% - 6px);
+        height: 45vh;
+    }
+
+    #dashboard-first-two-charts-container
+    {
+        flex-direction: row;
+    }
 
     /* ==========Dashboard============ */
 /*     
