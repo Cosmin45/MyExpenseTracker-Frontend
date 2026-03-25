@@ -1,5 +1,6 @@
 function updateExpenseVsIncomeChart(informations)
 {
+    console.log("1");
     const lastElements = informations.expenseVsIncomeList.slice(-6).reverse();
     const labels = [];
     const expenses = [];
@@ -12,7 +13,7 @@ function updateExpenseVsIncomeChart(informations)
         incomes.push(lastElements[i].totalIncomesAmount);
     }
 
-    const incomeVsExpenseCtx = document.getElementById('expense-vs-income-chart');
+    const incomeVsExpenseCtx = document.querySelector("#dashboard-expenses-and-incomes-by-month-container canvas");
     new Chart(incomeVsExpenseCtx, 
         {
         type: 'bar',

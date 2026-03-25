@@ -4,6 +4,49 @@
         <title>Dashboard</title>
     </head>
     <body>
-        
+        <header class="navbar">
+            <div id="dashboard-logo-container">
+                <img src="/images/application-logo.png" alt="app-logo">
+                <p>MyExpenseTracker</p>
+            </div>
+            <div id="dashboard-app-name-container">
+                <p>MyExpenseTracker</p>
+            </div>
+            <div id="dashboard-buttons-container">
+                <button class="dashboard-type-button active">Dashboard</button>
+                <button class="dashboard-type-button">Payments</button>
+                <button class="dashboard-type-button">Statistics</button>
+                <button class="dashboard-type-button">Budget & Savings</button>
+            </div>
+            <div id="dashboard-user-profile-container">
+                <p></p>
+                <img src="/images/user.png" alt="user-img">
+            </div>
+        </header>
+        <div id="dashboard-main-container">
+            <div id="dashboard-dashboard-container">
+                <div id="dashboard-cards-container">
+                    <div id="card-first-container" class="card">
+                        <p>Monthly Income</p>
+                        <p id="card-one-value">0.0</p>
+                    </div>
+                    <div id="card-second-container" class="card">
+                        <p>Monthly Income</p>
+                        <p id="card-second-value">0.0</p>
+                    </div>
+                    <div id="card-third-container" class="card">
+                        <p>Monthly Income</p>
+                        <p id="card-third-value">0.0</p>
+                    </div>
+                    <div id="card-forth-container" class="card">
+                        <p>Monthly Income</p>
+                        <p id="card-forth-value">0.0</p>
+                    </div>
+                </div>
+                <div id="dashboard-expenses-and-incomes-by-month-container"><canvas></canvas></div>
+            </div>
+        </div>
+
+        <script src="/js/expense-vs-income-chart.js"></script>
     </body>
 </html>
