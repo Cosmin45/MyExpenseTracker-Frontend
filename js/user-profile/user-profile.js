@@ -1,6 +1,6 @@
 function backOnClick()
 {
-    window.location.href = "../dashboard.html";
+    window.location.href = "../dashboard-v2.html";
 }
 
 function goToEditPage(page)

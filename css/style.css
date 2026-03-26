@@ -169,17 +169,24 @@ button
 {
     display: flex;
     align-items: center;
-}
-
-.navbar img
-{
-    width: 40px;
-    height: 40px;
+    /* border: 1px solid red; */
+    gap: 10px;
 }
 
 #dashboard-user-profile-container
 {
     justify-content: end;
+}
+
+#dashboard-user-profile-container p
+{
+    display: none;
+}
+
+#dashboard-user-profile-container p:hover,
+#dashboard-user-profile-container img:hover
+{
+    cursor: pointer;
 }
 
 #dashboard-app-name-container
@@ -199,6 +206,12 @@ button
 #dashboard-logo-container p
 {
     display: none;
+}
+
+.navbar img
+{
+    width: 40px;
+    height: 40px;
 }
 
 /* Cards */
@@ -2188,6 +2201,11 @@ button
         width: 20%;
         height: 100%;
         /* border: 1px solid red; */
+    }
+
+    #dashboard-user-profile-container p
+    {
+        display: block;
     }
 
     #dashboard-buttons-container

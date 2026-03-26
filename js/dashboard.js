@@ -1,3 +1,9 @@
+const usernameElement = document.querySelector("#dashboard-user-profile-container p");
+const imageElement = document.querySelector("#dashboard-user-profile-container img");
+
+usernameElement.addEventListener("click", userProfileOnClick);
+imageElement.addEventListener("click", userProfileOnClick);
+
 async function loadDashboardInfo() 
 {
     const token = localStorage.getItem("jwt");
@@ -28,7 +34,7 @@ async function loadDashboardInfo()
 
         const informations = await response.json();
 
-        // updateUsername(informations);
+        updateUsername(informations);
 
         updateCards(informations);
 
@@ -53,7 +59,7 @@ function updateUsername(informations)
     const userString = informations.username;
     const userArray = userString.split("");
 
-    const userName = document.querySelector("#user-profile-button");
+    const userName = document.querySelector("#dashboard-user-profile-container p");
 
     if(userArray.length > 15)
     {
