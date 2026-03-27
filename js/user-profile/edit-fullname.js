@@ -113,6 +113,9 @@ async function saveChangesOnClick()
         const success = document.querySelector("#edit-fullname-message-ok");
         success.textContent = "Your fullname has been changed successfully.";
         success.style.display = "block";
+
+        const currentFullname = document.querySelector("#edit-fullname-current-fullname");
+        currentFullname.value = newfullname;
     }
     catch(Error)
     {

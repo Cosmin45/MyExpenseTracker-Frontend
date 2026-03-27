@@ -113,6 +113,9 @@ async function saveChangesOnClick()
         const success = document.querySelector("#edit-username-message-ok");
         success.textContent = "Your username has been changed successfully.";
         success.style.display = "block";
+
+        const currentUsername = document.querySelector("#edit-username-current-username");
+        currentUsername.value = newusername;
     }
     catch(Error)
     {
