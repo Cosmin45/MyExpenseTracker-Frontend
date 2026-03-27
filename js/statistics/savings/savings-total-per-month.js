@@ -13,11 +13,13 @@ function updateSavingsPerMonthPerMonthChart(informations)
     const containers = document.querySelectorAll(
         ".savings-by-month-container canvas");
 
-    console.log(containers);
-
     containers.forEach(container => 
     {
-        new Chart(container, 
+        if (container.chart) {
+        container.chart.destroy();
+        }
+
+        container.chart =new Chart(container, 
         {
         type: 'bar',
         data: {

@@ -221,7 +221,7 @@ button
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 #dashboard-dashboard-container
@@ -302,6 +302,16 @@ button
     height: 30vh;
     background-color: white;
     border-radius: 5px;
+}
+
+#dashboard-main-container .main-container
+{
+    display: none;
+}
+
+#dashboard-main-container .main-container.active
+{
+    display: flex;
 }
 
 /* ==========Dashboard============ */
@@ -1131,7 +1141,9 @@ button
 }
 
 /* ==========Edit Fullname============ */
-#edit-fullname-window-container
+#edit-fullname-window-container,
+#change-budget-window-container,
+#change-savings-goal-window-container
 {
     display: flex;
     align-items: center;
@@ -1140,7 +1152,9 @@ button
     height: 100%;
 }
 
-#edit-fullname-main-container
+#edit-fullname-main-container,
+#change-budget-main-container,
+#change-savings-goal-main-container
 {
     display: flex;
     flex-direction: column;
@@ -1154,14 +1168,22 @@ button
 
 #edit-fullname-top-container,
 #edit-fullname-middle-container,
-#edit-fullname-bottom-container
+#edit-fullname-bottom-container,
+#change-budget-top-container,
+#change-budget-middle-container,
+#change-budget-bottom-container,
+#change-savings-goal-top-container,
+#change-savings-goal-middle-container,
+#change-savings-goal-bottom-container
 {
     display: flex;
     /* border: 1px solid #ff7878; */
     width: 95%;
 }
 
-#edit-fullname-top-container
+#edit-fullname-top-container,
+#change-budget-top-container,
+#change-savings-goal-top-container
 {
     align-items: center;
     justify-content: center;
@@ -1169,14 +1191,18 @@ button
     border-bottom: 1px solid #d4d3d3;
 }
 
-#edit-fullname-middle-container
+#edit-fullname-middle-container,
+#change-budget-middle-container,
+#change-savings-goal-middle-container
 {
     flex-direction: column;
     gap: 15px;
     height: 20%;
 }
 
-#edit-fullname-middle-container div
+#edit-fullname-middle-container div,
+#change-budget-middle-container div,
+#change-savings-goal-middle-container div
 {
     display: flex;
     flex-direction: column;
@@ -1184,7 +1210,9 @@ button
     height: 100%;
 }
 
-#edit-fullname-middle-container input
+#edit-fullname-middle-container input,
+#change-budget-middle-container input,
+#change-savings-goal-middle-container input
 {
     height: 100%;
     border-radius: 10px;
@@ -1194,7 +1222,9 @@ button
     font-size: 16px;
 }
 
-#edit-fullname-bottom-container
+#edit-fullname-bottom-container,
+#change-budget-bottom-container,
+#change-savings-goal-bottom-container
 {
     justify-content: center;
     align-items: center;
@@ -1203,18 +1233,24 @@ button
     border-top: 1px solid #d4d3d3;
 }
 
-#edit-fullname-top-container label
+#edit-fullname-top-container label,
+#change-budget-top-container label,
+#change-savings-goal-top-container label
 {
     font-size: 2rem;
 }
 
-#edit-fullname-middle-container label
+#edit-fullname-middle-container label,
+#change-budget-middle-container label,
+#change-savings-goal-middle-container label
 {
     font-weight: bold;
     color: #2C3E50;
 }
 
-#edit-fullname-bottom-container button
+#edit-fullname-bottom-container button,
+#change-budget-bottom-container button,
+#change-savings-goal-bottom-container button
 {
     height: 60%;
     width: 33%;
@@ -1222,16 +1258,22 @@ button
     border-radius: 10px;
 }
 
-#fullname-edit-save-button
+#fullname-edit-save-button,
+#change-budget-save-button,
+#change-savings-goal-save-button
 {
     background-color: orange;
 }
-#fullname-edit-save-button:hover
+#fullname-edit-save-button:hover,
+#change-budget-save-button:hover,
+#change-savings-goal-save-button:hover
 {
     background-color: #ffda96;
 }
 
-#edit-fullname-message-container
+#edit-fullname-message-container,
+#change-budget-message-container,
+#change-savings-goal-message-container
 {
     display: flex;
     flex-direction: column;
@@ -1242,7 +1284,9 @@ button
     height: 5%;
 } 
 
-#edit-fullname-message-nok
+#edit-fullname-message-nok,
+#change-budget-message-nok,
+#change-savings-goal-message-nok
 {
     color: red;
     width: 100%;
@@ -1252,7 +1296,9 @@ button
     /* border: 1px solid black; */
 }
 
-#edit-fullname-message-ok
+#edit-fullname-message-ok,
+#change-budget-message-ok,
+#change-savings-goal-message-ok
 {
     color: #4bb36f;
     width: 100%;
@@ -1602,7 +1648,8 @@ button
     display:flex;
     flex-direction:column;
     background:#F5F7FA;
-    padding:15px;
+    padding:5px;
+    padding-top:0px;
     min-height:100vh;
     min-width: 630px;
 }
@@ -1694,7 +1741,7 @@ button
     padding-left: 15px;
     color: #486ba3;
     font-weight: bold;
-    background-color: #f0f0f0;
+    background-color: #e7e9eb;
 }
 
 /* #payments-sort-by-select
@@ -2148,6 +2195,125 @@ button
     display: flex;
 }
 
+
+/*  Budget and Savings  */
+#budget-and-savings-main-container
+{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: start;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+.budget-and-savings-secondary-container
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 32vh;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+    border: 1px solid rgb(221, 221, 221);
+}
+
+#budget-settings-top-container,
+#savings-settings-top-container
+{
+    height: 80%;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* padding-bottom: 20px; */
+}
+
+.budget-and-savings-secondary-container > p:first-of-type
+{
+    font-size: 20px;
+}
+
+#budget-left-bar-container,
+#saving-progress-bar-container
+{
+    display: flex;
+    height: 10%;
+    /* border: 1px solid red; */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#budget-left-fill,
+#saved-fill
+{
+    width: 0%;
+    height: 100%;
+    background-color:#4bb36f;
+}
+
+#saving-left-fill,
+#budget-spent-fill
+{
+    width: 0%;
+    height: 100%;
+    background-color:#ff7878;
+}
+
+#budget-remaining,
+#saved-value
+{
+    color: #4bb36f;
+}
+#saving-remaining,
+#budget-spent
+{
+    color:#ff7878;
+}
+
+.budget-and-savings-secondary-container p
+{
+    font-size: 20px;
+}
+
+.budget-and-savings-secondary-container span
+{
+    font-size: 22px;
+}
+
+.change-settings-bottom-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border-top: 1px solid rgb(221, 221, 221); */
+    height: 20%;
+    background-color: #ecf3fd;
+}
+
+.change-settings-bottom-container button
+{
+    width: 50%;
+    height: 70%;
+    background-color: #486ba3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.change-settings-bottom-container button:hover
+{
+    background-color: #6a92d1;
+}
+
+#budget-settings-title,
+#savings-settings-title
+{
+    font-weight: bold;
+}
+
+
 @media (min-width: 900px)
 {
     #add-payment-container  
@@ -2206,6 +2372,7 @@ button
     #dashboard-user-profile-container p
     {
         display: block;
+        font-size: 20px;
     }
 
     #dashboard-buttons-container
@@ -2500,7 +2667,9 @@ button
     #edit-fullname-main-container,
     #edit-username-main-container,
     #edit-password-main-container,
-    #delete-account-main-container
+    #delete-account-main-container,
+    #change-budget-main-container,
+    #change-savings-goal-main-container
     {
         width: 40%;
         height: 100%;
@@ -2574,5 +2743,18 @@ button
         height: 40vh;
     }
 
+    #budget-and-savings-main-container
+    {
+        align-items: center;
+        width: 100%;
+        /* border: 1px solid red; */
+        padding: 0;
+    }
+
+    .budget-and-savings-secondary-container
+    {
+        width: 50%;
+        height: 33%;
+    }
 
 }

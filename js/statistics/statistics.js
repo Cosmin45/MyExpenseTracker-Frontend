@@ -60,7 +60,7 @@ async function loadStatisticsInfo()
 
         // Cashflow
 
-        updateExpenseVsIncomeChart(informations);
+        updateExpenseVsIncomeChart2(informations);
 
         updateExpenseVsBudgetChart(informations);
 

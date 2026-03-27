@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/style.css">
+        <title>Change Savings Goal</title>
+    </head>
+    <body>
+        <div id="change-savings-goal-window-container">
+            <div id="change-savings-goal-main-container">
+                <div id="change-savings-goal-top-container">
+                    <label>Change Savings Goal</label>
+                </div>
+                <div id="change-savings-goal-middle-container">
+                    <div>
+                        <label>Current Savings Goal</label>
+                        <input type="text" id="change-savings-goal-current-savings-goal" disabled>
+                    </div>
+                    <div>
+                        <label>New Savings Goal</label>
+                        <input type="text" id="change-savings-goal-new-savings-goal">
+                    </div>
+                </div>
+                <div id="change-savings-goal-bottom-container">
+                    <button onclick="backOnClick()" id="change-savings-goal-cancel-button">Back</button>
+                    <button onclick="saveChangesOnClick()" id="change-savings-goal-save-button">Save</button>
+                </div>
+                <div id="change-savings-goal-message-container">
+                    <p id="change-savings-goal-message-nok" class="message">
+                        Please complete required field.
+                    </p>
+                    <p id="change-savings-goal-message-ok" class="message">
+                        Your Budget has been changed successfully.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script src="/js/budget-and-savings/change-savings-goal.js"></script>
+    </body>
+</html>

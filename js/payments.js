@@ -42,7 +42,6 @@ async function loadAllPayments()
         }
 
         const informations = await response.json();
-        console.log(informations);
 
         const informationsExpensesList = informations.expensesList;
         const container = document.getElementById("payments-container");
@@ -179,7 +178,7 @@ async function applyFilters()
     if(type !== "All") params.append("type", type);
     if(category !== "All") params.append("category", category);
     if(time !== "All") params.append("time", time);
-    if(sortBy !== "sort-by") params.append("sortBy", sortBy);
+    if(sortBy !== "date-desc") params.append("sortBy", sortBy);
 
     try 
     {

@@ -13,38 +13,39 @@
                 <p>MyExpenseTracker</p>
             </div>
             <div id="dashboard-buttons-container">
-                <button class="dashboard-type-button active">Dashboard</button>
-                <button class="dashboard-type-button">Payments</button>
-                <button class="dashboard-type-button">Statistics</button>
-                <button class="dashboard-type-button">Budget & Savings</button>
+                <button id="dashboard-button" class="dashboard-type-button active">Dashboard</button>
+                <button id="payments-button" class="dashboard-type-button">Payments</button>
+                <button id="statistics-button" class="dashboard-type-button">Statistics</button>
+                <button id="budget-and-savings-button" class="dashboard-type-button">Budget & Savings</button>
             </div>
             <div id="dashboard-user-profile-container">
                 <p></p>
                 <img src="/images/user.png" alt="user-img">
             </div>
         </header>
+
         <div id="dashboard-main-container">
-            <div id="dashboard-dashboard-container">
+            <div id="dashboard-dashboard-container" class="main-container">
                 <div id="dashboard-cards-container">
                     <div id="card-first-container" class="card">
-                        <p>Monthly Income</p>
+                        <p>Monthly average incomes</p>
                         <p id="card-one-value">0.0</p>
                     </div>
                     <div id="card-second-container" class="card">
-                        <p>Monthly Income</p>
+                        <p>Monthly average expenses</p>
                         <p id="card-second-value">0.0</p>
                     </div>
                     <div id="card-third-container" class="card">
-                        <p>Monthly Income</p>
+                        <p>Savings this month</p>
                         <p id="card-third-value">0.0</p>
                     </div>
                     <div id="card-forth-container" class="card">
-                        <p>Monthly Income</p>
+                        <p>Budget left this month</p>
                         <p id="card-forth-value">0.0</p>
                     </div>
                 </div>
                 <div id="dashboard-first-two-charts-container">
-                    <div id="dashboard-expenses-and-incomes-by-month-container">
+                    <div id="dashboard-expenses-and-incomes-by-month-container" class="expenses-and-incomes-by-month-container">
                         <canvas></canvas>
                     </div>
                     <div class="savings-by-month-container">
@@ -52,12 +53,317 @@
                     </div>
                 </div>
             </div>
-            
+            <div id="payments-main-container" class="main-container">
+                <div id="payments-add-and-filters-container">
+                    <button onclick="addPaymentOnClick()" id="payments-add-payment-button"></button>
+                    <div id="payments-filters-container">
+                        <select name="" id="payment-type-select">
+                            <option value="All">All Types</option>
+                            <option value="EXPENSE">Expense</option>
+                            <option value="INCOME">Income</option>
+                        </select>
+                        <select name="" id="payment-category-select" onchange="">
+                            <option value="All">All Categories</option>
+                            <option value="FOOD">Food</option>
+                            <option value="TRANSPORT">Transport</option>
+                            <option value="ENTERTAINMENT">Entertainment</option>
+                            <option value="BILLS">Bills</option>
+                            <option value="HEALTH">Health</option>
+                            <option value="SHOPPING">Shopping</option>
+                            <option value="SALARY">Salary</option>
+                            <option value="FREELANCE">Freelance</option>
+                            <option value="GROCERIES">Groceries</option>
+                            <option value="UTILITIES">Utilities</option>
+                            <option value="DINING_OUT">Dining Out</option>
+                            <option value="CLOTHING">Clothing</option>
+                            <option value="TRANSFER">Transfer</option>
+                            <option value="OTHER">Other</option>
+                        </select>
+                        <select name="" id="payment-time-select">
+                            <option value="All">All Time</option>
+                            <option value="this-year">This year</option>
+                            <option value="last-6-months">Last 6 months</option>
+                            <option value="this-month">This Month</option>
+                            <option value="last-7-days">Last 7 days</option>
+                        </select>
+                        <select id="payments-sort-by-select">
+                            <option value="date-desc" selected>Date DESC</option>
+                            <option value="date-asc">Date ASC</option>
+                            <option value="value-desc">Value DESC</option>
+                            <option value="value-asc">Value ASC</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="payments-container">
+                    <div class="payment-card-container">
+                        <div class="payments-edit-and-delete-container">
+                            <button class="payment-card-edit-button"></button>
+                            <button class="payment-card-delete-button"></button>
+                        </div>
+                        <div class="payment-informations-container">
+                            <!-- <div class="payment-card-top-section-container">
+                                <div class="payment-card-time-and-category-container">
+                                    <p class="payment-card-time">${payment.date}</p>
+                                    <p class="payment-card-category">${payment.category}</p>
+                                </div>
+
+                                <p class="payment-card-value">${payment.amount}</p>
+                            </div>
+
+                            <div class="payment-card-middle-section-container">
+                                <p class="payment-card-marchant">${payment.merchant}</p>
+                                <p class="payment-card-payment-method">${payment.paymentMethod}</p>
+                            </div>
+
+                            <p class="payment-card-bottom-note">
+                                <span>Note: </span>
+                                ${payment.note}
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="statistics-main-container" class="main-container">
+                <div id="statistics-buttons-container">
+                    <button id="statistics-expenses-button" class="type-button active">Expenses</button>
+                    <button id="statistics-incomes-button" class="type-button">Incomes</button>
+                    <button id="statistics-cashflow-button" class="type-button">Cashflow</button>
+                    <button id="statistics-budget-button" class="type-button">Budget</button>
+                    <button id="statistics-savings-button" class="type-button">Savings</button>
+                </div>
+
+                <div id="statistics-expenses-main-container" class="informations-container">
+                    
+                    <div id="statistics-expenses-total-per-month-container"><canvas></canvas></div>
+                    
+                    <div id="statistics-expenses-ring-charts-container">
+                        <div id="statistics-expenses-top-spending-categories-container"><canvas></canvas></div>
+                        
+                        <div id="statistics-expenses-by-payment-method-container"><canvas></canvas></div>
+                        
+                        <div id="statistics-expenses-average-by-category-container"><canvas></canvas></div>
+                        
+                        <div id="statistics-expenses-by-merchant-container"><canvas></canvas></div>
+                    </div>
+
+                    <div id="statistics-expenses-top-highest-expenses-container" class="normal-container">
+                        <h3>Top Highest Expenses</h3>
+                        <div class="all-columns-container">
+                            <div class="date-container">
+                                <p style="font-weight: bold;">Date</p>
+                            </div>
+                            <div class="category-container">
+                                <p style="font-weight: bold;">Category</p>
+                            </div>
+                            <div class="value-container">
+                                <p style="font-weight: bold;">Value</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="statistics-expenses-recurring-payments-container" class="normal-container">
+                        <h3>Recurring Payments</h3>
+                        <div class="all-columns-container">
+                            <div class="merchant-container">
+                                <p style="font-weight: bold;">Merchant</p>
+                            </div>
+                            <div class="category-container">
+                                <p style="font-weight: bold;">Category</p>
+                            </div>
+                            <div class="months-count-container">
+                                <p style="font-weight: bold;">Month count</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="statistics-expenses-month-comparison-container" class="mini-container">
+                        <h3>Month comparison</h3>
+                        <p>
+                            This month expenses are <span class="value"></span><span class="text"></span>
+                        </p>
+                    </div>
+                    
+                    <div id="statistics-expenses-highest-expense-date-container" class="mini-container">
+                        <h3>Highest Expense Date</h3>
+                        <div>
+                            <p id="date">----/--/--</p>
+                            <p id="value">-</p>
+                        </div>
+                    </div>
+                    
+                    <div id="statistics-expenses-forecast-next-month-container" class="mini-container">
+                        <h3>Forecast Next Month</h3>
+                        <p>
+                            Based on your past information, your next month expenses will be <span style="font-weight: bold;">-</span>
+                        </p>
+                    </div>
+                    
+                    <div id="statistics-expenses-total-container" class="mini-container">
+                        <h3>Total Expenses</h3>
+                        <p>Your total expenses is <span>-</span></p>
+                    </div>
+                    
+                    <div id="statistics-expenses-average-container" class="mini-container">
+                        <h3>Average Expenses</h3>
+                        <p>Your average expenses is <span style="font-weight: bold;">-</span></p>
+                    </div>
+                    
+                </div>
+
+                <div id="statistics-incomes-main-container" class="informations-container">
+                    <!-- Rectangular Chart -->
+                    <div id="statistics-incomes-total-per-month-container"><canvas></canvas></div>
+                    <!-- Rectangular Chart -->
+                    <div id="statistics-incomes-average-per-month-container"><canvas></canvas></div>
+                    <!-- Mini Container -->
+                    <div id="statistics-incomes-forecast-next-month-container" class="mini-container">
+                        <h3>Forecast Next Month</h3>
+                        <p>
+                            Based on your past information, your next month income will be <span>-</span>
+                        </p>
+                    </div>
+                    <!-- Mini Container -->
+                    <div id="statistics-incomes-month-comparison-container" class="mini-container">
+                        <h3>Month comparison</h3>
+                        <p>
+                            This month incomes are <span class="value"></span><span class="text"></span>
+                        </p>
+                    </div>
+                    <!-- Mini Container -->
+                    <div id="statistics-incomes-total-container" class="mini-container">
+                        <h3>Total Incomes</h3>
+                        <p>Your total incomes is <span>-</span></p>
+                    </div>
+                    <!-- Mini Container -->
+                    <div id="statistics-incomes-average-container" class="mini-container">
+                        <h3>Average Incomes</h3>
+                        <p>Your average incomes is <span>-</span></p>
+                    </div>
+                    <!-- Mini Container -->
+                    <div id="statistics-incomes-highest-income-date-container" class="mini-container">
+                        <h3>Highest Income Date</h3>
+                        <div>
+                            <p id="date">----/--/--</p>
+                            <p id="value">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="statistics-cashflow-main-container" class="informations-container">
+                    <div id="statistics-cashflow-expenses-vs-incomes-container"><canvas></canvas></div>
+                    <div id="statistics-cashflow-expenses-vs-budget-container"><canvas></canvas></div>
+                    <div id="statistics-cashflow-exp-vs-inc-vs-bud-vs-sav-container"><canvas></canvas></div>
+                </div>
+
+                <div id="statistics-budget-main-container" class="informations-container">
+                    <div id="statistics-budget-left-per-month-container"><canvas></canvas></div>
+                    <div class="progress-bar-container">
+                        <div class="labels-container">
+                            <h3 id="expenses-label">Expenses</h3>
+                            <p class="progress-label">
+                                <span id="expenses-value"></span>
+                                /
+                                <span id="budget-value"></span>
+                            </p>
+                            <h3 id="budget-label">Budget</h3>
+                        </div>
+                        <div class="bar-container">
+                            <div id="expenses"></div>
+                            <div id="budget-left"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="statistics-savings-main-container" class="informations-container">
+                    <div class="savings-by-month-container"><canvas></canvas></div>
+                    
+                    <div class="progress-bar-container">
+                        <div class="labels-container">
+                            <h3 id="savings-label">Savings</h3>
+                            <p class="progress-label">
+                                <span id="savings-value"></span>
+                                /
+                                <span id="goal-value"></span>
+                            </p>
+                            <h3 id="goal-label">Goal</h3>
+                        </div>
+                        <div class="bar-container">
+                            <div id="savings-progress"></div>
+                            <div id="savings-goal"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="budget-and-savings-main-container" class="main-container">
+                <div id="budget-settings-container" class="budget-and-savings-secondary-container">
+                    <div id="budget-settings-top-container">
+                        <p id="budget-settings-title">Current Budget</p>
+                        <p>Budget limit: <span id="budget-limit">---</span></p>
+                        <div id="budget-left-bar-container">
+                            <div id="budget-spent-fill"></div>
+                            <div id="budget-left-fill"></div>
+                        </div>
+                        <div>
+                            <p>Spent: <span id="budget-spent">---</span></p>
+                        </div>
+                        <p>Remaining: <span id="budget-remaining">---</span></p>
+                    </div>
+                    <div class="change-settings-bottom-container">
+                        <button onclick="changeBudgetOnClick()">Change Budget</button>
+                    </div>
+                </div>
+                <div id="savings-settings-container" class="budget-and-savings-secondary-container">
+                    <div id="savings-settings-top-container">
+                        <p id="savings-settings-title">Saving Goal</p>
+                        <p>Target Saving: <span id="saving-target">---</span></p>
+                        <div id="saving-progress-bar-container">
+                            <div id="saved-fill"></div>
+                            <div id="saving-left-fill"></div>
+                        </div>
+                        <div>
+                            <p>Saved: <span id="saved-value">---</span></p>
+                        </div>
+                        <p>Remaining: <span id="saving-remaining">---</span></p>
+                    </div>
+                    <div class="change-settings-bottom-container">
+                        <button onclick="changeSavingsGoalOnClick()">Change Goal</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="/js/dashboard.js"></script>
         <script src="/js/expense-vs-income-chart.js"></script>
+        
+        <script src="/js/payments.js"></script>
+
+        <!-- Expenses -->
+        <script src="/js//statistics/statistics.js"></script>
+        <script src="/js/statistics/expenses/expenses-total-per-month.js"></script>
+        <script src="/js/statistics/expenses/top-spending-categories.js"></script>
+        <script src="/js/statistics/expenses/expenses-by-payment-method.js"></script>
+        <script src="/js/statistics/expenses/expenses-average-per-category.js"></script>
+        <script src="/js/statistics/expenses/expenses-by-merchant.js"></script>
+        <script src="/js/statistics/expenses/expenses-mini-containers.js"></script>
+        <script src="/js/statistics/expenses/normal-containers.js"></script>
+        <!-- Incomes -->
+        <script src="/js/statistics/incomes/incomes-total-per-month.js"></script>
+        <script src="/js/statistics/incomes/incomes-average-per-month.js"></script>
+        <script src="/js/statistics/incomes/incomes-mini-containers.js"></script>
+        <!-- Cashflow -->
+        <script src="/js/statistics/cashflow/cashflow-expenses-vs-incomes.js"></script>
+        <script src="/js/statistics/cashflow/cashflow-expenses-vs-budget.js"></script>
+        <script src="/js/statistics/cashflow/exp-vs-inc-vs-bud-vs-sav.js"></script>
+        <!-- Savings -->
         <script src="/js/statistics/savings/savings-total-per-month.js"></script>
+        <script src="/js/statistics/savings/savings-progress-bar.js"></script>
+        <!-- Budget -->
+        <script src="/js/statistics/budget/budget-left-per-month.js"></script>
+        <script src="/js/statistics/budget/budget-left-progress-bar.js"></script>
+
+        <script src="/js/budget-and-savings/budget-and-savings.js"></script>
+        <script src="/js/budget-and-savings/budget-container.js"></script>
+        <script src="/js/budget-and-savings/savings-container.js"></script>
     </body>
 </html>

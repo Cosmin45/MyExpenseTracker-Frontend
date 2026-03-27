@@ -1,4 +1,4 @@
-function updateExpenseVsIncomeChart(informations)
+function updateExpenseVsIncomeChart2(informations)
 {
     const lastElements = informations.expenseVsIncome.slice(-6).reverse();
     const labels = [];

@@ -57,7 +57,7 @@ async function loginOnClick()
 
         localStorage.setItem("jwt", data.token);
 
-        window.location.href = "./pages/dashboard.html";
+        window.location.href = "./pages/dashboard-v2.html";
     }
     catch(Error)
     {
