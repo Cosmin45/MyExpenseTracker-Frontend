@@ -51,6 +51,18 @@
                     <button onclick="goToEditPage('password')">Edit</button>
                 </div>
             </div>
+
+            <div id="user-profile-mfa-container" class="user-information">
+                <div class="logo-and-info">
+                    <img src="/images/user-profile-images/mfa-2.png" alt="mfa-logo">
+                    <label>Multi-Factor Authentication</label>
+                </div>
+                <div id="mfa-on-off-buttons-container">
+                    <button id="mfa-on-button" class="type-button">On</button>
+                    <button id="mfa-off-button" class="type-button">Off</button>
+                </div>
+            </div>
+
             <div id="delete-account-container">
                     <button onclick="deleteAccountOnClick()" id="delete-account-button"> Delete Account</button>
                     <p id="delete-account-warning">Permanently delete your account and all data.</p>
@@ -58,5 +70,6 @@
         </div>
 
         <script src="/js/user-profile/user-profile.js"></script>
+        <script src="/js/user-profile/mfa-on-off.js"></script>
     </body>
 </html>

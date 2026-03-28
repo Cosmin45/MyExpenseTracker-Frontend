@@ -871,7 +871,7 @@ button
     justify-content: center;
     gap: 10px;
     height: 40%;
-    width: 100%;
+    width: 95%;
 }
 
 .user-information
@@ -882,8 +882,7 @@ button
     border-radius: 5px;
     background-color: white;
     height: 100%;
-    margin-left: 30px;
-    margin-right: 30px;
+    box-sizing: border-box;
 }
 
 .user-information .logo-and-info
@@ -910,7 +909,7 @@ button
     font-weight: bold;
 }
 
-.user-information button
+#user-informations-container .user-information button
 {
     margin-left: auto;
     width: 15%;
@@ -920,6 +919,51 @@ button
     border-radius: 5px;
     font-weight: bold;
 }
+
+#user-profile-mfa-container
+{
+    background-color: white;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+
+    height: calc(10% - 8px);
+    width: 95%;
+}
+
+#mfa-on-off-buttons-container
+{
+    display: flex;
+    align-items: center;
+    width: 20%;
+    height: 50%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#mfa-on-off-buttons-container button
+{
+    width: 50%;
+    height: 100%;
+    border-radius: 0px;
+    border: none;
+    font-weight: bold;
+}
+
+/* #mfa-on-off-buttons-container #mfa-on-button
+{
+    background-color: #4bb36f;
+    color: white;
+}
+
+#mfa-on-off-buttons-container #mfa-off-button
+{
+    background-color: #ff4c4c;
+    color: white;
+} */
 
 #delete-account-container
 {
@@ -969,6 +1013,7 @@ button
 {
     color: #4bb36f;
     font-size: 24px;
+    color: #2C3E50;
 }
 
 #verify-email-message-ok
@@ -2656,7 +2701,13 @@ button
         gap: 84px;
     }
 
-    #delete-account-container
+    #mfa-on-off-buttons-container
+    {
+        width: 15%;
+    }
+
+    #delete-account-container,
+    #user-profile-mfa-container
     {
         width: 50%;
     }

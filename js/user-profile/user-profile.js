@@ -40,14 +40,25 @@ async function loadUserInfo()
         const email = user.email;
         const fullname = user.fullname;
         const username = user.username;
+        const requiresMFA = user.requiresMFA;
 
         const emailObject = document.querySelector("#user-email-container p");
         const fullnameObject = document.querySelector("#user-fullname-container p");
         const usernameObject = document.querySelector("#user-username-container p");
+        const mfaOnButton = document.querySelector("#mfa-on-button");
+        const mfaOffButton = document.querySelector("#mfa-off-button");
 
         emailObject.textContent = email;
         fullnameObject.textContent = fullname;
         usernameObject.textContent = username;
+        if(requiresMFA)
+        {
+            mfaOnButton.classList.add("active");
+        }
+        else
+        {
+            mfaOffButton.classList.add("active");
+        }
     } 
     catch (e) 
     {
