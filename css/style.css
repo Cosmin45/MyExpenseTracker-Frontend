@@ -953,17 +953,14 @@ button
     font-weight: bold;
 }
 
-/* #mfa-on-off-buttons-container #mfa-on-button
+#mfa-on-off-buttons-container .type-button
 {
-    background-color: #4bb36f;
+    color: #486ba3;
+}
+#mfa-on-off-buttons-container .type-button.active
+{
     color: white;
 }
-
-#mfa-on-off-buttons-container #mfa-off-button
-{
-    background-color: #ff4c4c;
-    color: white;
-} */
 
 #delete-account-container
 {
