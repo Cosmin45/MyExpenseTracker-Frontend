@@ -113,7 +113,7 @@ async function editPaymentOnClick()
 
 function cancelNewPayment()
 {
-    window.location.href = "/pages/payments.html";
+    window.location.href = "/pages/dashboard-v2.html";
 }
 
 async function loadPaymentProperties()

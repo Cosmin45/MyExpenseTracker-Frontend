@@ -102,16 +102,20 @@ async function loadUserInfo()
         const fullname = user.fullname;
         const username = user.username;
         const requiresMFA = user.requiresMFA;
+        const allowsAlerts = user.allowsAlerts;
 
         const emailObject = document.querySelector("#user-email-container p");
         const fullnameObject = document.querySelector("#user-fullname-container p");
         const usernameObject = document.querySelector("#user-username-container p");
         const mfaOnButton = document.querySelector("#mfa-on-button");
         const mfaOffButton = document.querySelector("#mfa-off-button");
+        const alertOnButton = document.querySelector("#alert-on-button");
+        const alertOffButton = document.querySelector("#alert-off-button");
 
         emailObject.textContent = email;
         fullnameObject.textContent = fullname;
         usernameObject.textContent = username;
+        
         if(requiresMFA)
         {
             mfaOnButton.classList.add("active");
@@ -119,6 +123,15 @@ async function loadUserInfo()
         else
         {
             mfaOffButton.classList.add("active");
+        }
+
+        if(allowsAlerts)
+        {
+            alertOnButton.classList.add("active");
+        }
+        else
+        {
+            alertOffButton.classList.add("active");
         }
     } 
     catch (e) 

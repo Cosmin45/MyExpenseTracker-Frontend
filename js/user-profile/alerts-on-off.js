@@ -1,30 +1,30 @@
-const mfaButtons = document.querySelectorAll("#mfa-on-off-buttons-container .type-button");
-const currentActiveButton = document.querySelector("#mfa-on-off-buttons-container .type-button.active");
-mfaButtons.forEach(button => {
+const alertButtons = document.querySelectorAll("#alert-on-off-buttons-container .type-button");
+const currentActiveAlertsButton = document.querySelector("#alert-on-off-buttons-container .type-button.active");
+alertButtons.forEach(button => {
     button.addEventListener("click", () => {
         if(button.classList.contains("active"))
         {
             return;
         }
 
-        mfaButtons.forEach(b => b.classList.remove("active"));
+        alertButtons.forEach(b => b.classList.remove("active"));
         button.classList.add("active");
 
-        showIfRequiresMfa();
+        showIfAllowsAlerts();
     });
 });
 
 
-function showIfRequiresMfa()
+function showIfAllowsAlerts()
 {
-    const button = document.querySelector("#mfa-on-off-buttons-container .type-button.active");
-    if(button.id.includes("mfa-on"))
+    const button = document.querySelector("#alert-on-off-buttons-container .type-button.active");
+    if(button.id.includes("alert-on"))
     {
-        changeMfaTo("enable");
+        changeAlertsTo("enable");
     }
-    else if(button.id.includes("mfa-off"))
+    else if(button.id.includes("alert-off"))
     {
-        changeMfaTo("disable");
+        changeAlertsTo("disable");
     }
     else
     {
@@ -42,7 +42,7 @@ function getAuthHeader()
     };
 }
 
-async function changeMfaTo(command)
+async function changeAlertsTo(command)
 {
     try
     {
@@ -54,7 +54,7 @@ async function changeMfaTo(command)
             return;
         }
 
-        const response = await fetch("http://localhost:8080/mfa/" + command,
+        const response = await fetch("http://localhost:8080/alerts/" + command,
             {
                 method: "PUT",
                 headers: getAuthHeader()
@@ -62,8 +62,8 @@ async function changeMfaTo(command)
 
         if(!response.ok)
         {
-            mfaButtons.forEach(button => button.classList.remove("active"));
-            currentActiveButton.classList.add("active")
+            alertButtons.forEach(button => button.classList.remove("active"));
+            currentActiveAlertsButton.classList.add("active")
             return;
         }
     }
