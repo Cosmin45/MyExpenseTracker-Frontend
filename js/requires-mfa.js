@@ -50,7 +50,7 @@ async function mfaOnClick()
         const data = await response.json();
         localStorage.setItem("jwt", data.token);
 
-        window.location.href = "dashboard.html"
+        window.location.href = "/pages/dashboard-v2.html"
     }
     catch(Error)
     {

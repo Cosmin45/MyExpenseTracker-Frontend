@@ -797,30 +797,16 @@ button
 
 #top-bar-container
 {
+    justify-content: space-between;
     width: 100%;
-    position: relative;
     height: 6%;
     /* padding-left: 50px; */
     background-color: #486ba3;
+    color: white;
 }
 
-#top-bar-container button
+#top-bar-container > p
 {
-    width: 80%;
-    height: 80%;
-    color: white;
-    background-color: transparent;
-    border: none;
-    font-size: 20px;
-    text-align: left;
-}
-
-#top-bar-container p
-{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
     font-size: 26px;
 }
 
@@ -833,10 +819,28 @@ button
 #top-bar-container div
 {
     display: flex;
-    width: 25%;
-    height: 80%;
+    width: 18%;
+    height: 100%;
     align-items: center;
-    margin-left: 30px;
+    font-size: 20px;
+}
+
+#top-bar-container div:hover
+{
+    cursor: pointer;
+}
+
+#top-bar-container #top-bar-left-container
+{
+    padding-left: 10px;
+    gap: 5px;
+}
+
+#top-bar-container #top-bar-right-container
+{
+    justify-content: end;
+    padding-right: 10px;
+    gap: 10px;
 }
 
 #image-container
@@ -909,7 +913,8 @@ button
     font-weight: bold;
 }
 
-#user-informations-container .user-information button
+#user-informations-container .user-information button,
+#log-out-all-button
 {
     margin-left: auto;
     width: 15%;
@@ -920,18 +925,26 @@ button
     font-weight: bold;
 }
 
-#user-profile-mfa-container
+#user-profile-settings-container
 {
-    background-color: white;
     border-radius: 5px;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     gap: 10px;
 
-    height: calc(10% - 8px);
+    height: calc(20% - 8px);
     width: 95%;
+}
+
+#user-profile-mfa-container
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;;
 }
 
 #mfa-on-off-buttons-container
@@ -961,6 +974,17 @@ button
 {
     color: white;
 }
+
+#user-profile-logout-all-container
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
 
 #delete-account-container
 {
@@ -2661,10 +2685,21 @@ button
     }
 
     /* ==========User Profile============ */
+    #top-bar-container #top-bar-left-container
+    {
+        margin-left: 25%;
+        padding-left: 0px;
+    }
+
+    #top-bar-container #top-bar-right-container
+    {
+        margin-right: 25%;
+        padding-right: 0px;
+    }
+    
     #top-bar-container div
     {
-        width: 10%;
-        margin-left: 26.5%;
+        width: 6%;
     }
 
     #image-container
@@ -2704,7 +2739,7 @@ button
     }
 
     #delete-account-container,
-    #user-profile-mfa-container
+    #user-profile-settings-container
     {
         width: 50%;
     }

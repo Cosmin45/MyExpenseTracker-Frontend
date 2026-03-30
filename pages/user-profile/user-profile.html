@@ -6,11 +6,15 @@
     <body>
         <div id="user-profile-main-container">
             <div id="top-bar-container">
-                <div>
+                <div id="top-bar-left-container">
                     <img src="/images/user-profile-images/back.png" alt="back-img">
-                    <button onclick="backOnClick()">Back</button>
+                    <p>Back</p>
                 </div>
                 <p>User Profile</p>
+                <div id="top-bar-right-container">
+                    <p>Log out</p>
+                    <img src="/images/user-profile-images/log-out.png" alt="">
+                </div>
             </div>
             <div id="image-container">
                     <img id="user-image" src="/images/user-profile-images/user-profile.png" alt="User-image">
@@ -52,14 +56,24 @@
                 </div>
             </div>
 
-            <div id="user-profile-mfa-container" class="user-information">
-                <div class="logo-and-info">
-                    <img src="/images/user-profile-images/mfa-2.png" alt="mfa-logo">
-                    <label>Multi-Factor Authentication</label>
+            <div id="user-profile-settings-container">
+                <div id="user-profile-mfa-container" class="user-information">
+                    <div class="logo-and-info">
+                        <img src="/images/user-profile-images/mfa-2.png" alt="mfa-logo">
+                        <label>Multi-Factor Authentication</label>
+                    </div>
+                    <div id="mfa-on-off-buttons-container">
+                        <button id="mfa-on-button" class="type-button">On</button>
+                        <button id="mfa-off-button" class="type-button">Off</button>
+                    </div>
                 </div>
-                <div id="mfa-on-off-buttons-container">
-                    <button id="mfa-on-button" class="type-button">On</button>
-                    <button id="mfa-off-button" class="type-button">Off</button>
+
+                <div id="user-profile-logout-all-container" class="user-information">
+                    <div class="logo-and-info">
+                        <img src="/images/user-profile-images/log-out-all.png" alt="logout-logo">
+                        <label>Log out from all accounts</label>
+                    </div>
+                    <button id="log-out-all-button">Log out</button>
                 </div>
             </div>
 

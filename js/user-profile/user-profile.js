@@ -1,11 +1,72 @@
-function backOnClick()
+const backContainer = document.querySelector("#top-bar-left-container");
+const logoutContainer = document.querySelector("#top-bar-right-container");
+const logoutAllButton = document.querySelector("#log-out-all-button");
+
+backContainer.addEventListener("click", backOnClick);
+logoutContainer.addEventListener("click", logout);
+logoutAllButton.addEventListener("click", logoutAll);
+
+async function logout()
 {
-    window.location.href = "../dashboard-v2.html";
+    try
+    {
+        const token = localStorage.getItem("jwt");
+
+        if(!token)
+        {
+            window.location.href = "/index.html";
+            return;
+        }
+
+        const response = await fetch("http://localhost:8080/user/logout",
+            {
+                method: "POST",
+                headers: getAuthHeader()
+            });
+
+        if(!response.ok)
+        {
+            return;
+        }
+
+        window.location.href = "/index.html";
+    }
+    catch(Error)
+    {
+    }
 }
 
-function goToEditPage(page)
+async function logoutAll()
 {
-    window.location.href = "user-profile-edit-" + page + ".html"
+    try
+    {
+        const token = localStorage.getItem("jwt");
+
+        if(!token)
+        {
+            window.location.href = "/index.html";
+            return;
+        }
+
+        const response = await fetch("http://localhost:8080/user/logout-all",
+            {
+                method: "POST",
+                headers: getAuthHeader()
+            });
+
+        if(!response.ok)
+        {
+            console.log("Something was wrong in logout operation.");
+            return;
+        }
+
+        console.log("Logout all successfully");
+        window.location.href = "/index.html";
+    }
+    catch(Error)
+    {
+        console.log("Couldn't connect to server. Try again later.");
+    }
 }
 
 async function loadUserInfo() 
@@ -65,8 +126,8 @@ async function loadUserInfo()
         console.error("Error loading user", e);
     }
 }
-
 window.addEventListener("DOMContentLoaded", loadUserInfo);
+
 
 function previewImage(event) 
 {
@@ -86,4 +147,14 @@ function previewImage(event)
 function deleteAccountOnClick()
 {
     window.location.href = "/pages/user-profile/delete-account.html";
+}
+
+function goToEditPage(page)
+{
+    window.location.href = "user-profile-edit-" + page + ".html"
+}
+
+function backOnClick()
+{
+    window.location.href = "../dashboard-v2.html";
 }
