@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/style.css">
+        <title>Change Budget</title>
+    </head>
+    <body>
+        <div id="change-budget-window-container">
+            <div id="change-budget-main-container">
+                <div id="change-budget-top-container">
+                    <label>Change Budget</label>
+                </div>
+                <div id="change-budget-middle-container">
+                    <div>
+                        <label>Current Budget</label>
+                        <input type="text" id="change-budget-current-budget" disabled>
+                    </div>
+                    <div>
+                        <label>New Budget</label>
+                        <input type="text" id="change-budget-new-budget">
+                    </div>
+                </div>
+                <div id="change-budget-bottom-container">
+                    <button onclick="backOnClick()" id="change-budget-cancel-button">Back</button>
+                    <button onclick="saveChangesOnClick()" id="change-budget-save-button">Save</button>
+                </div>
+                <div id="change-budget-message-container">
+                    <p id="change-budget-message-nok" class="message">
+                        Please complete required field.
+                    </p>
+                    <p id="change-budget-message-ok" class="message">
+                        Your Budget has been changed successfully.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script src="/js/user/budget-and-savings/change-budget.js"></script>
+    </body>
+</html>

@@ -50,14 +50,25 @@ async function loginOnClick()
         
         if(data.requiresMFA)
         {
-            window.location.href = "./pages/requires-mfa.html?username=" + username;
+            window.location.href = "/pages/auth/requires-mfa.html?username=" + username;
 
             return;
         }
 
         localStorage.setItem("jwt", data.token);
 
-        window.location.href = "./pages/dashboard-v2.html";
+        if(data.role === "USER")
+        {
+            window.location.href = "/pages/user/dashboard-user.html";
+        }
+        else if(data.role === "ADMIN")
+        {
+            window.location.href = "/pages/admin/dashboard-admin.html";
+        }
+        else
+        {
+            console.log("Role unknown");
+        }
     }
     catch(Error)
     {
