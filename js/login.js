@@ -56,6 +56,7 @@ async function loginOnClick()
         }
 
         localStorage.setItem("jwt", data.token);
+        localStorage.setItem("role", data.role);
 
         if(data.role === "USER")
         {

@@ -91,5 +91,18 @@ async function saveChangesOnClick()
 
 function backOnClick()
 {
-    window.location.href = "/pages/user/user-profile/user-profile.html"
+    const role = localStorage.getItem("role");
+
+    if(role === "ADMIN")
+    {
+        window.location.href = "/pages/admin/admin-profile.html"
+    }
+    else if(role === "USER")
+    {
+        window.location.href = "/pages/user/user-profile/user-profile.html"
+    }
+    else
+    {
+        console.log("Role unknown.")
+    }
 }

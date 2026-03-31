@@ -4,6 +4,63 @@
         <title>Dashboard</title>
     </head>
     <body>
-        
+        <header class="navbar">
+            <div class="dashboard-logo-container">
+                <img src="/images/application-logo.png" alt="app-logo">
+                <p>MyExpenseTracker</p>
+            </div>
+            <div class="dashboard-buttons-container">
+                <button id="dashboard-button" class="dashboard-type-button active">Dashboard</button>
+                <button id="audit-button" class="dashboard-type-button">Audit</button>
+                <button id="users-button" class="dashboard-type-button">Users</button>
+                <button id="unexpected-errors-button" class="dashboard-type-button">Unexpected Errors</button>
+            </div>
+            <div class="dashboard-user-profile-container">
+                <p></p>
+                <img src="/images/user.png" alt="user-img">
+            </div>
+        </header>
+        <div id="dashboard-main-container">
+            <div id="dashboard-container" class="main-container">
+                <div id="dashboard-cards-container">
+                    <div id="card-first-container" class="card">
+                        <p>Total Users</p>
+                        <p id="card-one-value">0.0</p>
+                    </div>
+                    <div id="card-second-container" class="card">
+                        <p>Total Admins</p>
+                        <p id="card-second-value">0.0</p>
+                    </div>
+                    <div id="card-third-container" class="card">
+                        <p>Total Payments</p>
+                        <p id="card-third-value">0.0</p>
+                    </div>
+                    <div id="card-forth-container" class="card">
+                        <p>Enabled Users</p>
+                        <p id="card-forth-value">0.0</p>
+                    </div>
+                </div>
+                <div id="dashboard-first-two-charts-container">
+                    <div id="dashboard--container" class="expenses-and-incomes-by-month-container">
+                        <canvas></canvas>
+                    </div>
+                    <div class="savings-by-month-container">
+                        <canvas></canvas>
+                    </div>
+                </div>
+            </div>
+            <div id="audit-container" class="main-container">
+
+            </div>
+            <div id="users-container" class="main-container">
+
+            </div>
+            <div id="unexpected-errors-container" class="main-container">
+
+            </div>
+        </div>
+
+
+        <script src="/js/admin/dashboard/dashboard-admin.js"></script>
     </body>
 </html>

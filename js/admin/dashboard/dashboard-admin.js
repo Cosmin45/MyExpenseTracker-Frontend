@@ -29,18 +29,17 @@ function showActiveContainer()
     {
         document.querySelector("#dashboard-container").classList.add("active");
     }
-    else if(button.id.includes("payments"))
+    else if(button.id.includes("audit"))
     {
-        document.querySelector("#payments-main-container").classList.add("active");
+        document.querySelector("#audit-container").classList.add("active");
     }
-    else if(button.id.includes("statistics"))
+    else if(button.id.includes("users"))
     {
-        document.querySelector("#statistics-main-container").classList.add("active");
+        document.querySelector("#users-container").classList.add("active");
     }
-
-    else if(button.id.includes("budget-and-savings"))
+    else if(button.id.includes("unexpected-errors"))
     {
-        document.querySelector("#budget-and-savings-main-container").classList.add("active");
+        document.querySelector("#unexpected-errors-container").classList.add("active");
     }
     else
     {
@@ -53,7 +52,7 @@ async function loadDashboardInfo()
     const token = localStorage.getItem("jwt");
     const role = localStorage.getItem("role");
 
-    if (!token || role != "USER") 
+    if (!token || role != "ADMIN") 
     {
         window.location.href = "/index.html";
         return;
@@ -83,13 +82,6 @@ async function loadDashboardInfo()
 
         updateCards(informations);
 
-        updateExpenseVsIncomeChart(informations);
-
-        updateSavingsPerMonthPerMonthChart(informations);
-
-        // updateRecentPaymentsAddedContainer(informations);
-
-        // updateExpensesDistributionChart(informations);
 
     } 
     catch (e) 
@@ -143,7 +135,7 @@ function addPaymentOnClick()
 
 function userProfileOnClick()
 {
-    window.location.href = "/pages/user/user-profile/user-profile.html";
+    window.location.href = "/pages/admin/admin-profile.html";
 }
 
 function changeBudgetOnClick()
