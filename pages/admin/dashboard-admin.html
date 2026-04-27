@@ -52,27 +52,27 @@
             <div id="users-container" class="main-container">
                 <div id="users-filters-and-sort">
                     <select name="" id="users-select-by-role">
-                        <option value="all-roles">All Roles</option>
+                        <option value="all" selected>All Roles</option>
                         <option value="user">User</option>
                         <option value="admin">Admin</option>
                     </select>
                     <select name="" id="users-select-by-status">
-                        <option value="all-status">All Status</option>
+                        <option value="all" selected>All Status</option>
                         <option value="enabled">Enabled</option>
                         <option value="disabled">Disabled</option>
                     </select>
                     <select name="" id="users-select-by-email-type">
-                        <option value="all-emails">All emails</option>
+                        <option value="all" selected>All emails</option>
                         <option value="verified">Verified</option>
                         <option value="unverified">Unverified</option>
                     </select>
                     <select name="" id="users-select-by-mfa">
-                        <option value="ignore-mfa">All MFA</option>
+                        <option value="all" selected>All MFA</option>
                         <option value="mfa-on">MFA On</option>
                         <option value="mfa-off">MFA Off</option>
                     </select>
                     <select name="" id="users-select-by-alerts">
-                        <option value="ignore-alerts">Ignore alerts</option>
+                        <option value="all" selected>Ignore alerts</option>
                         <option value="alerts-on">Alerts On</option>
                         <option value="alerts-off">Alerts Off</option>
                     </select>
@@ -91,8 +91,10 @@
                         <option value="status">Status</option>
                         <option value="email-verified">Email verified</option>
                         <option value="requires-mfa">Requires MFA</option>
-                        <option value="budget-goal">Budget goal</option>
-                        <option value="savings-goal">Savings goal</option>
+                        <option value="budget-goal-asc">Budget goal ASC</option>
+                        <option value="budget-goal-desc">Budget goal DESC</option>
+                        <option value="savings-goal-asc">Savings goal ASC</option>
+                        <option value="savings-goal-desc">Savings goal DESC</option>
                         <option value="allows-alerts">Allows alerts</option>
                     </select>
                 </div>

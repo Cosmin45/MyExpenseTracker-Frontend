@@ -1,48 +1,48 @@
-async function loadUsers()
-{
-    const token = localStorage.getItem("jwt");
+// async function loadUsers()
+// {
+//     const token = localStorage.getItem("jwt");
 
-    if (!token) 
-    {
-        window.location.href = "/index.html";
-        return;
-    }
+//     if (!token) 
+//     {
+//         window.location.href = "/index.html";
+//         return;
+//     }
 
-    try 
-    {
-        const response = await fetch("http://localhost:8080/admin/users", 
-        {
-            method: "GET",
-            headers: 
-            {
-                "Authorization": "Bearer " + token
-            }
-        });
+//     try 
+//     {
+//         const response = await fetch("http://localhost:8080/admin/users", 
+//         {
+//             method: "GET",
+//             headers: 
+//             {
+//                 "Authorization": "Bearer " + token
+//             }
+//         });
 
-        if (!response.ok) 
-        {
-            localStorage.removeItem("jwt");
-            window.location.href = "/index.html";
-            return;
-        }
+//         if (!response.ok) 
+//         {
+//             localStorage.removeItem("jwt");
+//             window.location.href = "/index.html";
+//             return;
+//         }
 
-        const users = await response.json();
+//         const users = await response.json();
 
-        const container = document.querySelector("#users-table-container tbody");
-        container.innerHTML = "";
+//         const container = document.querySelector("#users-table-container tbody");
+//         container.innerHTML = "";
 
-        users.forEach(user => 
-        {
-            createUserRow(user);
-        });
+//         users.forEach(user => 
+//         {
+//             createUserRow(user);
+//         });
 
-    } 
-    catch (e) 
-    {
-        console.error("Error loading user", e);
-    }
-}
-window.addEventListener("DOMContentLoaded", loadUsers);
+//     } 
+//     catch (e) 
+//     {
+//         console.error("Error loading user", e);
+//     }
+// }
+window.addEventListener("DOMContentLoaded", applyFilters);
 
 function createUserRow(user)
 {
@@ -51,7 +51,7 @@ function createUserRow(user)
     const row = document.createElement("tr");
 
     row.innerHTML = `
-        <td>${user.id}</td>
+        <td style="font-weight: bold;">${user.id}</td>
         <td>${user.username}</td>
         <td>${user.fullName}</td>
         <td>${user.email}</td>
@@ -82,9 +82,11 @@ function createUserRow(user)
 
     const role = row.querySelector(".user-role");
     role.value = user.role;
+    setColorByRole(role);
 
     const status = row.querySelector(".user-status");
     status.value = user.accountStatus;
+    setColorByStatus(status);
 
     const deleteButton = row.querySelector(".delete");
 
@@ -105,11 +107,12 @@ function createUserRow(user)
         {
             this.value = oldRole;
         }
+        setColorByRole(role);
     });
 
     status.addEventListener("change", async function()
     {
-        const oldStatus = user.status;
+        const oldStatus = user.accountStatus;
         const newStatus = this.value;
 
         this.disabled = true;
@@ -124,6 +127,7 @@ function createUserRow(user)
         {
             this.value = oldStatus;
         }
+        setColorByStatus(status);
     });
 
     deleteButton.addEventListener("click", async function()
@@ -141,6 +145,30 @@ function createUserRow(user)
             this.disabled = false;
         }
     });
+}
+
+function setColorByRole(role)
+{
+    if(role.value.toLowerCase() === "user")
+    {
+        role.style.color = "green";
+    }
+    else if(role.value.toLowerCase() === "admin")
+    {
+        role.style.color = "orange";
+    }
+}
+
+function setColorByStatus(status)
+{
+    if(status.value.toLowerCase() === "enabled")
+    {
+        status.style.color = "green";
+    }
+    else if(status.value.toLowerCase() === "disabled")
+    {
+        status.style.color = "red";
+    }
 }
 
 async function editRole(userId, newRole)
@@ -295,14 +323,18 @@ async function deleteOnClick(userId, button)
     }
 }
 
-const typeSelect = document.getElementById("payment-type-select");
-const categorySelect = document.getElementById("payment-category-select");
-const timeSelect = document.getElementById("payment-time-select");
-const sortBySelect = document.getElementById("payments-sort-by-select");
+const roleSelect = document.getElementById("users-select-by-role");
+const statusSelect = document.getElementById("users-select-by-status");
+const emailSelect = document.getElementById("users-select-by-email-type");
+const mfaSelect = document.getElementById("users-select-by-mfa");
+const alertsSelect = document.getElementById("users-select-by-alerts");
+const sortBySelect = document.getElementById("users-select-sort-by");
 
-typeSelect.addEventListener("change", applyFilters);
-categorySelect.addEventListener("change", applyFilters);
-timeSelect.addEventListener("change", applyFilters);
+roleSelect.addEventListener("change", applyFilters);
+statusSelect.addEventListener("change", applyFilters);
+emailSelect.addEventListener("change", applyFilters);
+mfaSelect.addEventListener("change", applyFilters);
+alertsSelect.addEventListener("change", applyFilters);
 sortBySelect.addEventListener("change", applyFilters);
 
 async function applyFilters()
@@ -315,20 +347,24 @@ async function applyFilters()
         return
     }
 
-    const type = typeSelect.value;
-    const category = categorySelect.value;
-    const time = timeSelect.value;
+    const role = roleSelect.value;
+    const status = statusSelect.value;
+    const email = emailSelect.value;
+    const mfa = mfaSelect.value;
+    const alerts = alertsSelect.value;
     const sortBy = sortBySelect.value;
 
     const params = new URLSearchParams();
-    if(type !== "All") params.append("type", type);
-    if(category !== "All") params.append("category", category);
-    if(time !== "All") params.append("time", time);
-    if(sortBy !== "date-desc") params.append("sortBy", sortBy);
+    if(role !== "all") params.append("role", role);
+    if(status !== "all") params.append("status", status);
+    if(email !== "all") params.append("email", email);
+    if(mfa !== "all") params.append("mfa", mfa);
+    if(alerts !== "all") params.append("alerts", alerts);
+    if(sortBy !== "id-asc") params.append("sortBy", sortBy);
 
     try 
     {
-        const response = await fetch("http://localhost:8080/expenses/filter?" + params.toString(), 
+        const response = await fetch("http://localhost:8080/admin/filter?" + params.toString(), 
         {
             method: "GET",
             headers: 
@@ -339,18 +375,16 @@ async function applyFilters()
 
         if (!response.ok) 
         {
-            // localStorage.removeItem("jwt");
-            // window.location.href = "/index.html";
             return;
         }
 
         const informations = await response.json();
-        const container = document.getElementById("payments-container");
+        const container = document.querySelector("#users-table-container tbody");
         container.innerHTML = "";
 
-        informations.forEach(payment => 
+        informations.forEach(user => 
         {
-            createPaymentCard(payment);
+            createUserRow(user);
         });
     } 
     catch (e) 
