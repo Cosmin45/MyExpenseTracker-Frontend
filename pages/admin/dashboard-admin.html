@@ -11,8 +11,8 @@
             </div>
             <div class="dashboard-buttons-container">
                 <button id="dashboard-button" class="dashboard-type-button">Dashboard</button>
-                <button id="users-button" class="dashboard-type-button active">Users</button>
-                <button id="audit-button" class="dashboard-type-button">Audit</button>
+                <button id="users-button" class="dashboard-type-button">Users</button>
+                <button id="audit-button" class="dashboard-type-button active">Audit</button>
                 <button id="unexpected-errors-button" class="dashboard-type-button">Unexpected Errors</button>
             </div>
             <div class="dashboard-user-profile-container">
@@ -25,28 +25,28 @@
                 <div id="dashboard-cards-container">
                     <div id="card-first-container" class="card">
                         <p>Total Users</p>
-                        <p id="card-one-value">0.0</p>
+                        <p id="-value">0.0</p>
                     </div>
                     <div id="card-second-container" class="card">
                         <p>Total Admins</p>
-                        <p id="card-second-value">0.0</p>
+                        <p id="-value">0.0</p>
                     </div>
                     <div id="card-third-container" class="card">
                         <p>Total Payments</p>
-                        <p id="card-third-value">0.0</p>
+                        <p id="-value">0.0</p>
                     </div>
                     <div id="card-forth-container" class="card">
                         <p>Enabled Users</p>
-                        <p id="card-forth-value">0.0</p>
+                        <p id="-value">0.0</p>
                     </div>
                 </div>
                 <div id="dashboard-first-two-charts-container">
-                    <div id="dashboard--container" class="expenses-and-incomes-by-month-container">
+                    <!-- <div id="dashboard--container" class="expenses-and-incomes-by-month-container">
                         <canvas></canvas>
                     </div>
                     <div class="savings-by-month-container">
                         <canvas></canvas>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div id="users-container" class="main-container">
@@ -118,70 +118,109 @@
                             </tr>
                         </thead>
                         <tbody>
-
-                            
-                            <!-- <tr>
-                                <td>1</td>
-                                <td>Anyway01</td>
-                                <td>Anyway Anytime</td>
-                                <td>Anyway01@yahoo.com</td>
-                                <td>2026-03-05 20:00:06.484234</td>
-                                <td>
-                                    <select>
-                                        <option>USER</option>
-                                        <option>ADMIN</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select>
-                                        <option>ENABLED</option>
-                                        <option>DISABLED</option>
-                                    </select>
-                                </td>
-                                <td>TRUE</td>
-                                <td>FALSE</td>
-                                <td>2000</td>
-                                <td>15000</td>
-                                <td>FALSE</td>
-                                <td>
-                                    <button>DELETE</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Cosmin45</td>
-                                <td>Cosmin Ciocirtau</td>
-                                <td>cosmincosminel45@yahoo.com</td>
-                                <td>2026-03-05 20:00:06.484234</td>
-                                <td>
-                                    <select>
-                                        <option>USER</option>
-                                        <option>ADMIN</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select>
-                                        <option>ENABLED</option>
-                                        <option>DISABLED</option>
-                                    </select>
-                                </td>
-                                <td>FALSE</td>
-                                <td>TRUE</td>
-                                <td>1500</td>
-                                <td>25000</td>
-                                <td>TRUE</td>
-                                <td>
-                                    <button>DELETE</button>
-                                </td>
-                            </tr> -->
-                            
+                            <!-- Rows dynamically added from js-->
                         </tbody>
                     </table>
                 </div>
                 
             </div>
             <div id="audit-container" class="main-container">
-                <p>Audit</p>
+                <div id="audit-filters-and-sort">
+                    <select name="" id="audit-select-by-action">
+                        <option value="all" selected>All Actions</option>
+                        <option value="LOGIN_SUCCESS">LOGIN_SUCCESS</option>
+                        <option value="LOGIN_FAILED">LOGIN_FAILED</option>
+                        <option value="LOGOUT">LOGOUT</option>
+                        <option value="EMAIL_CHANGED">EMAIL_CHANGED</option>
+                        <option value="PASSWORD_CHANGED">PASSWORD_CHANGED</option>
+                        <option value="FULLNAME_CHANGED">FULLNAME_CHANGED</option>
+                        <option value="USERNAME_CHANGED">USERNAME_CHANGED</option>
+                        <option value="ROLE_CHANGED">ROLE_CHANGED</option>
+                        <option value="ACCOUNT_ENABLED">ACCOUNT_ENABLED</option>
+                        <option value="ACCOUNT_DISABLED">ACCOUNT_DISABLED</option>
+                        <option value="ACCOUNT_DELETED">ACCOUNT_DELETED</option>
+                        <option value="MFA_ENABLED">MFA_ENABLED</option>
+                        <option value="MFA_DISABLED">MFA_DISABLED</option>
+                        <option value="MFA_CODE_FAILED">MFA_CODE_FAILED</option>
+                        <option value="EMAIL_VERIFICATION_SENT">EMAIL_VERIFICATION_SENT</option>
+                        <option value="PASSWORD_RESET_REQUESTED">PASSWORD_RESET_REQUESTED</option>
+                        <option value="PASSWORD_RESET_SUCCESS">PASSWORD_RESET_SUCCESS</option>
+                        <option value="ALERTS_DISABLED">ALERTS_DISABLED</option>
+                        <option value="ALERTS_ENABLED">ALERTS_ENABLED</option>
+                    </select>
+                    <select name="" id="audit-select-by-date">
+                        <option value="all" selected>All Dates</option>
+                        <option value="last-week">Last week</option>
+                        <option value="last-month">Last month</option>
+                        <option value="last-6-months">Last 6 months</option>
+                        <option value="last-year">Last year</option>
+                    </select>
+                    <select name="" id="audit-select-by-device">
+                        <option value="all" selected>All devices</option>
+                        <option value="desktop">Desktop</option>
+                        <option value="mobile">Mobile</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <select name="" id="audit-select-by-os">
+                        <option value="all" selected>All OS</option>
+                        <option value="windows">Windows</option>
+                        <option value="linux">Linux</option>
+                        <option value="mac">Mac</option>
+                        <option value="android">Android</option>
+                        <option value="ios">IOS</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <select name="" id="audit-select-by-browser">
+                        <option value="all" selected>All browsers</option>
+                        <option value="mozilla-firefox">Mozilla Firefox</option>
+                        <option value="google-chrome">Google Chrome</option>
+                        <option value="microsoft-edge">Microsoft Edge</option>
+                        <option value="safari">Safari</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <select name="" id="audit-select-sort-by">
+                        <option value="id-asc" selected>Id ASC</option>
+                        <option value="id-desc">Id DESC</option>
+                        <option value="userid-asc">User id ASC</option>
+                        <option value="userid-desc">User id DESC</option>
+                        <option value="username-asc">Username ASC</option>
+                        <option value="username-desc">Username DESC</option>
+                        <option value="action-asc">Action ASC</option>
+                        <option value="action-desc">Action DESC</option>
+                        <option value="description-asc">Description ASC</option>
+                        <option value="description-desc">Description DESC</option>
+                        <option value="created-at-asc">Created at ASC</option>
+                        <option value="created-at-desc">Created at DESC</option>
+                        <option value="ip-address">Ip address</option>
+                        <option value="user-agent">User agent</option>
+                        <option value="device">Device</option>
+                        <option value="os">Os</option>
+                        <option value="browser">Browser</option>
+                    </select>
+                </div>
+                <div id="audit-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>User id</th>
+                                <th>Request id</th>
+                                <th>Username</th>
+                                <th>Action</th>
+                                <th>Description</th>
+                                <th>Created at</th>
+                                <th>Ip address</th>
+                                <th>User agent</th>
+                                <th>Device</th>
+                                <th>Os</th>
+                                <th>Browser</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div id="unexpected-errors-container" class="main-container">
                 <p>Errors</p>
@@ -191,5 +230,6 @@
 
         <script src="/js/admin/dashboard/dashboard-admin.js"></script>
         <script src="/js/admin/users/users.js"></script>
+        <script src="/js/admin/audit/logs.js"></script>
     </body>
 </html>

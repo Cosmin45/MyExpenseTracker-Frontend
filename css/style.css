@@ -124,6 +124,11 @@ button
     width: 100%;
     background-color: white;
     /* border: 1px solid red; */
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
 }
 
 .dashboard-logo-container,
@@ -2398,28 +2403,33 @@ button
 }
 
 
-/* ==========Admin - Audit============ */
-#users-container
+/* ==========Admin============ */
+#users-container,
+#audit-container
 {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-#users-table-container
+#users-table-container,
+#audit-table-container
 {
     width: 100%;
 }
 
-#users-table-container table
+#users-table-container table,
+#audit-table-container table
 {
     width:100%;
-    border-collapse:collapse;
+    border-collapse: collapse;
     background-color: white;
 }
 
 #users-table-container th,
-#users-table-container td
+#users-table-container td,
+#audit-table-container th,
+#audit-table-container td
 {
     border:1px solid #ccc;
     padding:10px;
@@ -2429,13 +2439,15 @@ button
     max-width: 12vw;
 }
 
-#users-table-container th
+#users-table-container th,
+#audit-table-container th
 {
     background-color: #e7e9eb;
     color: #486ba3;
 }
 
-#users-table-container table td select
+#users-table-container table td select,
+#audit-table-container table td select
 {
     font-size: 16px;
 }
@@ -2445,17 +2457,19 @@ button
     color: red;
 }
 
-#users-filters-and-sort
+#users-filters-and-sort,
+#audit-filters-and-sort
 {
     display: flex;
     gap: 10px;
     height: 5vh;
 }
 
-#users-filters-and-sort select
+#users-filters-and-sort select,
+#audit-filters-and-sort select
 {
     height: 100%;
-    width: 9%;
+    width: 10%;
 
     font-size: 16px;
     border: none;
@@ -2466,9 +2480,15 @@ button
     background-color: #e7e9eb;
 }
 
-#users-filters-and-sort #users-select-sort-by
+#users-filters-and-sort #users-select-sort-by,
+#audit-filters-and-sort #audit-select-sort-by
 {
     margin-left: 10px;
+}
+
+#audit-filters-and-sort #audit-select-by-action
+{
+    width: 16vw;
 }
 
 @media (min-width: 900px)
