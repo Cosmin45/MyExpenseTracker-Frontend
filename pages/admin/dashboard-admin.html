@@ -3,7 +3,7 @@
         <link rel="stylesheet" href="/css/style.css">
         <title>Dashboard</title>
     </head>
-    <body>
+    <body class="body-with-navbar-fixed">
         <header class="navbar">
             <div class="dashboard-logo-container">
                 <img src="/images/application-logo.png" alt="app-logo">
@@ -12,8 +12,8 @@
             <div class="dashboard-buttons-container">
                 <button id="dashboard-button" class="dashboard-type-button">Dashboard</button>
                 <button id="users-button" class="dashboard-type-button">Users</button>
-                <button id="audit-button" class="dashboard-type-button active">Audit</button>
-                <button id="unexpected-errors-button" class="dashboard-type-button">Unexpected Errors</button>
+                <button id="audit-button" class="dashboard-type-button">Audit</button>
+                <button id="unexpected-errors-button" class="dashboard-type-button active">Unexpected Errors</button>
             </div>
             <div class="dashboard-user-profile-container">
                 <p></p>
@@ -57,7 +57,7 @@
                         <option value="admin">Admin</option>
                     </select>
                     <select name="" id="users-select-by-status">
-                        <option value="all" selected>All Status</option>
+                        <option value="all" selected>All Statuses</option>
                         <option value="enabled">Enabled</option>
                         <option value="disabled">Disabled</option>
                     </select>
@@ -77,8 +77,8 @@
                         <option value="alerts-off">Alerts Off</option>
                     </select>
                     <select name="" id="users-select-sort-by">
-                        <option value="id-asc" selected>Id ASC</option>
-                        <option value="id-desc">Id DESC</option>
+                        <option value="id-asc">Id ASC</option>
+                        <option value="id-desc" selected>Id DESC</option>
                         <option value="username-asc">Username ASC</option>
                         <option value="username-desc">Username DESC</option>
                         <option value="fullname-asc">Fullname ASC</option>
@@ -179,8 +179,8 @@
                         <option value="other">Other</option>
                     </select>
                     <select name="" id="audit-select-sort-by">
-                        <option value="id-asc" selected>Id ASC</option>
-                        <option value="id-desc">Id DESC</option>
+                        <option value="id-asc">Id ASC</option>
+                        <option value="id-desc" selected>Id DESC</option>
                         <option value="userid-asc">User id ASC</option>
                         <option value="userid-desc">User id DESC</option>
                         <option value="username-asc">Username ASC</option>
@@ -223,7 +223,137 @@
                 </div>
             </div>
             <div id="unexpected-errors-container" class="main-container">
-                <p>Errors</p>
+                <div id="unexpected-errors-filters-and-sort">
+                    <select name="" id="unexpected-errors-select-by-resolved">
+                        <option value="all" selected>All resolved types</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    <select name="" id="unexpected-errors-select-by-status">
+                        <optgroup label="General">
+                            <option value="all" selected>All statuses</option>
+                            <option value="5xx">Server Errors (5xx)</option>
+                            <option value="4xx">Client Errors (4xx)</option>
+                        </optgroup>
+
+                        <optgroup label="Client Errors">
+                            <option value="400">400 Bad Request</option>
+                            <option value="401">401 Unauthorized</option>
+                            <option value="403">403 Forbidden</option>
+                            <option value="404">404 Not Found</option>
+                            <option value="429">429 Too Many Requests</option>
+                        </optgroup>
+
+                        <optgroup label="Server Errors">
+                            <option value="500">500 Internal Server Error</option>
+                            <option value="502">502 Bad Gateway</option>
+                            <option value="503">503 Service Unavailable</option>
+                            <option value="504">504 Gateway Timeout</option>
+                        </optgroup>
+                    </select>
+                    <select name="" id="unexpected-errors-select-by-method">
+                        <option value="all" selected>All methods</option>
+                        <option value="get">GET</option>
+                        <option value="post">POST</option>
+                        <option value="put">PUT</option>
+                        <option value="delete">DELETE</option>
+                    </select>
+                    <select name="" id="unexpected-errors-select-by-date">
+                        <option value="all" selected>All Dates</option>
+                        <option value="last-week">Last week</option>
+                        <option value="last-month">Last month</option>
+                        <option value="last-6-months">Last 6 months</option>
+                        <option value="last-year">Last year</option>
+                    </select>
+                    <select name="" id="unexpected-errors-select-by-device">
+                        <option value="all" selected>All devices</option>
+                        <option value="desktop">Desktop</option>
+                        <option value="mobile">Mobile</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <select name="" id="unexpected-errors-select-by-os">
+                        <option value="all" selected>All OS</option>
+                        <option value="windows">Windows</option>
+                        <option value="linux">Linux</option>
+                        <option value="mac">Mac</option>
+                        <option value="android">Android</option>
+                        <option value="ios">IOS</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <select name="" id="unexpected-errors-select-by-browser">
+                        <option value="all" selected>All browsers</option>
+                        <option value="mozilla-firefox">Mozilla Firefox</option>
+                        <option value="google-chrome">Google Chrome</option>
+                        <option value="microsoft-edge">Microsoft Edge</option>
+                        <option value="safari">Safari</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <select name="" id="unexpected-errors-select-sort-by">
+                        <option value="resolved-asc">Resolved ASC</option>
+                        <option value="resolved-desc">Resolved DESC</option>
+                        <option value="id-asc">Id ASC</option>
+                        <option value="id-desc" selected>Id DESC</option>
+                        <option value="userid-asc">User id ASC</option>
+                        <option value="userid-desc">User id DESC</option>
+                        <option value="request-id-asc">Request id ASC</option>
+                        <option value="request-id-desc">Request id DESC</option>
+                        <option value="status-asc">Status ASC</option>
+                        <option value="status-desc">Status DESC</option>
+                        <option value="method-asc">Method ASC</option>
+                        <option value="method-desc">Method DESC</option>
+                        <option value="error-code-asc">Error code ASC</option>
+                        <option value="error-code-desc">Error code DESC</option>
+                        <option value="path-asc">Path ASC</option>
+                        <option value="path-desc">Path DESC</option>
+                        <option value="occurred-at-asc">Occurred at ASC</option>
+                        <option value="occurred-at-desc">Occurred at DESC</option>
+                        <option value="ip-address">Ip address</option>
+                        <option value="message-asc">Message ASC</option>
+                        <option value="message-desc">Message DESC</option>
+                        <option value="stack-trace-asc">Stack trace ASC</option>
+                        <option value="stack-trace-desc">Stack trace DESC</option>
+                        <option value="query-params-asc">Query params ASC</option>
+                        <option value="query-params-desc">Query params DESC</option>
+                        <option value="request-body-asc">Request body ASC</option>
+                        <option value="request-body-desc">Request body DESC</option>
+                        <option value="user-agent">User agent</option>
+                        <option value="device-asc">Device ASC</option>
+                        <option value="device-desc">Device DESC</option>
+                        <option value="os-asc">Os ASC</option>
+                        <option value="os-desc">Os DESC</option>
+                        <option value="browser-asc">Browser ASC</option>
+                        <option value="browser-desc">Browser DESC</option>
+                    </select>
+                </div>
+                <div id="unexpected-errors-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="th-4-vw">Resolved</th>
+                                <th class="th-4-vw">Id</th>
+                                <th class="th-4-vw">User id</th>
+                                <th>Request id</th>
+                                <th class="th-4-vw">Status</th>
+                                <th class="th-4-vw">Method</th>
+                                <th>Error code</th>
+                                <th>Path</th>
+                                <th class="th-13-vw">Occured at</th>
+                                <th>Ip address</th>
+                                <th class="th-25-vw">Message</th>
+                                <th class="th-25-vw">Stack trace</th>
+                                <th>Query params</th>
+                                <th>Request body</th>
+                                <th class="th-13-vw">User agent</th>
+                                <th>Device</th>
+                                <th>Os</th>
+                                <th>Browser</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
@@ -231,5 +361,6 @@
         <script src="/js/admin/dashboard/dashboard-admin.js"></script>
         <script src="/js/admin/users/users.js"></script>
         <script src="/js/admin/audit/logs.js"></script>
+        <script src="/js/admin/unexpected-errors/unexpected-errors.js"></script>
     </body>
 </html>

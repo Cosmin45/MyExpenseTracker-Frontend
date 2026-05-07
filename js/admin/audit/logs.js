@@ -63,13 +63,13 @@ async function applyFilters()
     if(browser !== "all") params.append("browser", browser);
     if(sortBy !== "id-asc") params.append("sortBy", sortBy);
 
-    console.log("------------------");
-    console.log("Action: " + action);
-    console.log("Date: " + date);
-    console.log("Device: " + device);
-    console.log("Os: " + os);
-    console.log("Browser: " + browser);
-    console.log("SortBy: " + sortBy);
+    // console.log("------------------");
+    // console.log("Action: " + action);
+    // console.log("Date: " + date);
+    // console.log("Device: " + device);
+    // console.log("Os: " + os);
+    // console.log("Browser: " + browser);
+    // console.log("SortBy: " + sortBy);
 
     try 
     {

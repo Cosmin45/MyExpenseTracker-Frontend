@@ -42,7 +42,7 @@
 //         console.error("Error loading user", e);
 //     }
 // }
-window.addEventListener("DOMContentLoaded", applyFilters);
+window.addEventListener("DOMContentLoaded", applyUnexpectedErrorsFilter);
 
 function createUserRow(user)
 {
@@ -58,14 +58,14 @@ function createUserRow(user)
         <td>${user.createdAt}</td>
         <td>
             <select class="user-role">
-                <option>USER</option>
-                <option>ADMIN</option>
+                <option style="color: green;">USER</option>
+                <option style="color: orange;">ADMIN</option>
             </select>
         </td>
         <td>
             <select class="user-status">
-                <option>ENABLED</option>
-                <option>DISABLED</option>
+                <option style="color: green;">ENABLED</option>
+                <option style="color: red;">DISABLED</option>
             </select>
         </td>
         <td>${user.emailVerified}</td>
@@ -330,14 +330,14 @@ const mfaSelect = document.getElementById("users-select-by-mfa");
 const alertsSelect = document.getElementById("users-select-by-alerts");
 const sortBySelect = document.getElementById("users-select-sort-by");
 
-roleSelect.addEventListener("change", applyFilters);
-statusSelect.addEventListener("change", applyFilters);
-emailSelect.addEventListener("change", applyFilters);
-mfaSelect.addEventListener("change", applyFilters);
-alertsSelect.addEventListener("change", applyFilters);
-sortBySelect.addEventListener("change", applyFilters);
+roleSelect.addEventListener("change", applyUnexpectedErrorsFilter);
+statusSelect.addEventListener("change", applyUnexpectedErrorsFilter);
+emailSelect.addEventListener("change", applyUnexpectedErrorsFilter);
+mfaSelect.addEventListener("change", applyUnexpectedErrorsFilter);
+alertsSelect.addEventListener("change", applyUnexpectedErrorsFilter);
+sortBySelect.addEventListener("change", applyUnexpectedErrorsFilter);
 
-async function applyFilters()
+async function applyUnexpectedErrorsFilter()
 {
     const token = localStorage.getItem("jwt");
 
