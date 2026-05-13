@@ -2451,7 +2451,8 @@ button
     max-width: 12vw;
 }
 
-#unexpected-errors-table-container th
+#unexpected-errors-table-container th,
+#audit-table-container th
 {
     min-width: 10vw;
 }
@@ -2528,17 +2529,20 @@ button
     font-weight: bold;
 }
 
-#unexpected-errors-table-container .th-4-vw
+#unexpected-errors-table-container .th-4-vw,
+#audit-table-container .th-4-vw
 {
     min-width: 4vw;
 }
 
-#unexpected-errors-table-container .th-13-vw
+#unexpected-errors-table-container .th-13-vw,
+#audit-table-container .th-13-vw
 {
     min-width: 13vw;
 }
 
-#unexpected-errors-table-container .th-25-vw
+#unexpected-errors-table-container .th-25-vw,
+#audit-table-container .th-25-vw
 {
     min-width: 25vw;
 }
@@ -2548,6 +2552,8 @@ button
 {
     width: 13vw;
 }
+
+
 
 
 @media (min-width: 900px)

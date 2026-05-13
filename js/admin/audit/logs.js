@@ -9,6 +9,7 @@ function createLogRow(log)
     row.innerHTML = `
         <td style="font-weight: bold;">${log.id}</td>
         <td>${log.userId}</td>
+        <td>${log.adminId}</td>
         <td>${log.requestId}</td>
         <td>${log.username}</td>
         <td>${log.action}</td>
