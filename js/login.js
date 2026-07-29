@@ -48,15 +48,15 @@ async function loginOnClick()
             return;
         }
         
+        localStorage.setItem("jwt", data.token);
+        localStorage.setItem("role", data.role);
+
         if(data.requiresMFA)
         {
             window.location.href = "/pages/auth/requires-mfa.html?username=" + username;
 
             return;
         }
-
-        localStorage.setItem("jwt", data.token);
-        localStorage.setItem("role", data.role);
 
         if(data.role === "USER")
         {

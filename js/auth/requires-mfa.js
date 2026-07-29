@@ -1,5 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 const username = params.get("username");
+const role = localStorage.getItem("role");
 
 function clearAll()
 {
@@ -50,7 +51,18 @@ async function mfaOnClick()
         const data = await response.json();
         localStorage.setItem("jwt", data.token);
 
-        window.location.href = "/pages/user/dashboard-user.html"
+        if(role === "USER")
+        {
+            window.location.href = "/pages/user/dashboard-user.html";
+        }
+        else if(role === "ADMIN")
+        {
+            window.location.href = "/pages/admin/dashboard-admin.html";
+        }
+        else
+        {
+            console.log("Role unknown");
+        }
     }
     catch(Error)
     {

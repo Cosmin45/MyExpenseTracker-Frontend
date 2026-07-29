@@ -2462,7 +2462,7 @@ button
     min-width: 20vw;
     max-height: 80px;
 
-    overflow: auto;   /* 🔥 asta e cheia */
+    overflow: auto;
     word-break: break-word;
 }
 
